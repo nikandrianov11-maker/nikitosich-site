@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вступить в команду — Nikitosich</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#2e2c31;--card:#16161f;--text:#fff;--dim:#a8a5ac;
+    --border:rgba(255,255,255,.1);--accent:#a855f7;--accent2:#06b6d4;
+  }
+  body{
+    font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--text);
+    line-height:1.6;min-height:100vh;padding:40px 20px;
+    background-image:
+      radial-gradient(circle at 15% 10%,rgba(168,85,247,.22),transparent 45%),
+      radial-gradient(circle at 85% 80%,rgba(6,182,212,.18),transparent 45%);
+  }
+  a{color:inherit;text-decoration:none}
+
+  .back{
+    position:fixed;top:24px;left:24px;z-index:100;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:13px 24px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.18);border-radius:50px;
+    color:#fff;font-weight:700;font-size:14px;
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    transition:.3s;cursor:pointer;font-family:inherit;
+  }
+  .back:hover{background:rgba(168,85,247,.25);border-color:var(--accent);transform:translateX(-4px)}
+
+  .container{width:100%;max-width:720px;margin:0 auto;position:relative;z-index:2}
+
+  .title{
+    text-align:center;font-size:clamp(1.8rem,5vw,2.8rem);
+    font-weight:900;line-height:1.1;margin-bottom:12px;
+    background:linear-gradient(90deg,#fff,#a855f7,#06b6d4,#fff);
+    background-size:300% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:shine 5s linear infinite;
+  }
+  @keyframes shine{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+  .subtitle{
+    text-align:center;color:var(--dim);font-size:1rem;
+    margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;
+  }
+
+  .form-box{
+    background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+    border:1px solid rgba(255,255,255,.12);border-radius:24px;
+    padding:44px 40px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 60px rgba(168,85,247,.1);
+    position:relative;
+  }
+  .form-box::before{
+    content:'';position:absolute;inset:-2px;border-radius:26px;padding:2px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent));
+    background-size:300% 300%;
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+    animation:borderGlow 6s linear infinite;pointer-events:none;z-index:0;
+  }
+  @keyframes borderGlow{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  form{display:flex;flex-direction:column;gap:28px;position:relative;z-index:1}
+
+  .q{display:flex;flex-direction:column;gap:12px}
+  .q-label{font-size:1rem;font-weight:700;color:#fff;line-height:1.4}
+  .q-label .req{color:var(--accent);font-weight:900;margin-left:2px}
+  .q-label .hint{color:var(--dim);font-weight:500;font-size:0.85rem;display:block;margin-top:2px}
+
+  .q input[type="text"],
+  .q input[type="email"],
+  .q input[type="number"],
+  .q textarea{
+    padding:14px 18px;
+    background:rgba(255,255,255,.05);
+    border:1.5px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    color:#fff;font-family:inherit;font-size:1rem;
+    transition:border-color .3s,box-shadow .3s,background .3s;
+    outline:none;width:100%;
+  }
+  .q input::placeholder,.q textarea::placeholder{color:rgba(255,255,255,.35)}
+  .q input:focus,.q textarea:focus{
+    border-color:var(--accent);
+    background:rgba(255,255,255,.08);
+    box-shadow:0 0 0 4px rgba(168,85,247,.15);
+  }
+  .q textarea{min-height:90px;resize:vertical}
+
+  /* Чекбоксы (множественный выбор) */
+  .check-group{display:flex;flex-direction:column;gap:10px}
+  .check-item{
+    display:flex;align-items:center;gap:12px;
+    padding:12px 16px;
+    background:rgba(255,255,255,.04);
+    border:1.5px solid rgba(255,255,255,.1);
+    border-radius:12px;
+    cursor:pointer;
+    transition:.25s;
+    font-size:0.98rem;
+  }
+  .check-item:hover{
+    background:rgba(255,255,255,.08);
+    border-color:rgba(168,85,247,.4);
+  }
+  .check-item input[type="checkbox"]{
+    appearance:none;-webkit-appearance:none;
+    width:22px;height:22px;flex-shrink:0;
+    border:2px solid rgba(255,255,255,.4);
+    border-radius:6px;
+    cursor:pointer;position:relative;
+    transition:.25s;
+    margin:0;
+  }
+  .check-item input[type="checkbox"]:checked{
+    border-color:var(--accent);
+    background:var(--accent);
+    box-shadow:0 0 0 4px rgba(168,85,247,.2);
+  }
+  .check-item input[type="checkbox"]:checked::after{
+    content:'';
+    position:absolute;
+    left:6px;top:2px;
+    width:7px;height:12px;
+    border:solid #fff;
+    border-width:0 2.5px 2.5px 0;
+    transform:rotate(45deg);
+  }
+  .check-item:has(input:checked){
+    background:rgba(168,85,247,.12);
+    border-color:var(--accent);
+  }
+  .check-item .other-input{
+    flex:1;
+    padding:8px 12px;
+    background:rgba(0,0,0,.2);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:8px;
+    color:#fff;font-family:inherit;font-size:0.9rem;
+    outline:none;
+  }
+  .check-item .other-input:focus{border-color:var(--accent)}
+
+  /* Кнопка отправки */
+  .submit-btn{
+    margin-top:12px;
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:18px 32px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#fff;font-weight:800;font-size:1.05rem;
+    border:none;border-radius:14px;cursor:pointer;
+    font-family:inherit;
+    transition:transform .3s,box-shadow .3s,filter .3s;
+    position:relative;overflow:hidden;
+  }
+  .submit-btn::before{
+    content:'';position:absolute;top:0;left:-100%;
+    width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+    transition:.6s;
+  }
+  .submit-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 40px rgba(168,85,247,.6);
+    filter:brightness(1.1);
+  }
+  .submit-btn:hover::before{left:100%}
+  .submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+  .submit-btn svg{width:20px;height:20px;fill:#fff}
+
+  .form-message{
+    display:none;padding:16px 20px;border-radius:12px;
+    font-weight:600;font-size:0.95rem;text-align:center;
+    margin-top:12px;animation:fadeIn .4s ease;
+  }
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+  .form-message.success{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);color:#4ade80;display:block}
+  .form-message.error{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);color:#f87171;display:block}
+
+  @media (max-width:600px){
+    .form-box{padding:28px 20px;border-radius:20px}
+    .back{padding:11px 18px;font-size:12px;top:16px;left:16px}
+    .q input,.q textarea{padding:12px 14px;font-size:0.95rem}
+    .check-item{padding:10px 14px;font-size:0.92rem}
+    .submit-btn{padding:16px 24px;font-size:1rem}
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back"><span>←</span><span>На главную</span></a>
+
+<div class="container">
+  <h1 class="title">Вступить в команду</h1>
+  <p class="subtitle">Заполни анкету — мы свяжемся с тобой и обсудим детали. В вопросах с выбором можно отметить <b>несколько вариантов</b>.</p>
+
+  <div class="form-box">
+    <form id="joinForm">
+
+      <!-- 1 -->
+      <div class="q">
+        <label class="q-label" for="name">Как вас зовут? Достаточно имени. <span class="req">*</span></label>
+        <input type="text" id="name" name="Имя" placeholder="Мой ответ" required>
+      </div>
+
+      <!-- 2 -->
+      <div class="q">
+        <label class="q-label" for="age">Сколько вам лет? (Только честно) <span class="req">*</span></label>
+        <input type="number" id="age" name="Возраст" placeholder="Мой ответ" min="10" max="99" required>
+      </div>
+
+      <!-- 3 -->
+      <div class="q">
+        <label class="q-label" for="experience">Какой у вас опыт работы? <span class="req">*</span></label>
+        <input type="text" id="experience" name="Опыт работы" placeholder="Мой ответ" required>
+      </div>
+
+      <!-- 4 -->
+      <div class="q">
+        <label class="q-label">В каких программах вы работаете? <span class="req">*</span>
+          <span class="hint">Можно выбрать несколько</span>
+        </label>
+        <div class="check-group">
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="Premiere Pro"><span>Premiere Pro</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="After Effects"><span>After Effects</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="Photoshop"><span>Photoshop</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="Adobe Audition"><span>Adobe Audition</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="Blender"><span>Blender</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="Cinema 4D"><span>Cinema 4D</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="DaVinci Resolve"><span>DaVinci Resolve</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="Vegas Pro"><span>Vegas Pro</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="Cap Cut"><span>Cap Cut</span></label>
+          <label class="check-item"><input type="checkbox" name="Программы[]" value="Монтирую на телефоне"><span>Монтирую на телефоне</span></label>
+          <label class="check-item">
+            <input type="checkbox" name="Программы[]" value="Другое" id="progOther">
+            <span>Другое:</span>
+            <input type="text" class="other-input" name="Программы_другое" placeholder="Укажите..." oninput="document.getElementById('progOther').checked=this.value.length>0">
+          </label>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="q">
+        <label class="q-label">С какой версией Adobe вы работаете? <span class="req">*</span>
+          <span class="hint">Можно выбрать несколько</span>
+        </label>
+        <div class="check-group">
+          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2026"><span>2026</span></label>
+          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2025"><span>2025</span></label>
+          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2024"><span>2024</span></label>
+          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2023"><span>2023</span></label>
+          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2022"><span>2022</span></label>
+          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2021 и ниже"><span>2021 и ниже</span></label>
+          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="Не работаю в Adobe"><span>Не работаю в Adobe</span></label>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="q">
+        <label class="q-label" for="plugins">Какими плагинами для монтажа вы пользуетесь? (Хотя бы основные)</label>
+        <input type="text" id="plugins" name="Плагины" placeholder="Мой ответ">
+      </div>
+
+      <!-- 7 -->
+      <div class="q">
+        <label class="q-label">Какие видео монтируете? (С какими провели больше время за монтажём) <span class="req">*</span>
+          <span class="hint">Можно выбрать несколько</span>
+        </label>
+        <div class="check-group">
+          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Shorts/Reels"><span>Shorts/Reels</span></label>
+          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Подкасты"><span>Подкасты</span></label>
+          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Динамичный/мемный"><span>Динамичный/мемный</span></label>
+          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Кинематографичный"><span>Кинематографичный</span></label>
+          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Классический монтаж"><span>Классический монтаж (Простые Влоги и т.п.)</span></label>
+          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Динамичный СДВГ"><span>Динамичный "СДВГ"</span></label>
+          <label class="check-item">
+            <input type="checkbox" name="Тип видео[]" value="Другое" id="videoOther">
+            <span>Другое:</span>
+            <input type="text" class="other-input" name="Тип видео_другое" placeholder="Укажите..." oninput="document.getElementById('videoOther').checked=this.value.length>0">
+          </label>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="q">
+        <label class="q-label" for="portfolio">Есть ли портфолио? Прикрепите ссылку на него. <span class="req">*</span></label>
+        <input type="text" id="portfolio" name="Портфолио" placeholder="Мой ответ" required>
+      </div>
+
+      <!-- 9 -->
+      <div class="q">
+        <label class="q-label" for="currentJob">Где сейчас работаете? (чем занимаетесь в плане монтажа) <span class="req">*</span></label>
+        <input type="text" id="currentJob" name="Текущая работа" placeholder="Мой ответ" required>
+      </div>
+
+      <!-- 10 -->
+      <div class="q">
+        <label class="q-label" for="hardest">Что для вас самое сложное в процессе монтажа? <span class="req">*</span></label>
+        <input type="text" id="hardest" name="Самое сложное" placeholder="Мой ответ" required>
+      </div>
+
+      <!-- 11 -->
+      <div class="q">
+        <label class="q-label" for="deadlines">Делаете ли работу в сроки? (Часто ли не укладываетесь в дедлайны) <span class="req">*</span></label>
+        <input type="text" id="deadlines" name="Сроки" placeholder="Мой ответ" required>
+      </div>
+
+      <!-- 12 -->
+      <div class="q">
+        <label class="q-label" for="contact">Укажите, как с вами связаться. (VK/TG) <span class="req">*</span></label>
+        <input type="text" id="contact" name="Контакт" placeholder="Мой ответ" required>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        Вступить в команду
+      </button>
+
+      <div class="form-message" id="formMessage"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // ==== ССЫЛКА ОТ FORMSPREE (уже вставлена) ====
+  const FORMSPREE_URL = "https://formspree.io/f/mwlpvgzd";
+
+  const form = document.getElementById('joinForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const message = document.getElementById('formMessage');
+  const btnHTML = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Вступить в команду';
+
+  // Проверка: хотя бы один чекбокс в обязательных группах
+  function validateCheckboxGroups() {
+    const groups = [
+      { name: 'Программы[]', label: 'программах' },
+      { name: 'Версия Adobe[]', label: 'версии Adobe' },
+      { name: 'Тип видео[]', label: 'типах видео' }
+    ];
+    for (const g of groups) {
+      const checked = form.querySelectorAll(`input[name="${g.name}"]:checked`).length;
+      if (checked === 0) {
+        return `Пожалуйста, выберите хотя бы один вариант в "${g.label}".`;
+      }
+    }
+    return null;
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Проверка чекбоксов
+    const groupError = validateCheckboxGroups();
+    if (groupError) {
+      message.className = 'form-message error';
+      message.textContent = '⚠️ ' + groupError;
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправка...';
+    message.className = 'form-message';
+    message.style.display = 'none';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        message.className = 'form-message success';
+        message.textContent = '✅ Спасибо! Анкета отправлена. Мы свяжемся с тобой скоро.';
+        form.reset();
+        submitBtn.textContent = 'Отправлено ✓';
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = btnHTML;
+        }, 3000);
+      } else {
+        const data = await response.json().catch(() => ({}));
+        message.className = 'form-message error';
+        message.textContent = '❌ Ошибка: ' + (data.error || 'Попробуйте ещё раз.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = btnHTML;
+      }
+    } catch (err) {
+      message.className = 'form-message error';
+      message.textContent = '❌ Не удалось отправить. Проверьте интернет и попробуйте снова.';
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = btnHTML;
+    }
+  });
+</script>
+</body>
+</html>
