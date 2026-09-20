@@ -32,6 +32,8 @@ a{color:inherit;text-decoration:none}
 .mmenu{display:none;position:fixed;inset:0;background:rgba(20,18,22,.98);z-index:1000;padding:100px 32px calc(40px + env(safe-area-inset-bottom));flex-direction:column;gap:8px;opacity:0;pointer-events:none;transition:.3s;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .mmenu.on{opacity:1;pointer-events:auto}
 .mmenu a{font-size:22px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mmenu__back{display:none}
+
 .glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
 .glow-blue{background:radial-gradient(circle,rgba(30,111,255,.55) 0%,transparent 70%)}
 .glow-red{background:radial-gradient(circle,rgba(255,46,77,.5) 0%,transparent 70%)}
@@ -260,7 +262,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   .nav__list{display:none}
   .nav__team{display:none}
 
-  /* Бургер всегда доступен — фиксируем его сверху справа */
+  /* Бургер фиксируем сверху справа */
   .burger{
     display:flex;
     position:fixed;
@@ -279,12 +281,12 @@ main section{padding:120px 0;position:relative;overflow:hidden}
     border-color:rgba(255,255,255,.3);
   }
 
-  /* --- МОБИЛЬНОЕ МЕНЮ: 2 колонки, плитки --- */
+  /* --- МОБИЛЬНОЕ МЕНЮ: 2 колонки + кнопка «Назад» внизу --- */
   .mmenu{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:12px;
-    padding:88px 18px calc(40px + env(safe-area-inset-bottom));
+    padding:88px 18px calc(30px + env(safe-area-inset-bottom));
     align-content:start;
     justify-content:stretch;
   }
@@ -325,6 +327,42 @@ main section{padding:120px 0;position:relative;overflow:hidden}
     background:linear-gradient(135deg,rgba(168,85,247,.3),rgba(6,182,212,.25));
     border-color:rgba(168,85,247,.45);
     margin-top:4px;
+  }
+
+  /* --- КНОПКА «НАЗАД» ВНИЗУ МЕНЮ --- */
+  .mmenu__back{
+    display:flex;
+    grid-column:1 / -1;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:18px;
+    padding:16px 24px;
+    width:100%;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:50px;
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:.25s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .mmenu__back svg{
+    width:18px;
+    height:18px;
+    fill:none;
+    stroke:#fff;
+    stroke-width:2.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    flex-shrink:0;
+  }
+  .mmenu__back:active{
+    background:rgba(255,255,255,.18);
+    transform:scale(.98);
   }
 
   /* --- ЗАГОЛОВКИ СЕКЦИЙ: уменьшаем, чтобы влезали --- */
@@ -405,7 +443,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   }
 }
 
-/* ================== ТАЧ-УСТРОЙСТВА: убираем «залипающие» hover-эффекты ================== */
+/* ================== ТАЧ-УСТРОЙСТВА ================== */
 @media(hover:none){
 .review:nth-child(n){transform:none}
 .review{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
@@ -424,7 +462,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .to-top:hover{transform:translateY(0) scale(1);box-shadow:0 6px 20px rgba(30,111,255,.55)}
 }
 
-/* ================== ДЛЯ ТЕХ, КОМУ АНИМАЦИИ МЕШАЮТ ================== */
+/* ================== REDUCED MOTION ================== */
 @media (prefers-reduced-motion:reduce){
 *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 html{scroll-behavior:auto}
@@ -441,6 +479,15 @@ html{scroll-behavior:auto}
   <a href="#reviews" data-close>Отзывы</a>
   <a href="#questions" data-close>Вопросы</a>
   <a href="#" id="teamMobile">👥 Команда</a>
+
+  <!-- Кнопка «Назад» внизу меню (только на мобильных) -->
+  <button class="mmenu__back" id="mmenuBack" type="button" aria-label="Вернуться назад">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19 12H5"/>
+      <path d="M12 19l-7-7 7-7"/>
+    </svg>
+    <span>Назад</span>
+  </button>
 </div>
 
 <div id="mainSite">
@@ -723,7 +770,6 @@ html{scroll-behavior:auto}
         </article>
       </div>
 
-      <!-- БЛОК С КНОПКАМИ ВНИЗУ -->
       <div class="team-cta">
         <h3>Хочешь работать с нами?</h3>
         <p>Посмотри работы команды или присоединяйся к нам</p>
@@ -737,7 +783,7 @@ html{scroll-behavior:auto}
   </section>
 </div>
 
-<!-- ====== КНОПКА «НАВЕРХ» (работает на обеих страницах) ====== -->
+<!-- КНОПКА «НАВЕРХ» -->
 <button class="to-top" id="toTop" type="button" aria-label="Вернуться наверх" title="Наверх">
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="M12 19V5"/>
@@ -768,6 +814,7 @@ html{scroll-behavior:auto}
   var modalT   = document.getElementById('modalT');
   var modalX   = document.getElementById('modalX');
   var toTop    = document.getElementById('toTop');
+  var mmenuBack = document.getElementById('mmenuBack');
 
   /* ============================================================
      АНИМАЦИИ «НАВСЕГДА»
@@ -835,6 +882,13 @@ html{scroll-behavior:auto}
       var open = mmenu.classList.toggle('on');
       burger.classList.toggle('on', open);
       document.body.classList.toggle('locked', open);
+    });
+  }
+
+  /* Кнопка «Назад» внизу мобильного меню */
+  if (mmenuBack) {
+    mmenuBack.addEventListener('click', function(){
+      closeMenu();
     });
   }
 
