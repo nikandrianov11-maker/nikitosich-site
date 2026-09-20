@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2e2c31">
 <title>Никита Андрианов — Режиссёр видеомонтажа</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#2e2c31;--bg-alt:#262429;--text:#fff;--dim:#a8a5ac;--border:rgba(255,255,255,.08);--blue:#1e6fff;--ta:#a855f7;--ta2:#06b6d4;--gold:#fbbf24;--tm:#9ca3af}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.5;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.5;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-font-smoothing:antialiased}
 body.locked{overflow:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
-.anim{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.anim{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
 .anim.in{opacity:1;transform:translate(0,0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;position:relative;z-index:10;gap:20px}
@@ -28,17 +29,17 @@ a{color:inherit;text-decoration:none}
 .burger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.on span:nth-child(2){opacity:0}
 .burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mmenu{display:none;position:fixed;inset:0;background:rgba(20,18,22,.98);z-index:1000;padding:100px 32px 40px;flex-direction:column;gap:8px;opacity:0;pointer-events:none;transition:.3s;overflow-y:auto}
+.mmenu{display:none;position:fixed;inset:0;background:rgba(20,18,22,.98);z-index:1000;padding:100px 32px calc(40px + env(safe-area-inset-bottom));flex-direction:column;gap:8px;opacity:0;pointer-events:none;transition:.3s;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .mmenu.on{opacity:1;pointer-events:auto}
 .mmenu a{font-size:22px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
 .glow-blue{background:radial-gradient(circle,rgba(30,111,255,.55) 0%,transparent 70%)}
 .glow-red{background:radial-gradient(circle,rgba(255,46,77,.5) 0%,transparent 70%)}
 .glow-white{background:radial-gradient(circle,rgba(255,255,255,.25) 0%,transparent 70%)}
-.header{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.header{position:relative;display:flex;flex-direction:column;overflow:hidden;min-height:100vh;min-height:100dvh}
 .header__bg{position:absolute;inset:0;background:url("img/images/header-background.png") center/cover no-repeat;opacity:.85;z-index:0}
 .header__ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(46,44,49,.85),rgba(46,44,49,.5),rgba(46,44,49,.15));z-index:1}
-.header .container{position:relative;z-index:3;display:flex;flex-direction:column;min-height:100vh}
+.header .container{position:relative;z-index:3;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
 .header__content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:60px 0}
 .header__title{font-size:clamp(32px,5vw,64px);font-weight:800;line-height:1.05;margin-bottom:16px;text-transform:uppercase}
 .header__acc{display:block;color:#fff;font-size:.45em;font-weight:600;text-transform:none;margin-bottom:8px}
@@ -111,7 +112,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1000;padding:24px}
 .modal.on{display:flex}
 .modal__ov{position:absolute;inset:0;background:rgba(10,10,12,.85);cursor:pointer}
-.modal__c{position:relative;background:linear-gradient(160deg,#35323a,#2a282e);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:48px 56px;max-width:720px;width:100%;max-height:85vh;overflow-y:auto;z-index:1}
+.modal__c{position:relative;background:linear-gradient(160deg,#35323a,#2a282e);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:48px 56px;max-width:720px;width:100%;max-height:85vh;max-height:85dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:1}
 .modal__t{font-size:22px;font-weight:800;color:#fff;margin-bottom:24px;padding-right:60px}
 .modal__x{font-size:17px;line-height:1.8;color:#e0dde5}
 .modal__close{position:absolute;top:20px;right:20px;width:44px;height:44px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:50%;color:#fff;font-size:24px;cursor:pointer;transition:.25s}
@@ -124,7 +125,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .faq__i.on .faq__q::after{content:"−";background:#fff;color:var(--bg);transform:rotate(180deg)}
 .faq__a{max-height:0;overflow:hidden;transition:.4s;font-size:16px;line-height:1.7;color:#d8d5dc;opacity:0}
 .faq__i.on .faq__a{max-height:500px;padding-top:18px;opacity:1}
-.footer{background:var(--bg-alt);padding:100px 0 50px;text-align:center;border-top:1px solid var(--border);position:relative;overflow:hidden}
+.footer{background:var(--bg-alt);padding:100px 0 calc(50px + env(safe-area-inset-bottom));text-align:center;border-top:1px solid var(--border);position:relative;overflow:hidden}
 .footer .container{position:relative;z-index:2}
 .footer__stars{display:flex;justify-content:center;gap:14px;margin-bottom:30px}
 .footer__stars span{display:inline-block;width:20px;height:20px;background:#fff;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:sp 3s ease-in-out infinite}
@@ -140,7 +141,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .footer__copy{font-size:13px;color:#6a6770;padding-top:20px;border-top:1px solid var(--border);max-width:300px;margin:20px auto 0}
 
 /* TEAM VIEW */
-.team{min-height:100vh;background:#0a0a0f;color:var(--text);position:relative;overflow:hidden;padding:100px 0}
+.team{min-height:100vh;min-height:100dvh;background:#0a0a0f;color:var(--text);position:relative;overflow:hidden;padding:100px 0}
 .team::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 10%,rgba(168,85,247,.25),transparent 45%),radial-gradient(circle at 85% 80%,rgba(6,182,212,.2),transparent 45%),radial-gradient(circle at 50% 50%,rgba(236,72,153,.12),transparent 60%);pointer-events:none}
 .back-btn{position:fixed;top:24px;left:24px;z-index:200;display:inline-flex;align-items:center;gap:10px;padding:14px 26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:50px;color:#fff;font-weight:700;font-size:14px;cursor:pointer;backdrop-filter:blur(12px);transition:.3s;font-family:inherit}
 .back-btn:hover{background:rgba(168,85,247,.25);border-color:var(--ta);transform:translateX(-4px)}
@@ -211,12 +212,14 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .cta-btn--purple{background:linear-gradient(90deg,var(--ta),var(--ta2));color:#fff;box-shadow:0 10px 30px rgba(168,85,247,.45)}
 .cta-btn--purple:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(168,85,247,.7)}
 
+/* ================== МОБИЛЬНАЯ ВЕРСИЯ (облегчённая) ================== */
 @media(max-width:900px){
 .nav__list,.nav__team{display:none}
 .burger{display:flex}
 .mmenu{display:flex}
 main section{padding:70px 0}
-.glow{filter:blur(60px)}
+/* меньше размытия = меньше нагрузки на GPU телефона */
+.glow{filter:blur(40px);opacity:.65}
 .title{gap:14px;margin-bottom:32px}
 .about__grid{grid-template-columns:1fr;gap:32px}
 .about__photo{aspect-ratio:3/4;max-width:320px;margin:0 auto}
@@ -229,11 +232,12 @@ main section{padding:70px 0}
 .pack__btns{flex-direction:column}
 .pack__btn,.pack__btn-free{justify-content:center;width:100%}
 .reviews__grid{flex-direction:column;gap:20px;padding:0}
-.review{width:100%;max-width:100%;transform:none !important}
+.review{width:100%;max-width:100%}
 .faq__i{padding:20px 24px;border-radius:20px}
+.faq__q{font-size:16px}
 .modal__c{padding:32px 24px;border-radius:20px}
 .team{padding:90px 0 60px}
-.back-btn{padding:12px 20px;font-size:13px;top:18px;left:18px}
+.back-btn{padding:12px 20px;font-size:13px;top:18px;left:18px;backdrop-filter:none;background:rgba(20,18,22,.92)}
 .main-card{grid-template-columns:1fr}
 .main-photo{min-height:420px}
 .main-photo::after{background:linear-gradient(to top,rgba(22,22,31,.9) 0%,transparent 60%)}
@@ -243,6 +247,35 @@ main section{padding:70px 0}
 .team-cta{padding:36px 24px;margin-top:40px}
 .team-cta-btns{flex-direction:column}
 .cta-btn{width:100%;justify-content:center}
+/* самые «тяжёлые» бесконечные анимации (перерисовка градиента) — упрощаем */
+.main-card::before,.team-cta::before{animation:none;background-position:0 0}
+/* короче переходы — отзывчивее интерфейс */
+.anim{transition-duration:.55s}
+.anim.d1,.anim.d2,.anim.d3,.anim.d4{transition-delay:0s}
+}
+
+/* ================== ТАЧ-УСТРОЙСТВА: убираем «залипающие» hover-эффекты ================== */
+@media(hover:none){
+.review:nth-child(n){transform:none}
+.review{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.review:hover{transform:translateY(-4px);box-shadow:0 0 22px rgba(255,255,255,.16)}
+.review:hover .review__more{opacity:.75}
+.fav__link:hover{transform:none}
+.fav__link:hover .fav__img{transform:none}
+.card:hover{box-shadow:none}
+.card:hover .card-photo img{transform:none}
+.btn-h:hover{background:transparent;color:#fff;animation-play-state:running}
+.btn-ch:hover,.join__btn:hover,.pack__btn:hover,.pack__btn-free:hover,
+.about__skills-btn:hover,.nav__team:hover,.cta-btn--gold:hover,
+.cta-btn--purple:hover,.footer__social:hover{transform:none}
+.about__skills img{filter:none;opacity:.9}
+.modal__close:hover{transform:none;background:rgba(255,255,255,.06);color:#fff}
+}
+
+/* ================== ДЛЯ ТЕХ, КОМУ АНИМАЦИИ МЕШАЮТ ================== */
+@media (prefers-reduced-motion:reduce){
+*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+html{scroll-behavior:auto}
 }
 </style>
 </head>
@@ -288,8 +321,8 @@ main section{padding:70px 0}
           Nikitosich
         </p>
         <div class="header__btns">
-          <a href="https://t.me/ModerationNikitosich" target="_blank" class="btn-h">связаться со мной</a>
-          <a href="https://t.me/NikitaAndrianov" target="_blank" class="btn-ch">
+          <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="btn-h">связаться со мной</a>
+          <a href="https://t.me/NikitaAndrianov" target="_blank" rel="noopener" class="btn-ch">
             <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
             мой телеграм канал
           </a>
@@ -307,7 +340,7 @@ main section{padding:70px 0}
         <h2 class="title anim">Обо <span class="a">мне</span></h2>
         <div class="about__grid">
           <div>
-            <img src="img/images/nikita.jpg" alt="Фото Никиты" class="about__photo anim">
+            <img src="img/images/nikita.jpg" alt="Фото Никиты" class="about__photo anim" loading="lazy" decoding="async">
           </div>
           <div>
             <p class="about__txt anim d1">Привет! Меня зовут <span class="a">Никита</span>, а в интернете я — <span class="a">Nikitosich</span>.</p>
@@ -322,10 +355,10 @@ main section{padding:70px 0}
             <div class="about__skills-blk anim d4">
               <a href="#" class="about__skills-btn">мои навыки</a>
               <div class="about__skills">
-                <img src="img/images/about-pr.png" alt="Premiere Pro">
-                <img src="img/images/about-ae.png" alt="After Effects">
-                <img src="img/images/about-ps.png" alt="Photoshop">
-                <img src="img/images/about-me.png" alt="Media Encoder">
+                <img src="img/images/about-pr.png" alt="Premiere Pro" loading="lazy" decoding="async">
+                <img src="img/images/about-ae.png" alt="After Effects" loading="lazy" decoding="async">
+                <img src="img/images/about-ps.png" alt="Photoshop" loading="lazy" decoding="async">
+                <img src="img/images/about-me.png" alt="Media Encoder" loading="lazy" decoding="async">
               </div>
             </div>
           </div>
@@ -338,8 +371,8 @@ main section{padding:70px 0}
       <div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
       <div class="container">
         <h2 class="title anim">Любимая <span class="a">работа</span></h2>
-        <a href="https://youtu.be/2rd3-0kkmhQ" target="_blank" class="fav__link anim">
-          <img src="img/images/favorite.jpg" alt="Любимая работа" class="fav__img">
+        <a href="https://youtu.be/2rd3-0kkmhQ" target="_blank" rel="noopener" class="fav__link anim">
+          <img src="img/images/favorite.jpg" alt="Любимая работа" class="fav__img" loading="lazy" decoding="async">
           <div class="fav__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </a>
       </div>
@@ -361,8 +394,8 @@ main section{padding:70px 0}
           </ul>
           <div class="pack__price">💰 Стоимость пака — 2000 ₽</div>
           <div class="pack__btns">
-            <a href="https://t.me/NIkitosich_bot" target="_blank" class="pack__btn">Купить →</a>
-            <a href="https://t.me/freeNikitosichPac" target="_blank" class="pack__btn-free">Бесплатный пак →</a>
+            <a href="https://t.me/NIkitosich_bot" target="_blank" rel="noopener" class="pack__btn">Купить →</a>
+            <a href="https://t.me/freeNikitosichPac" target="_blank" rel="noopener" class="pack__btn-free">Бесплатный пак →</a>
           </div>
         </div>
       </div>
@@ -377,9 +410,9 @@ main section{padding:70px 0}
           <div>
             <h3 class="join__title">🎬 Ищем видеомонтажёров любого уровня!</h3>
             <p class="join__txt">Если ты шаришь в TikTok трендах, чувствуешь ритм и умеешь создавать динамичные ролики — <span class="a">Добро Пожаловать в команду!</span></p>
-            <a href="join.html" target="_blank" class="join__btn">Заполнить анкету →</a>
+            <a href="join.html" target="_blank" rel="noopener" class="join__btn">Заполнить анкету →</a>
           </div>
-          <img src="img/images/team-searching-img.png" alt="" class="join__img">
+          <img src="img/images/team-searching-img.png" alt="" class="join__img" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -420,7 +453,7 @@ main section{padding:70px 0}
       <div class="container">
         <h2 class="title anim">Вопросы</h2>
         <div class="faq">
-          <div class="faq__i anim"><div class="faq__q">Как заказать монтаж?</div><div class="faq__a"><p>Свяжитесь напрямую в <a href="https://t.me/ModerationNikitosich" style="color:#fff;text-decoration:underline" target="_blank">Telegram</a> — обсудим детали, сроки и стоимость.</p></div></div>
+          <div class="faq__i anim"><div class="faq__q">Как заказать монтаж?</div><div class="faq__a"><p>Свяжитесь напрямую в <a href="https://t.me/ModerationNikitosich" style="color:#fff;text-decoration:underline" target="_blank" rel="noopener">Telegram</a> — обсудим детали, сроки и стоимость.</p></div></div>
           <div class="faq__i anim d1"><div class="faq__q">Сколько стоит монтаж?</div><div class="faq__a"><p>Стоимость индивидуальна — точную цену можно назвать только после осмотра материала.</p></div></div>
           <div class="faq__i anim d2"><div class="faq__q">Сколько времени занимает монтаж?</div><div class="faq__a"><p>Сроки индивидуальны для каждого проекта. Точное время — после оценки материала.</p></div></div>
           <div class="faq__i anim d3"><div class="faq__q">Нужно ли платить за правки?</div><div class="faq__a"><p>Незначительные корректировки выполняем бесплатно. Сложные правки — за отдельную плату.</p></div></div>
@@ -439,10 +472,10 @@ main section{padding:70px 0}
       <h2 class="footer__title">Свяжитесь со мной, чтобы получить <span class="a">консультацию</span></h2>
       <a href="mailto:nik.andrianov.11@mail.ru" class="footer__email">nik.andrianov.11@mail.ru</a>
       <div class="footer__links">
-        <a href="https://t.me/ModerationNikitosich" target="_blank" class="footer__social">
+        <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="footer__social" aria-label="Telegram">
           <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
         </a>
-        <a href="https://www.youtube.com/channel/UC7IOeRq6r-kJLE_56_FwA5g" target="_blank" class="footer__social">
+        <a href="https://www.youtube.com/channel/UC7IOeRq6r-kJLE_56_FwA5g" target="_blank" rel="noopener" class="footer__social" aria-label="YouTube">
           <svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1-1.8-2-2C19.6 3.7 12 3.7 12 3.7s-7.6 0-9.5.5c-1 .3-1.8 1-2 2C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1 1.8 2 2 1.9.5 9.5.5 9.5.5s7.6 0 9.5-.5c1-.3 1.8-1 2-2 .5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
         </a>
       </div>
@@ -468,7 +501,7 @@ main section{padding:70px 0}
 
         <article class="main-card">
           <div class="main-photo">
-            <img src="images/nikita.jpg" alt="Никита Андрианов"
+            <img src="images/nikita.jpg" alt="Никита Андрианов" loading="lazy" decoding="async"
                  onerror="this.style.display='none';this.parentNode.classList.add('no')">
           </div>
           <div class="main-info">
@@ -477,8 +510,8 @@ main section{padding:70px 0}
             <h3 class="main-name">Никита Андрианов</h3>
             <p class="main-desc"><strong>Никита Андрианов</strong> — по всем вопросам к нему. Отвечает за координацию команды, приём заказов и контроль качества.</p>
             <div class="btns main">
-              <a href="https://t.me/ModerationNikitosich" target="_blank" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/Nikitosich1234" target="_blank" class="btn btn-portfolio">Портфолио</a>
+              <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
+              <a href="https://t.me/Nikitosich1234" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
             </div>
           </div>
         </article>
@@ -495,8 +528,8 @@ main section{padding:70px 0}
             <div class="card-name">Имя Фамилия</div>
             <p class="card-desc">Краткое описание монтажёра.</p>
             <div class="btns">
-              <a href="https://t.me/username" target="_blank" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/portfolio" target="_blank" class="btn btn-portfolio">Портфолио</a>
+              <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
+              <a href="https://t.me/portfolio" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
             </div>
           </div>
         </article>
@@ -507,8 +540,8 @@ main section{padding:70px 0}
             <div class="card-name">Имя Фамилия</div>
             <p class="card-desc">Краткое описание монтажёра.</p>
             <div class="btns">
-              <a href="https://t.me/username" target="_blank" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/portfolio" target="_blank" class="btn btn-portfolio">Портфолио</a>
+              <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
+              <a href="https://t.me/portfolio" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
             </div>
           </div>
         </article>
@@ -519,8 +552,8 @@ main section{padding:70px 0}
             <div class="card-name">Имя Фамилия</div>
             <p class="card-desc">Краткое описание монтажёра.</p>
             <div class="btns">
-              <a href="https://t.me/username" target="_blank" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/portfolio" target="_blank" class="btn btn-portfolio">Портфолио</a>
+              <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
+              <a href="https://t.me/portfolio" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
             </div>
           </div>
         </article>
@@ -531,8 +564,8 @@ main section{padding:70px 0}
             <div class="card-name">Имя Фамилия</div>
             <p class="card-desc">Краткое описание монтажёра.</p>
             <div class="btns">
-              <a href="https://t.me/username" target="_blank" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/portfolio" target="_blank" class="btn btn-portfolio">Портфолио</a>
+              <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
+              <a href="https://t.me/portfolio" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
             </div>
           </div>
         </article>
@@ -543,8 +576,8 @@ main section{padding:70px 0}
         <h3>Хочешь работать с нами?</h3>
         <p>Посмотри работы команды или присоединяйся к нам</p>
         <div class="team-cta-btns">
-          <a href="https://t.me/NikitosichTeamPortfolio" target="_blank" class="cta-btn cta-btn--gold">Портфолио команды</a>
-          <a href="join.html" target="_blank" class="cta-btn cta-btn--purple">Вступить в команду</a>
+          <a href="https://t.me/NikitosichTeamPortfolio" target="_blank" rel="noopener" class="cta-btn cta-btn--gold">Портфолио команды</a>
+          <a href="join.html" target="_blank" rel="noopener" class="cta-btn cta-btn--purple">Вступить в команду</a>
         </div>
       </div>
 
@@ -555,103 +588,148 @@ main section{padding:70px 0}
 <div class="modal" id="modal">
   <div class="modal__ov" data-close></div>
   <div class="modal__c">
-    <button class="modal__close" data-close>✕</button>
+    <button class="modal__close" data-close aria-label="Закрыть">✕</button>
     <p class="modal__t" id="modalT"></p>
     <p class="modal__x" id="modalX"></p>
   </div>
 </div>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-var mainSite = document.getElementById('mainSite');
-var teamView = document.getElementById('teamView');
+(function(){
+  'use strict';
 
-function showTeam(){
-  mainSite.style.display='none';
-  teamView.style.display='block';
-  window.scrollTo(0,0);
-  document.getElementById('mmenu').classList.remove('on');
-  document.getElementById('burger').classList.remove('on');
-  document.body.classList.remove('locked');
-  setTimeout(function(){
-    var els = document.querySelectorAll('.main-card,.card,.team-cta');
-    for(var i=0;i<els.length;i++){els[i].classList.add('in');}
-  },80);
-}
-function showMain(){
-  teamView.style.display='none';
-  mainSite.style.display='block';
-  window.scrollTo(0,0);
-}
-document.getElementById('teamBtn').addEventListener('click',showTeam);
-document.getElementById('teamMobile').addEventListener('click',function(e){e.preventDefault();showTeam();});
-document.getElementById('backBtn').addEventListener('click',showMain);
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-var burger=document.getElementById('burger');
-var mmenu=document.getElementById('mmenu');
-burger.addEventListener('click',function(){
-  burger.classList.toggle('on');
-  mmenu.classList.toggle('on');
-  if(mmenu.classList.contains('on')){document.body.classList.add('locked');}
-  else{document.body.classList.remove('locked');}
-});
-var mlinks = mmenu.querySelectorAll('a[data-close]');
-for(var i=0;i<mlinks.length;i++){
-  mlinks[i].addEventListener('click',function(){
+  var mainSite = document.getElementById('mainSite');
+  var teamView = document.getElementById('teamView');
+  var mmenu    = document.getElementById('mmenu');
+  var burger   = document.getElementById('burger');
+  var modal    = document.getElementById('modal');
+  var modalT   = document.getElementById('modalT');
+  var modalX   = document.getElementById('modalX');
+
+  /* ============================================================
+     АНИМАЦИИ «НАВСЕГДА»
+     Один наблюдатель, который и включает, и выключает класс .in.
+     Элемент анимируется КАЖДЫЙ раз, когда попадает в зону видимости,
+     а не только один раз за загрузку страницы.
+     ============================================================ */
+  var animObserver = new IntersectionObserver(function(entries){
+    for (var i = 0; i < entries.length; i++){
+      var e = entries[i];
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+      } else {
+        e.target.classList.remove('in');
+      }
+    }
+  }, {
+    threshold: 0,
+    /* сверху запас 140px — элемент «гаснет» только когда полностью ушёл за экран,
+       снизу -60px — появляется чуть позже, как и раньше */
+    rootMargin: '140px 0px -60px 0px'
+  });
+
+  function observeAll(root){
+    if (!root) return;
+    var els = root.querySelectorAll('.anim, .main-card, .card, .team-cta');
+    for (var i = 0; i < els.length; i++){ animObserver.observe(els[i]); }
+  }
+  observeAll(mainSite);
+  observeAll(teamView);
+
+  /* ---------- Меню ---------- */
+  function closeMenu(){
     burger.classList.remove('on');
     mmenu.classList.remove('on');
     document.body.classList.remove('locked');
-  });
-}
-
-var obs = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
-  });
-},{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
-var anims = document.querySelectorAll('#mainSite .anim');
-for(var j=0;j<anims.length;j++){obs.observe(anims[j]);}
-
-var fqs = document.querySelectorAll('.faq__q');
-for(var k=0;k<fqs.length;k++){
-  fqs[k].addEventListener('click',function(){this.parentElement.classList.toggle('on');});
-}
-
-var modal=document.getElementById('modal');
-var modalT=document.getElementById('modalT');
-var modalX=document.getElementById('modalX');
-var reviews = document.querySelectorAll('.review');
-for(var m=0;m<reviews.length;m++){
-  reviews[m].addEventListener('click',function(){
-    modalT.textContent=this.dataset.t;
-    modalX.textContent=this.dataset.x;
-    modal.classList.add('on');
-    document.body.classList.add('locked');
-  });
-}
-var closers = modal.querySelectorAll('[data-close]');
-for(var n=0;n<closers.length;n++){
-  closers[n].addEventListener('click',function(){
-    modal.classList.remove('on');
-    document.body.classList.remove('locked');
-  });
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){
-    modal.classList.remove('on');
-    document.body.classList.remove('locked');
   }
-});
 
-var anchors = document.querySelectorAll('#mainSite a[href^="#"]');
-for(var p=0;p<anchors.length;p++){
-  anchors[p].addEventListener('click',function(e){
-    var h=this.getAttribute('href');
-    if(h==='#')return;
-    var t=document.querySelector(h);
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  burger.addEventListener('click', function(){
+    var open = mmenu.classList.toggle('on');
+    burger.classList.toggle('on', open);
+    document.body.classList.toggle('locked', open);
   });
-}
+
+  var mlinks = mmenu.querySelectorAll('a[data-close]');
+  for (var i = 0; i < mlinks.length; i++){
+    mlinks[i].addEventListener('click', closeMenu);
+  }
+
+  /* ---------- Переключение «Сайт» <-> «Команда» ---------- */
+  function showTeam(){
+    /* сбрасываем класс, чтобы анимация проигралась заново */
+    var els = teamView.querySelectorAll('.main-card, .card, .team-cta');
+    for (var i = 0; i < els.length; i++){ els[i].classList.remove('in'); }
+
+    mainSite.style.display = 'none';
+    teamView.style.display = 'block';
+    window.scrollTo(0, 0);
+    closeMenu();
+    /* наблюдатель сам добавит .in видимым элементам */
+  }
+
+  function showMain(){
+    teamView.style.display = 'none';
+    mainSite.style.display = 'block';
+    window.scrollTo(0, 0);
+    closeMenu();
+  }
+
+  document.getElementById('teamBtn').addEventListener('click', showTeam);
+  document.getElementById('teamMobile').addEventListener('click', function(e){
+    e.preventDefault();
+    showTeam();
+  });
+  document.getElementById('backBtn').addEventListener('click', showMain);
+
+  /* ---------- FAQ ---------- */
+  var fqs = document.querySelectorAll('.faq__q');
+  for (var k = 0; k < fqs.length; k++){
+    fqs[k].addEventListener('click', function(){
+      this.parentElement.classList.toggle('on');
+    });
+  }
+
+  /* ---------- Модальное окно отзывов ---------- */
+  var reviews = document.querySelectorAll('.review');
+  for (var m = 0; m < reviews.length; m++){
+    reviews[m].addEventListener('click', function(){
+      modalT.textContent = this.dataset.t;
+      modalX.textContent = this.dataset.x;
+      modal.classList.add('on');
+      document.body.classList.add('locked');
+    });
+  }
+
+  var closers = modal.querySelectorAll('[data-close]');
+  for (var n = 0; n < closers.length; n++){
+    closers[n].addEventListener('click', function(){
+      modal.classList.remove('on');
+      document.body.classList.remove('locked');
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      modal.classList.remove('on');
+      document.body.classList.remove('locked');
+      closeMenu();
+    }
+  });
+
+  /* ---------- Плавный скролл по якорям внутри сайта ---------- */
+  var anchors = mainSite.querySelectorAll('a[href^="#"]');
+  for (var p = 0; p < anchors.length; p++){
+    anchors[p].addEventListener('click', function(e){
+      var h = this.getAttribute('href');
+      if (h === '#') return;
+      var t = document.querySelector(h);
+      if (t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+    });
+  }
+
+})();
 </script>
 </body>
 </html>
