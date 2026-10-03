@@ -54,6 +54,9 @@ a{color:inherit;text-decoration:none}
 .btn-ch{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:linear-gradient(135deg,var(--blue),#0d4fc4);color:#fff;font-weight:700;font-size:16px;border:none;border-radius:10px;cursor:pointer;white-space:nowrap;transition:.3s;box-shadow:0 8px 24px rgba(30,111,255,.4)}
 .btn-ch:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(30,111,255,.7)}
 .btn-ch svg{width:20px;height:20px;fill:#fff}
+.btn-portfolio{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:linear-gradient(135deg,#a855f7,#06b6d4);color:#fff;font-weight:700;font-size:16px;border:none;border-radius:10px;cursor:pointer;white-space:nowrap;transition:.3s;box-shadow:0 8px 24px rgba(168,85,247,.4);font-family:inherit}
+.btn-portfolio:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(168,85,247,.75)}
+.btn-portfolio svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
 main section{padding:120px 0;position:relative;overflow:hidden}
 .title{font-size:clamp(28px,4vw,48px);font-weight:800;text-transform:uppercase;margin-bottom:48px;position:relative;z-index:2;display:flex;align-items:center;gap:20px}
 .title .a{color:#fff}
@@ -142,37 +145,12 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .footer__social:hover{border-color:#fff;transform:translateY(-3px)}
 .footer__copy{font-size:13px;color:#6a6770;padding-top:20px;border-top:1px solid var(--border);max-width:300px;margin:20px auto 0}
 
-/* ====== КНОПКА «НАВЕРХ» ====== */
-.to-top{
-  position:fixed;
-  right:28px;
-  bottom:28px;
-  width:54px;
-  height:54px;
-  padding:0;
-  border-radius:50%;
-  border:none;
-  background:linear-gradient(135deg,var(--blue),#0d4fc4);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  z-index:900;
-  opacity:0;
-  transform:translateY(24px) scale(.85);
-  pointer-events:none;
-  box-shadow:0 8px 26px rgba(30,111,255,.5);
-  transition:opacity .35s ease, transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .3s;
-  -webkit-tap-highlight-color:transparent;
-  font-family:inherit;
-}
+.to-top{position:fixed;right:28px;bottom:28px;width:54px;height:54px;padding:0;border-radius:50%;border:none;background:linear-gradient(135deg,var(--blue),#0d4fc4);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:900;opacity:0;transform:translateY(24px) scale(.85);pointer-events:none;box-shadow:0 8px 26px rgba(30,111,255,.5);transition:opacity .35s ease, transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .3s;-webkit-tap-highlight-color:transparent;font-family:inherit}
 .to-top.on{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
 .to-top svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;display:block}
 .to-top:hover{box-shadow:0 14px 36px rgba(30,111,255,.8);transform:translateY(-4px) scale(1.06)}
 .to-top:active{transform:translateY(-1px) scale(.97)}
 
-/* TEAM VIEW */
 .team{min-height:100vh;min-height:100dvh;background:#0a0a0f;color:var(--text);position:relative;overflow:hidden;padding:100px 0}
 .team::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 10%,rgba(168,85,247,.25),transparent 45%),radial-gradient(circle at 85% 80%,rgba(6,182,212,.2),transparent 45%),radial-gradient(circle at 50% 50%,rgba(236,72,153,.12),transparent 60%);pointer-events:none}
 .back-btn{position:fixed;top:24px;left:24px;z-index:200;display:inline-flex;align-items:center;gap:10px;padding:14px 26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:50px;color:#fff;font-weight:700;font-size:14px;cursor:pointer;backdrop-filter:blur(12px);transition:.3s;font-family:inherit}
@@ -209,10 +187,10 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .btn:hover::after{transform:translateX(5px)}
 .btn-contact{background:linear-gradient(90deg,var(--ta),var(--ta2));color:#fff;border:none}
 .btn-contact:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(168,85,247,.5)}
-.btn-portfolio{background:transparent;color:var(--text);border:1.5px solid rgba(168,85,247,.5)}
-.btn-portfolio:hover{transform:translateY(-3px);border-color:var(--ta);background:rgba(168,85,247,.1)}
+.btn-portfolio-team{background:transparent;color:var(--text);border:1.5px solid rgba(168,85,247,.5)}
+.btn-portfolio-team:hover{transform:translateY(-3px);border-color:var(--ta);background:rgba(168,85,247,.1)}
 .btns.main .btn-contact{background:linear-gradient(90deg,var(--gold),#f97316);color:#1a1a2e}
-.btns.main .btn-portfolio{border-color:rgba(251,191,36,.55);color:var(--gold)}
+.btns.main .btn-portfolio-team{border-color:rgba(251,191,36,.55);color:var(--gold)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:36px}
 .card{background:#16161f;border-radius:20px;overflow:hidden;opacity:0;transform:translateY(50px) scale(.95);transition:.8s;border:1px solid rgba(168,85,247,.15);display:flex;flex-direction:column}
 .card.in{opacity:1;transform:translateY(0) scale(1)}
@@ -229,7 +207,6 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .card .btns{flex-direction:column}
 .card .btn{width:100%;flex:none}
 
-/* БЛОК КНОПОК ВНИЗУ КОМАНДЫ */
 .team-cta{max-width:900px;margin:60px auto 0;padding:50px 40px;background:linear-gradient(160deg,rgba(168,85,247,.1),rgba(6,182,212,.06));border:1px solid rgba(168,85,247,.25);border-radius:28px;text-align:center;position:relative;overflow:hidden;opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
 .team-cta.in{opacity:1;transform:translateY(0)}
 .team-cta::before{content:'';position:absolute;inset:-2px;border-radius:30px;padding:2px;background:linear-gradient(135deg,var(--ta),var(--ta2),var(--gold),var(--ta));background-size:300% 300%;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:bglow 8s linear infinite;pointer-events:none;z-index:0}
@@ -244,155 +221,32 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .cta-btn--purple{background:linear-gradient(90deg,var(--ta),var(--ta2));color:#fff;box-shadow:0 10px 30px rgba(168,85,247,.45)}
 .cta-btn--purple:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(168,85,247,.7)}
 
-/* ================== МОБИЛЬНАЯ ВЕРСИЯ ================== */
 @media(max-width:900px){
-  /* --- НАВИГАЦИЯ: только логотип + бургер --- */
-  .nav{
-    flex-wrap:nowrap;
-    justify-content:space-between;
-    padding:14px 0;
-    gap:12px;
-  }
-  .nav__logo{
-    width:auto;
-    text-align:left;
-    margin-bottom:0;
-    font-size:19px;
-  }
+  .nav{flex-wrap:nowrap;justify-content:space-between;padding:14px 0;gap:12px}
+  .nav__logo{width:auto;text-align:left;margin-bottom:0;font-size:19px}
   .nav__list{display:none}
   .nav__team{display:none}
-
-  /* Бургер фиксируем сверху справа */
-  .burger{
-    display:flex;
-    position:fixed;
-    top:14px;
-    right:14px;
-    width:46px;
-    height:46px;
-    background:rgba(20,18,22,.85);
-    border:1px solid rgba(255,255,255,.18);
-    -webkit-backdrop-filter:blur(10px);
-    backdrop-filter:blur(10px);
-    box-shadow:0 6px 20px rgba(0,0,0,.45);
-  }
-  .burger.on{
-    background:rgba(255,255,255,.1);
-    border-color:rgba(255,255,255,.3);
-  }
-
-  /* --- МОБИЛЬНОЕ МЕНЮ: 2 колонки + кнопка «Назад» внизу --- */
-  .mmenu{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    padding:88px 18px calc(30px + env(safe-area-inset-bottom));
-    align-content:start;
-    justify-content:stretch;
-  }
-  .mmenu::before{
-    content:"Навигация";
-    grid-column:1 / -1;
-    font-size:11px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:rgba(255,255,255,.4);
-    font-weight:700;
-    padding:0 4px 6px;
-  }
-  .mmenu a{
-    font-size:15px;
-    font-weight:700;
-    padding:18px 10px;
-    border-bottom:none;
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:14px;
-    text-align:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:66px;
-    line-height:1.25;
-    transition:background .2s, border-color .2s, transform .2s;
-  }
-  .mmenu a:active{
-    background:rgba(255,255,255,.12);
-    border-color:rgba(255,255,255,.3);
-    transform:scale(.98);
-  }
-  /* Кнопка «Команда» — на всю ширину */
-  .mmenu #teamMobile{
-    grid-column:1 / -1;
-    background:linear-gradient(135deg,rgba(168,85,247,.3),rgba(6,182,212,.25));
-    border-color:rgba(168,85,247,.45);
-    margin-top:4px;
-  }
-
-  /* --- КНОПКА «НАЗАД» ВНИЗУ МЕНЮ --- */
-  .mmenu__back{
-    display:flex;
-    grid-column:1 / -1;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin-top:18px;
-    padding:16px 24px;
-    width:100%;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.22);
-    border-radius:50px;
-    color:#fff;
-    font-weight:700;
-    font-size:15px;
-    font-family:inherit;
-    cursor:pointer;
-    transition:.25s;
-    -webkit-tap-highlight-color:transparent;
-  }
-  .mmenu__back svg{
-    width:18px;
-    height:18px;
-    fill:none;
-    stroke:#fff;
-    stroke-width:2.4;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-    flex-shrink:0;
-  }
-  .mmenu__back:active{
-    background:rgba(255,255,255,.18);
-    transform:scale(.98);
-  }
-
-  /* --- ЗАГОЛОВКИ СЕКЦИЙ: уменьшаем, чтобы влезали --- */
-  .title{
-    font-size:clamp(18px, 4.6vw, 28px);
-    gap:10px;
-    margin-bottom:30px;
-    line-height:1.15;
-    flex-wrap:wrap;
-  }
+  .burger{display:flex;position:fixed;top:14px;right:14px;width:46px;height:46px;background:rgba(20,18,22,.85);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 6px 20px rgba(0,0,0,.45)}
+  .burger.on{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}
+  .mmenu{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:88px 18px calc(30px + env(safe-area-inset-bottom));align-content:start;justify-content:stretch}
+  .mmenu::before{content:"Навигация";grid-column:1 / -1;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:700;padding:0 4px 6px}
+  .mmenu a{font-size:15px;font-weight:700;padding:18px 10px;border-bottom:none;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:14px;text-align:center;display:flex;align-items:center;justify-content:center;min-height:66px;line-height:1.25;transition:background .2s, border-color .2s, transform .2s}
+  .mmenu a:active{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);transform:scale(.98)}
+  .mmenu #teamMobile{grid-column:1 / -1;background:linear-gradient(135deg,rgba(168,85,247,.3),rgba(6,182,212,.25));border-color:rgba(168,85,247,.45);margin-top:4px}
+  .mmenu__back{display:flex;grid-column:1 / -1;align-items:center;justify-content:center;gap:10px;margin-top:18px;padding:16px 24px;width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:50px;color:#fff;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;transition:.25s;-webkit-tap-highlight-color:transparent}
+  .mmenu__back svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .mmenu__back:active{background:rgba(255,255,255,.18);transform:scale(.98)}
+  .title{font-size:clamp(18px, 4.6vw, 28px);gap:10px;margin-bottom:30px;line-height:1.15;flex-wrap:wrap}
   .title::before{width:20px;height:20px}
   .title::after{bottom:-14px;width:56px;height:2px}
-
-  /* --- ОБЩЕЕ --- */
   .container{padding:0 16px}
   main section{padding:70px 0}
   .glow{filter:blur(40px);opacity:.65}
   .about__grid{grid-template-columns:1fr;gap:32px}
-  .about__photo{
-    aspect-ratio:auto;
-    height:auto;
-    max-height:480px;
-    object-fit:contain;
-    background:linear-gradient(135deg,#1a1a2e,#2d2d44);
-    max-width:100%;
-    margin:0 auto;
-  }
+  .about__photo{aspect-ratio:auto;height:auto;max-height:480px;object-fit:contain;background:linear-gradient(135deg,#1a1a2e,#2d2d44);max-width:100%;margin:0 auto}
   .about__skills-blk{flex-direction:column;align-items:flex-start;gap:20px}
   .header__btns{flex-direction:column;align-items:stretch;width:100%;max-width:340px}
-  .btn-h,.btn-ch{width:100%;justify-content:center}
+  .btn-h,.btn-ch,.btn-portfolio{width:100%;justify-content:center}
   .join__img{animation:none;display:none}
   .pack__box,.join__box{padding:32px 24px;border-radius:20px}
   .join__box{grid-template-columns:1fr;gap:24px}
@@ -400,11 +254,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   .pack__btn,.pack__btn-free{justify-content:center;width:100%}
   .reviews__grid{flex-direction:column;gap:20px;padding:0}
   .review{width:100%;max-width:100%}
-  .review__x{
-    -webkit-line-clamp:unset;
-    display:block;
-    overflow:visible;
-  }
+  .review__x{-webkit-line-clamp:unset;display:block;overflow:visible}
   .review__more{display:none}
   .faq__i{padding:20px 24px;border-radius:20px}
   .faq__q{font-size:16px}
@@ -424,48 +274,31 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   .main-card::before,.team-cta::before{animation:none;background-position:0 0}
   .anim{transition-duration:.55s}
   .anim.d1,.anim.d2,.anim.d3,.anim.d4{transition-delay:0s}
-  .to-top{
-    right:16px;
-    bottom:calc(16px + env(safe-area-inset-bottom));
-    width:48px;
-    height:48px;
-    box-shadow:0 6px 20px rgba(30,111,255,.55);
-  }
+  .to-top{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:48px;height:48px;box-shadow:0 6px 20px rgba(30,111,255,.55)}
   .to-top svg{width:21px;height:21px}
-
-  /* Полная видимость картинки «Любимая работа» */
   .fav__link{min-height:auto}
-  .fav__img{
-    min-height:auto;
-    height:auto;
-    object-fit:contain;
-    background:#1a1a2e;
-  }
+  .fav__img{min-height:auto;height:auto;object-fit:contain;background:#1a1a2e}
 }
-
-/* ================== ТАЧ-УСТРОЙСТВА ================== */
 @media(hover:none){
-.review:nth-child(n){transform:none}
-.review{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-.review:hover{transform:translateY(-4px);box-shadow:0 0 22px rgba(255,255,255,.16)}
-.review:hover .review__more{opacity:.75}
-.fav__link:hover{transform:none}
-.fav__link:hover .fav__img{transform:none}
-.card:hover{box-shadow:none}
-.card:hover .card-photo img{transform:none}
-.btn-h:hover{background:transparent;color:#fff;animation-play-state:running}
-.btn-ch:hover,.join__btn:hover,.pack__btn:hover,.pack__btn-free:hover,
-.about__skills-btn:hover,.nav__team:hover,.cta-btn--gold:hover,
-.cta-btn--purple:hover,.footer__social:hover{transform:none}
-.about__skills img{filter:none;opacity:.9}
-.modal__close:hover{transform:none;background:rgba(255,255,255,.06);color:#fff}
-.to-top:hover{transform:translateY(0) scale(1);box-shadow:0 6px 20px rgba(30,111,255,.55)}
+  .review:nth-child(n){transform:none}
+  .review{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .review:hover{transform:translateY(-4px);box-shadow:0 0 22px rgba(255,255,255,.16)}
+  .review:hover .review__more{opacity:.75}
+  .fav__link:hover{transform:none}
+  .fav__link:hover .fav__img{transform:none}
+  .card:hover{box-shadow:none}
+  .card:hover .card-photo img{transform:none}
+  .btn-h:hover{background:transparent;color:#fff;animation-play-state:running}
+  .btn-ch:hover,.join__btn:hover,.pack__btn:hover,.pack__btn-free:hover,
+  .about__skills-btn:hover,.nav__team:hover,.cta-btn--gold:hover,
+  .cta-btn--purple:hover,.footer__social:hover,.btn-portfolio:hover{transform:none}
+  .about__skills img{filter:none;opacity:.9}
+  .modal__close:hover{transform:none;background:rgba(255,255,255,.06);color:#fff}
+  .to-top:hover{transform:translateY(0) scale(1);box-shadow:0 6px 20px rgba(30,111,255,.55)}
 }
-
-/* ================== REDUCED MOTION ================== */
 @media (prefers-reduced-motion:reduce){
-*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
 }
 </style>
 </head>
@@ -479,13 +312,8 @@ html{scroll-behavior:auto}
   <a href="#reviews" data-close>Отзывы</a>
   <a href="#questions" data-close>Вопросы</a>
   <a href="#" id="teamMobile">👥 Команда</a>
-
-  <!-- Кнопка «Назад» внизу меню (только на мобильных) -->
   <button class="mmenu__back" id="mmenuBack" type="button" aria-label="Вернуться назад">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M19 12H5"/>
-      <path d="M12 19l-7-7 7-7"/>
-    </svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
     <span>Назад</span>
   </button>
 </div>
@@ -524,6 +352,12 @@ html{scroll-behavior:auto}
           <a href="https://t.me/NikitaAndrianov" target="_blank" rel="noopener" class="btn-ch">
             <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
             мой телеграм канал
+          </a>
+          <a href="portfolio.html" id="portfolioBtn" class="btn-portfolio">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l1.2 2.2a1 1 0 0 1-.87 1.5H9.87A1 1 0 0 1 9 19.2L10.2 17H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v9h16V6H4zm3 2h5v1.8H7V8zm0 3.4h8V13H7v-1.6z"/>
+            </svg>
+            моё портфолио
           </a>
         </div>
       </div>
@@ -710,7 +544,7 @@ html{scroll-behavior:auto}
             <p class="main-desc"><strong>Никита Андрианов</strong> — по всем вопросам к нему. Отвечает за координацию команды, приём заказов и контроль качества.</p>
             <div class="btns main">
               <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/Nikitosich1234" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
+              <a href="portfolio.html" data-portfolio class="btn btn-portfolio-team">Портфолио</a>
             </div>
           </div>
         </article>
@@ -728,7 +562,7 @@ html{scroll-behavior:auto}
             <p class="card-desc">Краткое описание монтажёра.</p>
             <div class="btns">
               <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/portfolio" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
+              <a href="portfolio.html" data-portfolio class="btn btn-portfolio-team">Портфолио</a>
             </div>
           </div>
         </article>
@@ -740,7 +574,7 @@ html{scroll-behavior:auto}
             <p class="card-desc">Краткое описание монтажёра.</p>
             <div class="btns">
               <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/portfolio" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
+              <a href="portfolio.html" data-portfolio class="btn btn-portfolio-team">Портфолио</a>
             </div>
           </div>
         </article>
@@ -752,7 +586,7 @@ html{scroll-behavior:auto}
             <p class="card-desc">Краткое описание монтажёра.</p>
             <div class="btns">
               <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/portfolio" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
+              <a href="portfolio.html" data-portfolio class="btn btn-portfolio-team">Портфолио</a>
             </div>
           </div>
         </article>
@@ -764,7 +598,7 @@ html{scroll-behavior:auto}
             <p class="card-desc">Краткое описание монтажёра.</p>
             <div class="btns">
               <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="https://t.me/portfolio" target="_blank" rel="noopener" class="btn btn-portfolio">Портфолио</a>
+              <a href="portfolio.html" data-portfolio class="btn btn-portfolio-team">Портфолио</a>
             </div>
           </div>
         </article>
@@ -774,7 +608,7 @@ html{scroll-behavior:auto}
         <h3>Хочешь работать с нами?</h3>
         <p>Посмотри работы команды или присоединяйся к нам</p>
         <div class="team-cta-btns">
-          <a href="https://t.me/NikitosichTeamPortfolio" target="_blank" rel="noopener" class="cta-btn cta-btn--gold">Портфолио команды</a>
+          <a href="portfolio.html#motion" data-portfolio data-portfolio-team class="cta-btn cta-btn--gold">Портфолио команды</a>
           <a href="join.html" target="_blank" rel="noopener" class="cta-btn cta-btn--purple">Вступить в команду</a>
         </div>
       </div>
@@ -783,12 +617,8 @@ html{scroll-behavior:auto}
   </section>
 </div>
 
-<!-- КНОПКА «НАВЕРХ» -->
 <button class="to-top" id="toTop" type="button" aria-label="Вернуться наверх" title="Наверх">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 19V5"/>
-    <path d="M5 12l7-7 7 7"/>
-  </svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
 
 <div class="modal" id="modal">
@@ -817,7 +647,7 @@ html{scroll-behavior:auto}
   var mmenuBack = document.getElementById('mmenuBack');
 
   /* ============================================================
-     АНИМАЦИИ «НАВСЕГДА»
+     АНИМАЦИИ
      ============================================================ */
   var animObserver = new IntersectionObserver(function(entries){
     for (var i = 0; i < entries.length; i++){
@@ -862,15 +692,14 @@ html{scroll-behavior:auto}
   }, {passive:true});
 
   toTop.addEventListener('click', function(){
-    window.scrollTo({
-      top: 0,
-      behavior: reduceMotion ? 'auto' : 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });
 
   updateToTop();
 
-  /* ---------- Меню ---------- */
+  /* ============================================================
+     МЕНЮ
+     ============================================================ */
   function closeMenu(){
     if (burger) burger.classList.remove('on');
     if (mmenu) mmenu.classList.remove('on');
@@ -885,11 +714,8 @@ html{scroll-behavior:auto}
     });
   }
 
-  /* Кнопка «Назад» внизу мобильного меню */
   if (mmenuBack) {
-    mmenuBack.addEventListener('click', function(){
-      closeMenu();
-    });
+    mmenuBack.addEventListener('click', closeMenu);
   }
 
   var mlinks = mmenu ? mmenu.querySelectorAll('a[data-close]') : [];
@@ -897,18 +723,18 @@ html{scroll-behavior:auto}
     mlinks[i].addEventListener('click', closeMenu);
   }
 
-  /* ---------- Переключение «Сайт» <-> «Команда» ---------- */
+  /* ============================================================
+     ПЕРЕКЛЮЧЕНИЕ «САЙТ» <-> «КОМАНДА»
+     ============================================================ */
   function showTeam(){
     var els = teamView.querySelectorAll('.main-card, .card, .team-cta');
     for (var i = 0; i < els.length; i++){ els[i].classList.remove('in'); }
-
     mainSite.style.display = 'none';
     teamView.style.display = 'block';
     window.scrollTo(0, 0);
     closeMenu();
     updateToTop();
   }
-
   function showMain(){
     teamView.style.display = 'none';
     mainSite.style.display = 'block';
@@ -916,7 +742,6 @@ html{scroll-behavior:auto}
     closeMenu();
     updateToTop();
   }
-
   document.getElementById('teamBtn').addEventListener('click', showTeam);
   var teamMobileEl = document.getElementById('teamMobile');
   if (teamMobileEl) {
@@ -927,7 +752,9 @@ html{scroll-behavior:auto}
   }
   document.getElementById('backBtn').addEventListener('click', showMain);
 
-  /* ---------- FAQ ---------- */
+  /* ============================================================
+     FAQ
+     ============================================================ */
   var fqs = document.querySelectorAll('.faq__q');
   for (var k = 0; k < fqs.length; k++){
     fqs[k].addEventListener('click', function(){
@@ -935,7 +762,9 @@ html{scroll-behavior:auto}
     });
   }
 
-  /* ---------- Модальное окно отзывов ---------- */
+  /* ============================================================
+     МОДАЛКА ОТЗЫВОВ
+     ============================================================ */
   var reviews = document.querySelectorAll('.review');
   for (var m = 0; m < reviews.length; m++){
     reviews[m].addEventListener('click', function(){
@@ -962,12 +791,15 @@ html{scroll-behavior:auto}
     }
   });
 
-  /* ---------- Плавный скролл по якорям внутри сайта ---------- */
+  /* ============================================================
+     ПЛАВНЫЙ СКРОЛЛ ПО ЯКОРЯМ
+     ============================================================ */
   var anchors = mainSite.querySelectorAll('a[href^="#"]');
   for (var p = 0; p < anchors.length; p++){
     anchors[p].addEventListener('click', function(e){
       var h = this.getAttribute('href');
-      if (h === '#') return;
+      if (h === '#' || h === '') return;
+      if (this.hasAttribute('data-portfolio')) return;
       var t = document.querySelector(h);
       if (t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
     });
