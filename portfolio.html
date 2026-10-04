@@ -701,14 +701,9 @@ body.locked{overflow:hidden}
   document.getElementById('year').textContent = new Date().getFullYear();
 
   /* ================================================================
-     🔑 НАСТРОЙКА ОТПРАВКИ ЗАЯВОК НА ПОЧТУ
-     ----------------------------------------------------------------
-     1. Открой https://web3forms.com
-     2. Введи email: nik.andrianov.11@mail.ru
-     3. Скопируй Access Key из письма
-     4. Замени строку ниже на свой ключ
+     🔑 КЛЮЧ WEB3FORMS — уже вставлен
      ================================================================ */
-  var WEB3FORMS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+  var WEB3FORMS_KEY = 'a2d85d28-b59e-462c-8788-556339b31b71';
 
   /* ================================================================
      🎬 ДАННЫЕ
@@ -885,7 +880,6 @@ body.locked{overflow:hidden}
   orderForm.addEventListener('submit', function(e){
     e.preventDefault();
 
-    /* Проверяем ключ */
     if (!WEB3FORMS_KEY || WEB3FORMS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY'){
       orderStatus.textContent = 'Ключ отправки не настроен. Напишите в Telegram.';
       orderStatus.className = 'order-status err';
