@@ -46,7 +46,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .container{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
 body.locked{overflow:hidden}
 
-/* ================= NAV ================= */
 .pnav{
   position:sticky;top:0;z-index:100;
   background:rgba(10,10,15,.85);
@@ -67,7 +66,6 @@ body.locked{overflow:hidden}
 .pnav__back svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .pnav__logo{font-weight:800;font-size:17px;background:linear-gradient(90deg,#fff,var(--ta),var(--ta2));-webkit-background-clip:text;background-clip:text;color:transparent}
 
-/* ================= HERO ================= */
 .phero{text-align:center;padding:80px 0 50px;position:relative;z-index:2}
 .phero h1{
   font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;letter-spacing:-1.5px;line-height:1.05;
@@ -78,8 +76,7 @@ body.locked{overflow:hidden}
 @keyframes shine{0%{background-position:0% 50%}100%{background-position:300% 50%}}
 .phero p{color:var(--dim);font-size:clamp(1rem,1.7vw,1.15rem);max-width:640px;margin:0 auto}
 
-/* ================= EDITOR ================= */
-.editor{padding:60px 0;position:relative;z-index:2;border-top:1px solid var(--border)}
+.editor{padding:60px 0;position:relative;z-index:2;border-top:1px solid var(--border);scroll-margin-top:90px}
 .editor:first-of-type{border-top:none;padding-top:20px}
 
 .editor__head{
@@ -131,7 +128,6 @@ body.locked{overflow:hidden}
 .editor__contact:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(168,85,247,.75)}
 .editor__contact svg{width:18px;height:18px;fill:#fff;flex-shrink:0}
 
-/* ================= WORKS GRID ================= */
 .wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 
 .wcard{
@@ -145,7 +141,6 @@ body.locked{overflow:hidden}
 }
 .wcard:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.55);box-shadow:0 20px 50px rgba(168,85,247,.28)}
 
-/* Превью-число вместо обложки */
 .wcard__num{
   position:relative;
   aspect-ratio:16/9;
@@ -190,7 +185,6 @@ body.locked{overflow:hidden}
 .wcard__title{font-size:1.05rem;font-weight:700;color:#fff;line-height:1.3}
 .wcard__desc{font-size:.9rem;color:var(--dim);line-height:1.5}
 
-/* ================= BOTTOM CTA ================= */
 .join-cta{
   max-width:900px;
   margin:40px auto 0;
@@ -229,7 +223,6 @@ body.locked{overflow:hidden}
 .join-cta__btn:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(168,85,247,.8)}
 .join-cta__btn svg{width:18px;height:18px;fill:#fff}
 
-/* ================= FOOTER ================= */
 .pfoot{
   text-align:center;padding:70px 0 50px;
   border-top:1px solid var(--border);
@@ -239,7 +232,6 @@ body.locked{overflow:hidden}
 .pfoot a.mail:hover{color:#fff}
 .pfoot__copy{font-size:.8rem;color:#6a6770;margin-top:36px}
 
-/* ================= VIDEO MODAL ================= */
 .vmodal{
   position:fixed;inset:0;background:rgba(0,0,0,.92);
   z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;
@@ -262,7 +254,6 @@ body.locked{overflow:hidden}
 }
 .vmodal__close:hover{background:#fff;color:#000;transform:rotate(90deg)}
 
-/* ================= TO-TOP ================= */
 .to-top{
   position:fixed;right:28px;bottom:28px;
   width:54px;height:54px;padding:0;border-radius:50%;border:none;
@@ -279,7 +270,6 @@ body.locked{overflow:hidden}
 .to-top svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;display:block}
 .to-top:hover{box-shadow:0 14px 36px rgba(30,111,255,.8);transform:translateY(-4px) scale(1.06)}
 
-/* ================= MOBILE ================= */
 @media(max-width:900px){
   .container{padding:0 16px}
   .pnav{padding:12px 0}
@@ -328,7 +318,6 @@ body.locked{overflow:hidden}
 </head>
 <body>
 
-<!-- ================= NAV ================= -->
 <nav class="pnav">
   <div class="container pnav__in">
     <a href="index.html" class="pnav__back" id="backBtn">
@@ -339,7 +328,6 @@ body.locked{overflow:hidden}
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
 <header class="phero">
   <div class="container">
     <h1>Портфолио команды</h1>
@@ -347,10 +335,8 @@ body.locked{overflow:hidden}
   </div>
 </header>
 
-<!-- ================= EDITORS ================= -->
 <main id="team-list"></main>
 
-<!-- ================= BOTTOM CTA ================= -->
 <section class="container" style="padding-top:20px;padding-bottom:20px">
   <div class="join-cta">
     <h3>Хочешь работать с нами?</h3>
@@ -362,7 +348,6 @@ body.locked{overflow:hidden}
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="pfoot">
   <div class="container">
     <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="mail">Написать руководителю →</a>
@@ -370,7 +355,6 @@ body.locked{overflow:hidden}
   </div>
 </footer>
 
-<!-- ================= VIDEO MODAL ================= -->
 <div class="vmodal" id="vmodal">
   <div class="vmodal__box">
     <button class="vmodal__close" id="vclose" aria-label="Закрыть">✕</button>
@@ -378,7 +362,6 @@ body.locked{overflow:hidden}
   </div>
 </div>
 
-<!-- ================= TO-TOP ================= -->
 <button class="to-top" id="toTop" type="button" aria-label="Вернуться наверх" title="Наверх">
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="M12 19V5"/>
@@ -394,15 +377,6 @@ body.locked{overflow:hidden}
 
   /* ================================================================
      👥 МОНТАЖЁРЫ И ИХ РАБОТЫ
-     ----------------------------------------------------------------
-     Поля у монтажёра:
-     - name     — имя
-     - desc     — короткое описание (можно оставить пустым — тогда строки не будет)
-     - avatar   — путь к фото (или '' — будет буква)
-     - telegram — ссылка для кнопки «Связаться»
-     - works    — массив из 2 работ:
-        type: 'youtube' → id
-        type: 'mp4'     → src ('videos/файл.mp4')
      ================================================================ */
   var EDITORS = [
 
@@ -452,9 +426,6 @@ body.locked{overflow:hidden}
 
   ];
 
-  /* ============================================================
-     Отрисовка
-     ============================================================ */
   function esc(s){
     return String(s == null ? '' : s)
       .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
@@ -462,9 +433,7 @@ body.locked{overflow:hidden}
   }
 
   function renderWork(w, editorIdx, workIdx){
-    /* Номер работы — 1 или 2 (индекс + 1) */
     var num = workIdx + 1;
-
     return '<article class="wcard" data-editor="' + editorIdx + '" data-work="' + workIdx + '">' +
       '<div class="wcard__num">' +
         '<span class="wcard__num-text">' + num + '</span>' +
@@ -521,6 +490,39 @@ body.locked{overflow:hidden}
     html += renderEditor(EDITORS[i], i);
   }
   container.innerHTML = html;
+
+  /* ============================================================
+     ⬇️ АВТО-ПЕРЕХОД К МОНТАЖЁРУ ПО ЯКОРЮ
+     Если в адресе есть #editor-N — плавно скроллим к нему
+     ============================================================ */
+  (function scrollToEditor(){
+    var hash = window.location.hash;
+    if (!hash || !/^#editor-\d+$/.test(hash)) return;
+
+    var tries = 0;
+    function tryScroll(){
+      var target = document.getElementById(hash.substring(1));
+      if (target){
+        /* Пауза, чтобы отрисовались картинки/превью */
+        setTimeout(function(){
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 180);
+      } else if (tries++ < 15){
+        setTimeout(tryScroll, 100);
+      }
+    }
+    tryScroll();
+  })();
+
+  /* Также если пользователь кликает по ссылке с якорем уже на этой странице */
+  window.addEventListener('hashchange', function(){
+    var hash = window.location.hash;
+    if (!hash || !/^#editor-\d+$/.test(hash)) return;
+    var target = document.getElementById(hash.substring(1));
+    if (target){
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 
   /* ============================================================
      Модалка видео
