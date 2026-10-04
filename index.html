@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,7 +7,7 @@
 <title>Никита Андрианов — Режиссёр видеомонтажа</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#2e2c31;--bg-alt:#262429;--text:#fff;--dim:#a8a5ac;--border:rgba(255,255,255,.08);--blue:#1e6fff;--ta:#a855f7;--ta2:#06b6d4;--gold:#fbbf24;--tm:#9ca3af}
+:root{--bg:#2e2c31;--bg-alt:#262429;--text:#fff;--dim:#a8a5ac;--border:rgba(255,255,255,.08);--blue:#1e6fff;--ta:#a855f7;--ta2:#06b6d4;--gold:#fbbf24;--tm:#9ca3af;--green:#22c55e;--red:#ef4444}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.5;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-font-smoothing:antialiased}
 body.locked{overflow:hidden}
@@ -61,6 +60,13 @@ a{color:inherit;text-decoration:none}
 .btn-team{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:linear-gradient(135deg,#a855f7,#06b6d4);color:#fff;font-weight:700;font-size:16px;border:none;border-radius:10px;cursor:pointer;white-space:nowrap;font-family:inherit;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(168,85,247,.4);transition:transform .3s,box-shadow .3s;animation:teamPulse 2.5s ease-in-out infinite}
 .btn-team:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(168,85,247,.75);animation-play-state:paused}
 @keyframes teamPulse{0%,100%{box-shadow:0 0 0 0 rgba(168,85,247,.55),0 8px 24px rgba(168,85,247,.4)}50%{box-shadow:0 0 0 14px rgba(168,85,247,0),0 8px 32px rgba(6,182,212,.55)}}
+
+/* ================= ORDER BUTTON ================= */
+.order-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:linear-gradient(135deg,#16a34a,#0e7a35);color:#fff;font-weight:700;font-size:16px;border:none;border-radius:10px;cursor:pointer;white-space:nowrap;font-family:inherit;box-shadow:0 8px 24px rgba(22,163,74,.45);transition:.3s}
+.order-btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(22,163,74,.75)}
+.order-btn svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+.order-btn--lg{padding:18px 44px;font-size:17px;border-radius:50px}
+
 main section{padding:120px 0;position:relative;overflow:hidden}
 .title{font-size:clamp(28px,4vw,48px);font-weight:800;text-transform:uppercase;margin-bottom:48px;position:relative;z-index:2;display:flex;align-items:center;gap:20px}
 .title .a{color:#fff}
@@ -126,6 +132,38 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .modal__x{font-size:17px;line-height:1.8;color:#e0dde5}
 .modal__close{position:absolute;top:20px;right:20px;width:44px;height:44px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:50%;color:#fff;font-size:24px;cursor:pointer;transition:.25s}
 .modal__close:hover{background:#fff;color:var(--bg);transform:rotate(90deg)}
+
+/* ================= ORDER FORM MODAL ================= */
+.formmodal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1100;display:none;align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.formmodal.on{display:flex}
+.formmodal__box{position:relative;width:100%;max-width:560px;background:linear-gradient(160deg,#35323a,#2a282e);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:44px 42px;box-shadow:0 30px 80px rgba(0,0,0,.7);margin:auto}
+.formmodal__title{font-size:clamp(1.4rem,3vw,1.8rem);font-weight:800;margin-bottom:8px;background:linear-gradient(90deg,#fff,#a855f7,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:50px}
+.formmodal__subtitle{color:var(--dim);font-size:.92rem;margin-bottom:26px}
+.formmodal__close{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:20px;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center}
+.formmodal__close:hover{background:#fff;color:var(--bg);transform:rotate(90deg)}
+.order-form{display:flex;flex-direction:column;gap:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:.92rem;font-weight:600;color:#e0dde5}
+.req{color:var(--ta);font-weight:800;margin-left:2px}
+.field input,.field select,.field textarea{width:100%;padding:14px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;color:#fff;font-family:inherit;font-size:.95rem;transition:.25s;outline:none}
+.field input::placeholder,.field textarea::placeholder{color:#6a6770}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ta);background:rgba(168,85,247,.08);box-shadow:0 0 0 3px rgba(168,85,247,.15)}
+.field textarea{resize:vertical;min-height:90px}
+.field select{cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:20px;padding-right:44px}
+.field select option{background:#2a282e;color:#fff;padding:8px}
+.order-submit{padding:16px 32px;background:linear-gradient(135deg,#a855f7,#06b6d4);color:#fff;font-weight:800;font-size:1rem;border:none;border-radius:50px;cursor:pointer;box-shadow:0 10px 30px rgba(168,85,247,.5);transition:.3s;font-family:inherit;margin-top:6px}
+.order-submit:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 14px 40px rgba(168,85,247,.8)}
+.order-submit:disabled{opacity:.6;cursor:not-allowed}
+.order-status{font-size:.9rem;text-align:center;min-height:22px;margin-top:4px;line-height:1.4;transition:.3s}
+.order-status.ok{color:var(--green);font-weight:700}
+.order-status.err{color:var(--red);font-weight:600}
+
+/* CTA BLOCK */
+.cta-block{max-width:1000px;margin:0 auto;padding:60px 56px;background:linear-gradient(160deg,rgba(22,163,74,.14),rgba(6,182,212,.08));border:1px solid rgba(22,163,74,.35);border-radius:28px;text-align:center;position:relative;z-index:2;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.cta-block h3{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:14px;color:#fff}
+.cta-block p{color:#d8d5dc;font-size:1.02rem;margin-bottom:28px;max-width:640px;margin-left:auto;margin-right:auto}
+.cta-block .order-btn--lg{margin:0 auto}
+
 .faq{position:relative;z-index:2;display:flex;flex-direction:column;gap:16px}
 .faq__i{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:24px;padding:24px 32px;transition:.35s}
 .faq__i.on{background:rgba(255,255,255,.08);border-color:#fff}
@@ -250,7 +288,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   .about__photo{aspect-ratio:auto;height:auto;max-height:480px;object-fit:contain;background:linear-gradient(135deg,#1a1a2e,#2d2d44);max-width:100%;margin:0 auto}
   .about__skills-blk{flex-direction:column;align-items:flex-start;gap:20px}
   .header__btns{flex-direction:column;align-items:stretch;width:100%;max-width:340px}
-  .btn-h,.btn-ch,.btn-portfolio,.btn-team{width:100%;justify-content:center}
+  .btn-h,.btn-ch,.btn-portfolio,.btn-team,.order-btn{width:100%;justify-content:center}
   .join__img{animation:none;display:none}
   .pack__box,.join__box{padding:32px 24px;border-radius:20px}
   .join__box{grid-template-columns:1fr;gap:24px}
@@ -263,6 +301,10 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   .faq__i{padding:20px 24px;border-radius:20px}
   .faq__q{font-size:16px}
   .modal__c{padding:32px 24px;border-radius:20px}
+  .formmodal{padding:12px}
+  .formmodal__box{padding:32px 22px;border-radius:20px}
+  .formmodal__close{top:12px;right:12px;width:40px;height:40px}
+  .cta-block{padding:36px 22px}
   .team{padding:90px 0 60px}
   .back-btn{padding:12px 20px;font-size:13px;top:18px;left:18px;backdrop-filter:none;background:rgba(20,18,22,.92)}
   .main-card{grid-template-columns:1fr}
@@ -295,10 +337,12 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   .btn-h:hover{background:transparent;color:#fff;animation-play-state:running}
   .btn-ch:hover,.join__btn:hover,.pack__btn:hover,.pack__btn-free:hover,
   .about__skills-btn:hover,.nav__team:hover,.cta-btn--gold:hover,
-  .cta-btn--purple:hover,.footer__social:hover,.btn-portfolio:hover,.btn-team:hover{transform:none}
+  .cta-btn--purple:hover,.footer__social:hover,.btn-portfolio:hover,.btn-team:hover,.order-btn:hover{transform:none}
   .btn-team:hover{animation-play-state:running}
+  .order-submit:hover:not(:disabled){transform:none;box-shadow:0 10px 30px rgba(168,85,247,.5)}
   .about__skills img{filter:none;opacity:.9}
   .modal__close:hover{transform:none;background:rgba(255,255,255,.06);color:#fff}
+  .formmodal__close:hover{transform:none;background:rgba(255,255,255,.06);color:#fff}
   .to-top:hover{transform:translateY(0) scale(1);box-shadow:0 6px 20px rgba(30,111,255,.55)}
 }
 @media (prefers-reduced-motion:reduce){
@@ -353,6 +397,10 @@ main section{padding:120px 0;position:relative;overflow:hidden}
           Nikitosich
         </p>
         <div class="header__btns">
+          <button type="button" class="order-btn" id="orderBtnHeader">
+            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            Заказать монтаж
+          </button>
           <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="btn-h">связаться со мной</a>
           <a href="https://t.me/NikitaAndrianov" target="_blank" rel="noopener" class="btn-ch">
             <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
@@ -456,6 +504,22 @@ main section{padding:120px 0;position:relative;overflow:hidden}
       </div>
     </section>
 
+    <section id="order-cta">
+      <div class="glow glow-blue" style="width:550px;height:550px;top:-150px;left:-150px"></div>
+      <div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
+      <div class="container">
+        <h2 class="title anim">Заказать <span class="a">монтаж</span></h2>
+        <div class="cta-block anim">
+          <h3>Готовы заказать монтаж?</h3>
+          <p>Заполните короткую анкету — я свяжусь с вами в ближайшее время, обсудим детали и стоимость.</p>
+          <button type="button" class="order-btn order-btn--lg" id="orderBtnCta">
+            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            Заказать монтаж
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section id="reviews">
       <div class="glow glow-blue" style="width:500px;height:500px;top:-100px;left:-100px"></div>
       <div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
@@ -492,7 +556,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
       <div class="container">
         <h2 class="title anim">Вопросы</h2>
         <div class="faq">
-          <div class="faq__i anim"><div class="faq__q">Как заказать монтаж?</div><div class="faq__a"><p>Свяжитесь напрямую в <a href="https://t.me/ModerationNikitosich" style="color:#fff;text-decoration:underline" target="_blank" rel="noopener">Telegram</a> — обсудим детали, сроки и стоимость.</p></div></div>
+          <div class="faq__i anim"><div class="faq__q">Как заказать монтаж?</div><div class="faq__a"><p>Нажмите кнопку <a href="#order-cta" style="color:#fff;text-decoration:underline">«Заказать монтаж»</a> на этой странице, заполните короткую анкету — я свяжусь с вами, обсудим детали, сроки и стоимость. Или напишите напрямую в <a href="https://t.me/ModerationNikitosich" style="color:#fff;text-decoration:underline" target="_blank" rel="noopener">Telegram</a>.</p></div></div>
           <div class="faq__i anim d1"><div class="faq__q">Сколько стоит монтаж?</div><div class="faq__a"><p>Стоимость индивидуальна — точную цену можно назвать только после осмотра материала.</p></div></div>
           <div class="faq__i anim d2"><div class="faq__q">Сколько времени занимает монтаж?</div><div class="faq__a"><p>Сроки индивидуальны для каждого проекта. Точное время — после оценки материала.</p></div></div>
           <div class="faq__i anim d3"><div class="faq__q">Нужно ли платить за правки?</div><div class="faq__a"><p>Незначительные корректировки выполняем бесплатно. Сложные правки — за отдельную плату.</p></div></div>
@@ -509,6 +573,10 @@ main section{padding:120px 0;position:relative;overflow:hidden}
     <div class="container">
       <div class="footer__stars"><span></span><span></span><span></span><span></span><span></span></div>
       <h2 class="footer__title">Свяжитесь со мной, чтобы получить <span class="a">консультацию</span></h2>
+      <button type="button" class="order-btn order-btn--lg" id="orderBtnFooter" style="margin:0 auto 30px;display:flex">
+        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        Заказать монтаж
+      </button>
       <a href="mailto:nik.andrianov.11@mail.ru" class="footer__email">nik.andrianov.11@mail.ru</a>
       <div class="footer__links">
         <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="footer__social" aria-label="Telegram">
@@ -636,11 +704,61 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   </div>
 </div>
 
+<!-- ================= ORDER FORM MODAL ================= -->
+<div class="formmodal" id="formmodal">
+  <div class="formmodal__box">
+    <button class="formmodal__close" id="fclose" aria-label="Закрыть">✕</button>
+    <h2 class="formmodal__title">Заказать монтаж</h2>
+    <p class="formmodal__subtitle">Заполните анкету — я свяжусь с вами, чтобы обсудить детали.</p>
+
+    <form class="order-form" id="orderForm">
+      <div class="field">
+        <label for="vtype">Какое видео нужно <span class="req">*</span></label>
+        <select id="vtype" name="Какое видео" required>
+          <option value="">Выберите тип</option>
+          <option value="Игровое видео">Игровое видео</option>
+          <option value="Подкаст">Подкаст</option>
+          <option value="Reels">Reels</option>
+          <option value="Другое">Другое</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="budget">Бюджет <span class="req">*</span></label>
+        <input type="text" id="budget" name="Бюджет" placeholder="Сколько вы готовы заплатить" required>
+      </div>
+
+      <div class="field">
+        <label for="files">Ссылка на файлы <span class="req">*</span></label>
+        <input type="url" id="files" name="Ссылка на файлы" placeholder="Google Drive, Яндекс.Диск или другое" required>
+      </div>
+
+      <div class="field">
+        <label for="contact">Как с вами связаться <span class="req">*</span></label>
+        <input type="text" id="contact" name="Связь" placeholder="ВК или Telegram" required>
+      </div>
+
+      <div class="field">
+        <label for="note">Примечание к работе</label>
+        <textarea id="note" name="Примечание" rows="4" placeholder="Пожелания, сроки, ссылки на примеры..."></textarea>
+      </div>
+
+      <button type="submit" class="order-submit" id="orderSubmit">Отправить заявку</button>
+      <p class="order-status" id="orderStatus" role="status"></p>
+    </form>
+  </div>
+</div>
+
 <script>
 (function(){
   'use strict';
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ================================================================
+     🔑 КЛЮЧ WEB3FORMS — тот же, что и на портфолио
+     ================================================================ */
+  var WEB3FORMS_KEY = 'a2d85d28-b59e-462c-8788-556339b31b71';
 
   var mainSite = document.getElementById('mainSite');
   var teamView = document.getElementById('teamView');
@@ -652,6 +770,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   var toTop    = document.getElementById('toTop');
   var mmenuBack = document.getElementById('mmenuBack');
 
+  /* ---------- Анимации ---------- */
   var animObserver = new IntersectionObserver(function(entries){
     for (var i = 0; i < entries.length; i++){
       var e = entries[i];
@@ -691,9 +810,9 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   toTop.addEventListener('click', function(){
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });
-
   updateToTop();
 
+  /* ---------- Меню ---------- */
   function closeMenu(){
     if (burger) burger.classList.remove('on');
     if (mmenu) mmenu.classList.remove('on');
@@ -708,15 +827,12 @@ main section{padding:120px 0;position:relative;overflow:hidden}
     });
   }
 
-  if (mmenuBack) {
-    mmenuBack.addEventListener('click', closeMenu);
-  }
+  if (mmenuBack) mmenuBack.addEventListener('click', closeMenu);
 
   var mlinks = mmenu ? mmenu.querySelectorAll('a[data-close]') : [];
-  for (var i = 0; i < mlinks.length; i++){
-    mlinks[i].addEventListener('click', closeMenu);
-  }
+  for (var i = 0; i < mlinks.length; i++){ mlinks[i].addEventListener('click', closeMenu); }
 
+  /* ---------- Переключение сайт / команда ---------- */
   function showTeam(){
     var els = teamView.querySelectorAll('.main-card, .card, .team-cta');
     for (var i = 0; i < els.length; i++){ els[i].classList.remove('in'); }
@@ -726,7 +842,6 @@ main section{padding:120px 0;position:relative;overflow:hidden}
     closeMenu();
     updateToTop();
   }
-
   function showMain(){
     teamView.style.display = 'none';
     mainSite.style.display = 'block';
@@ -737,25 +852,20 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 
   document.getElementById('teamBtn').addEventListener('click', showTeam);
   var teamBtnHeader = document.getElementById('teamBtnHeader');
-  if (teamBtnHeader) {
-    teamBtnHeader.addEventListener('click', showTeam);
-  }
+  if (teamBtnHeader) teamBtnHeader.addEventListener('click', showTeam);
   var teamMobileEl = document.getElementById('teamMobile');
   if (teamMobileEl) {
-    teamMobileEl.addEventListener('click', function(e){
-      e.preventDefault();
-      showTeam();
-    });
+    teamMobileEl.addEventListener('click', function(e){ e.preventDefault(); showTeam(); });
   }
   document.getElementById('backBtn').addEventListener('click', showMain);
 
+  /* ---------- FAQ ---------- */
   var fqs = document.querySelectorAll('.faq__q');
   for (var k = 0; k < fqs.length; k++){
-    fqs[k].addEventListener('click', function(){
-      this.parentElement.classList.toggle('on');
-    });
+    fqs[k].addEventListener('click', function(){ this.parentElement.classList.toggle('on'); });
   }
 
+  /* ---------- Модалка отзывов ---------- */
   var reviews = document.querySelectorAll('.review');
   for (var m = 0; m < reviews.length; m++){
     reviews[m].addEventListener('click', function(){
@@ -765,7 +875,6 @@ main section{padding:120px 0;position:relative;overflow:hidden}
       document.body.classList.add('locked');
     });
   }
-
   var closers = modal.querySelectorAll('[data-close]');
   for (var n = 0; n < closers.length; n++){
     closers[n].addEventListener('click', function(){
@@ -774,14 +883,89 @@ main section{padding:120px 0;position:relative;overflow:hidden}
     });
   }
 
+  /* ---------- Модалка формы заказа ---------- */
+  var formModal = document.getElementById('formmodal');
+  var fclose = document.getElementById('fclose');
+
+  function openForm(){
+    formModal.classList.add('on');
+    document.body.classList.add('locked');
+  }
+  function closeForm(){
+    formModal.classList.remove('on');
+    document.body.classList.remove('locked');
+    var st = document.getElementById('orderStatus');
+    st.textContent = '';
+    st.className = 'order-status';
+  }
+
+  ['orderBtnHeader','orderBtnCta','orderBtnFooter'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('click', openForm);
+  });
+
+  fclose.addEventListener('click', closeForm);
+  formModal.addEventListener('click', function(e){ if (e.target === formModal) closeForm(); });
+
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape'){
       modal.classList.remove('on');
       document.body.classList.remove('locked');
+      closeForm();
       closeMenu();
     }
   });
 
+  /* ============================================================
+     ОТПРАВКА АНКЕТЫ
+     ============================================================ */
+  var orderForm = document.getElementById('orderForm');
+  var orderStatus = document.getElementById('orderStatus');
+  var orderSubmit = document.getElementById('orderSubmit');
+
+  orderForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY'){
+      orderStatus.textContent = 'Ключ отправки не настроен. Напишите в Telegram.';
+      orderStatus.className = 'order-status err';
+      return;
+    }
+
+    var formData = new FormData(orderForm);
+    formData.append('access_key', WEB3FORMS_KEY);
+    formData.append('subject', 'Новая заявка на монтаж — Nikitosich');
+    formData.append('from_name', 'Сайт Nikitosich');
+
+    orderStatus.textContent = 'Отправляем...';
+    orderStatus.className = 'order-status';
+    orderSubmit.disabled = true;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      orderSubmit.disabled = false;
+      if (data.success){
+        orderStatus.textContent = 'Заявка отправлена! Я свяжусь с вами в ближайшее время.';
+        orderStatus.className = 'order-status ok';
+        orderForm.reset();
+        setTimeout(function(){ closeForm(); }, 2800);
+      } else {
+        orderStatus.textContent = 'Не удалось отправить. Попробуйте ещё раз или напишите в Telegram.';
+        orderStatus.className = 'order-status err';
+      }
+    })
+    .catch(function(){
+      orderSubmit.disabled = false;
+      orderStatus.textContent = 'Ошибка соединения. Попробуйте ещё раз или напишите в Telegram.';
+      orderStatus.className = 'order-status err';
+    });
+  });
+
+  /* ---------- Плавный скролл по якорям ---------- */
   var anchors = mainSite.querySelectorAll('a[href^="#"]');
   for (var p = 0; p < anchors.length; p++){
     anchors[p].addEventListener('click', function(e){
