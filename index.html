@@ -156,6 +156,52 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 .order-status.ok{color:var(--green);font-weight:700}
 .order-status.err{color:var(--red);font-weight:600}
 
+/* Разделитель «или» */
+.order-divider{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:10px 0 2px;
+  color:#6a6770;
+  font-size:.85rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+.order-divider::before,
+.order-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:rgba(255,255,255,.1);
+}
+.order-divider span{
+  flex-shrink:0;
+}
+
+/* Кнопка Telegram */
+.order-tg{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:15px 32px;
+  background:linear-gradient(135deg,#0088cc,#006699);
+  color:#fff;
+  font-weight:700;
+  font-size:.98rem;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,136,204,.45);
+  transition:.3s;
+  font-family:inherit;
+  text-decoration:none;
+  margin-top:4px;
+}
+.order-tg:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,136,204,.75)}
+.order-tg svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+
 .cta-block{max-width:1000px;margin:0 auto;padding:60px 56px;background:linear-gradient(160deg,rgba(22,163,74,.14),rgba(6,182,212,.08));border:1px solid rgba(22,163,74,.35);border-radius:28px;text-align:center;position:relative;z-index:2;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .cta-block h3{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:14px;color:#fff}
 .cta-block p{color:#d8d5dc;font-size:1.02rem;margin-bottom:28px;max-width:640px;margin-left:auto;margin-right:auto}
@@ -301,6 +347,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   .formmodal{padding:12px}
   .formmodal__box{padding:32px 22px;border-radius:20px}
   .formmodal__close{top:12px;right:12px;width:40px;height:40px}
+  .order-tg{width:100%;justify-content:center}
   .cta-block{padding:36px 22px}
   .team{padding:90px 0 60px}
   .back-btn{padding:12px 20px;font-size:13px;top:18px;left:18px;backdrop-filter:none;background:rgba(20,18,22,.92)}
@@ -337,6 +384,7 @@ main section{padding:120px 0;position:relative;overflow:hidden}
   .cta-btn--purple:hover,.footer__social:hover,.btn-portfolio:hover,.btn-team:hover,.order-btn:hover{transform:none}
   .btn-team:hover{animation-play-state:running}
   .order-submit:hover:not(:disabled){transform:none;box-shadow:0 10px 30px rgba(168,85,247,.5)}
+  .order-tg:hover{transform:none;box-shadow:0 10px 30px rgba(0,136,204,.45)}
   .about__skills img{filter:none;opacity:.9}
   .modal__close:hover{transform:none;background:rgba(255,255,255,.06);color:#fff}
   .formmodal__close:hover{transform:none;background:rgba(255,255,255,.06);color:#fff}
@@ -741,6 +789,12 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 
       <button type="submit" class="order-submit" id="orderSubmit">Отправить заявку</button>
       <p class="order-status" id="orderStatus" role="status"></p>
+
+      <div class="order-divider"><span>или</span></div>
+      <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="order-tg">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+        Связаться в Telegram
+      </a>
     </form>
   </div>
 </div>
@@ -751,9 +805,6 @@ main section{padding:120px 0;position:relative;overflow:hidden}
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* ================================================================
-     🔑 КЛЮЧ WEB3FORMS — тот же, что и на портфолио
-     ================================================================ */
   var WEB3FORMS_KEY = 'a2d85d28-b59e-462c-8788-556339b31b71';
 
   var mainSite = document.getElementById('mainSite');
