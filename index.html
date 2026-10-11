@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101014"><meta name="description" content="Никита Андрианов / Nikitosich — видеомонтаж, motion design и команда монтажёров."><title>Nikitosich — видеомонтаж и motion design</title>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#101014" name="theme-color"/><meta content="Никита Андрианов / Nikitosich — видеомонтаж, motion design и команда монтажёров." name="description"/><title>Nikitosich — видеомонтаж и motion design</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0;background:#101014;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;line-height:1.5}body.locked{overflow:hidden}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit}img{max-width:100%}[hidden]{display:none!important}:focus-visible{outline:3px solid #89e9f1!important;outline-offset:4px}button,a{touch-action:manipulation}button:disabled{cursor:wait;opacity:.6}.app-view{min-height:100vh;position:relative;isolation:isolate}
 </style><style>/* home */
@@ -980,787 +981,727 @@ body.locked .route-toolbar{visibility:hidden;pointer-events:none}
 /* Keep secondary copy readable against the brighter background. */
 .app-view{--dim:#d3ddf4!important}
 #view-home .team-hero p,#view-home .tbs,#view-portfolio .phero p,#view-team-portfolio .phero p,#view-join .subtitle{color:#d4def3}
-</style></head><body><nav class="route-toolbar" id="routeToolbar" aria-label="Закреплённая навигация"><div class="routebar-inner"><button type="button" id="globalBack" class="route-back" aria-label="Назад"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7M8 12h12"/></svg><span>Назад</span></button><a href="#/home" class="route-brand">Nikitosich <span>/ STUDIO</span></a><div class="routebar-controls" id="routebarControls"><a href="#/portfolio" class="route-works">Работы</a><button id="globalMenu" type="button" class="route-menu" aria-label="Открыть меню" aria-controls="home-mmenu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div></nav><div class="studio-backdrop" aria-hidden="true"><span class="background-reel"></span><div class="bg-film"></div><div class="bg-tracks"><i></i><i></i><i></i></div></div><a class="skip-link" href="#/home/about">Перейти к содержимому</a><div class="reading-progress" aria-hidden="true"><i id="readingProgress"></i></div><div id="view-home" class="app-view">
-
+</style><style>/* Requested refinement: supporting motion, clearer route navigation. */
+html{scroll-padding-top:100px}section[id]{scroll-margin-top:100px}
+.ambient-edit{position:fixed;inset:80px 0 0;overflow:hidden;pointer-events:none;z-index:1;opacity:.085;contain:layout paint}
+.ambient-reel{position:absolute;width:220px;height:220px;border:2px solid #82aaff;border-radius:50%;background:radial-gradient(circle at 50% 25%,#9caaff 0 13%,transparent 14%),radial-gradient(circle at 25% 50%,#9caaff 0 13%,transparent 14%),radial-gradient(circle at 50% 75%,#9caaff 0 13%,transparent 14%),radial-gradient(circle at 75% 50%,#9caaff 0 13%,transparent 14%);animation:ambient-spin 42s linear infinite}
+.reel-a{left:-90px;top:10%}.reel-b{right:-110px;bottom:8%;width:300px;height:300px;animation-direction:reverse}
+.ambient-brackets{position:absolute;right:12%;top:12%;font:80px Consolas,monospace;color:#b7a5ff;animation:ambient-spin 65s linear infinite}
+.ambient-timeline{position:absolute;left:0;right:0;bottom:14%;height:130px;transform:rotate(-9deg);border-block:1px solid #a9b7e0;overflow:hidden}
+.ambient-ruler{height:18px;background:repeating-linear-gradient(90deg,#a9b7e0 0 1px,transparent 1px 24px);width:200%;animation:timeline-drift 24s linear infinite}
+.ambient-tracks{width:200%;animation:timeline-drift 24s linear infinite}
+.ambient-track{display:flex;gap:8px;margin:7px 0;height:25px}.ambient-track i{width:12%;border:1px solid #82aaff;border-radius:3px;background:#4181e5}.ambient-track:nth-child(2) i{background:#b77fdf;transform:translateX(-45px)}.ambient-track:nth-child(3) i{background:repeating-linear-gradient(90deg,#77c9be 0 2px,transparent 2px 7px)}
+.ambient-head{position:absolute;height:100%;width:2px;left:40%;top:0;background:#fff}
+@keyframes ambient-spin{to{transform:rotate(360deg)}}@keyframes timeline-drift{to{transform:translateX(-50%)}}
+.site-nav{position:fixed;top:84px;right:max(20px,calc((100vw - 1152px)/2));width:440px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 104px);overflow:auto;z-index:1200;padding:24px;border:1px solid #58688a;border-radius:12px;background:#182237;box-shadow:0 18px 70px #0008;color:#f5f7ff}
+.site-nav-head{display:flex;justify-content:space-between;align-items:center;font-size:20px;font-weight:700;margin-bottom:16px}.site-nav-head button{width:44px;height:44px;font-size:28px;background:transparent;border:1px solid #69758e;border-radius:8px;color:inherit}
+.site-nav-links{display:grid;gap:4px}.site-nav-links a{display:flex;align-items:center;justify-content:space-between;min-height:52px;padding:12px;text-decoration:none;border-radius:8px;font-size:18px}.site-nav-links a:hover,.site-nav-links a[aria-current=page]{background:#2e4267}.site-nav-links a span{font:14px Consolas,monospace;color:#abbddd}
+.site-nav-anchors{display:flex;flex-wrap:wrap;gap:4px 8px;padding-top:16px;border-top:1px solid #52607c;margin-top:16px}.site-nav-anchors a{font-size:14px;padding:12px 8px;min-height:44px;color:#ccd7ec;text-decoration:none}.site-nav-anchors a:hover{color:white;text-decoration:underline}
+:where(#view-home) .gem-playground{padding:40px 0;border:0}:where(#view-home) .gem-layout{grid-template-columns:240px 1fr;gap:32px;padding:24px;border:1px solid #637394;border-radius:12px;background:#1c263a;max-width:1000px;margin:auto}
+:where(#view-home) .gem-stage{min-height:240px;border:0;cursor:default;background:radial-gradient(ellipse,#39548e55,transparent 72%);border-radius:8px}:where(#view-home) #gemCanvas{height:240px;min-height:0;width:100%;cursor:default;touch-action:auto;pointer-events:none}
+:where(#view-home) .gem-ring{width:170px;height:170px;left:calc(50% - 85px);top:calc(50% - 85px)}:where(#view-home) .gem-mark{font-size:10px}:where(#view-home) .gem-stage-note{font-size:10px;bottom:8px}
+:where(#view-home) .gem-info h2{font-size:26px;line-height:1.2;margin:8px 0 20px}:where(#view-home) .gem-eyebrow{font-size:12px;color:#aabbdf;letter-spacing:1.2px;margin:0}
+.tip-copy{min-height:126px;transition:opacity .25s,transform .25s}.tip-copy.changing{opacity:0;transform:translateY(8px)}:where(#view-home) .tip-copy h3{font-size:20px;margin:6px 0 8px;color:#f4f7ff}:where(#view-home) .tip-copy p{font-size:16px;line-height:1.6;color:#ccd8f1;margin:0;max-width:62ch}
+#tipNumber{font:12px Consolas,monospace;letter-spacing:1px;color:#aabbdf}.tip-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px}.tip-dots{display:flex;gap:4px}.tip-dots button{width:44px;height:44px;background:transparent;border:0;display:grid;place-items:center}.tip-dots button::after{content:'';width:7px;height:7px;border-radius:50%;background:#aabbdf}.tip-dots button[aria-pressed=true]::after{background:#83b5ff;width:22px;border-radius:4px}
+#tipsPause{font-size:14px;min-height:44px;padding:8px 12px;background:transparent;color:#d9e4ff;border:1px solid #7082a5;border-radius:8px}
+:where(#view-team-portfolio) .wcard__num{height:100px;min-height:100px;background:#1d2941!important;display:flex;justify-content:space-between;align-items:center;padding:24px}:where(#view-team-portfolio) .wcard__num-text{font-size:26px;font-weight:700;color:#d8e5ff;position:static;line-height:1.2}:where(#view-team-portfolio) .wcard__play{position:static;transform:none;width:44px;height:44px;background:#3b537c;border:1px solid #8baddc}:where(#view-team-portfolio) .wcard:hover .wcard__play{transform:scale(1.06)}:where(#view-team-portfolio) .wcard__body{padding:16px 24px}:where(#view-team-portfolio) .wcard__title{display:none}:where(#view-team-portfolio) .wcard__desc{font-size:16px;color:#bfcae0;margin:0}
+:where(#view-home) .join__box{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.join-challenge{background:#18243b;border:1px solid #788cb4;border-radius:12px;padding:24px;color:#f3f7ff;min-width:0}:where(#view-home) .join-challenge h3{font-size:24px;line-height:1.3;margin:8px 0 16px}:where(#view-home) .challenge-label{font:12px Consolas,monospace;letter-spacing:1px;color:#beccec}
+.brief-options{display:flex;gap:8px;flex-wrap:wrap}.brief-options button{min-height:44px;padding:8px 16px;font-size:14px;color:#e1eaff;border:1px solid #8b9ab7;background:transparent;border-radius:8px}.brief-options button[aria-pressed=true]{background:#385786;border-color:#8fbdff}
+.brief-visual{position:relative;display:flex;gap:6px;height:54px;align-items:center;margin:24px 0;background:repeating-linear-gradient(90deg,transparent 0 19px,#ffffff14 19px 20px)}.brief-visual span{height:30px;flex:1;border:1px solid #8babdf;background:#456397;border-radius:3px}.brief-visual span:nth-child(2n){height:42px;background:#775793;border-color:#c7a5e7}.brief-visual i{position:absolute;top:0;bottom:0;width:2px;background:white;left:5%;animation:brief-scrub 6s ease-in-out infinite alternate}
+@keyframes brief-scrub{to{left:95%}}:where(#view-home) #briefText{font-size:16px;line-height:1.6;color:#e0e8f8;min-height:78px}:where(#view-home) .join-challenge small{display:block;font-size:14px;line-height:1.5;color:#bdcce6;margin-top:12px}:where(#view-home) .join-challenge a{display:inline-flex;min-height:44px;align-items:center;font-weight:700;margin-top:16px;color:#b8d5ff}
+.studio-reveal{transition:opacity .65s ease,translate .65s cubic-bezier(.22,.61,.36,1)}.studio-reveal:not(.studio-visible){opacity:0;translate:0 22px}.studio-visible{opacity:1;translate:0 0}
+html.motion-paused .ambient-edit *,html.motion-paused .brief-visual i,html.motion-paused .gem-ring,html.motion-paused .spinning-reel{animation-play-state:paused!important}
+html.lite .ambient-edit{display:none}html.lite .brief-visual i{animation:none}
+@media(max-width:760px){:where(#view-home) .gem-layout{grid-template-columns:140px 1fr;gap:20px;padding:20px}:where(#view-home) .gem-stage{min-height:180px}:where(#view-home) #gemCanvas{height:180px}:where(#view-home) .gem-mark,:where(#view-home) .gem-stage-note,:where(#view-home) .gem-ring{display:none}:where(#view-home) .join__box{grid-template-columns:1fr;gap:24px}.site-nav{right:16px}.ambient-edit{opacity:.06}.routebar-controls .mode-control button{min-width:44px}}
+@media(max-width:540px){:where(#view-home) .gem-layout{grid-template-columns:1fr;gap:4px;padding:20px}:where(#view-home) .gem-stage{min-height:140px}:where(#view-home) #gemCanvas{height:140px;width:160px;display:block;margin:auto}:where(#view-home) .gem-info h2{font-size:24px;margin-bottom:16px}.tip-copy{min-height:158px}.tip-footer{gap:4px}.tip-dots{gap:0}.tip-dots button{width:36px}#tipsPause{font-size:14px;padding:8px}.route-brand{font-size:16px!important}.route-works{display:none!important}.route-back{padding:8px!important}.route-back span{display:none}.routebar-controls{gap:6px!important}.join-challenge{padding:20px}.ambient-brackets{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.ambient-edit *, .brief-visual i{animation:none!important}.studio-reveal,.tip-copy{transition:none!important;opacity:1!important;translate:none!important}.gem-ring{animation:none!important}}
+/* Reset the original oversized number styling for the simple video labels. */
+:where(#view-team-portfolio) .wcard__num-text{letter-spacing:normal;background:none;-webkit-text-fill-color:#d8e5ff;user-select:auto}
+:where(#view-team-portfolio) .wcard__num{aspect-ratio:auto}
+html.motion-paused *{animation-play-state:paused!important}
+@media(max-width:540px){.tip-footer{flex-wrap:wrap;gap:4px 12px}.tip-dots button{width:44px}#tipsPause{margin-left:auto}}
+</style></head><body><div aria-hidden="true" class="ambient-edit"><div class="ambient-reel reel-a"></div><div class="ambient-reel reel-b"></div><div class="ambient-brackets">[ ]</div><div class="ambient-timeline"><div class="ambient-ruler"></div><div class="ambient-tracks"><div class="ambient-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ambient-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ambient-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><span class="ambient-head"></span></div></div><nav aria-label="Закреплённая навигация" class="route-toolbar" id="routeToolbar"><div class="routebar-inner"><button aria-label="Назад" class="route-back" id="globalBack" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"></path></svg><span>Назад</span></button><a class="route-brand" href="#/home">Nikitosich <span>/ STUDIO</span></a><div class="routebar-controls" id="routebarControls"><a class="route-works" href="#/portfolio">Работы</a><button aria-controls="siteNav" aria-expanded="false" aria-label="Открыть меню" class="route-menu" id="globalMenu" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div></nav><div aria-hidden="true" class="studio-backdrop"><span class="background-reel"></span><div class="bg-film"></div><div class="bg-tracks"><i></i><i></i><i></i></div></div><a class="skip-link" href="#/home/about">Перейти к содержимому</a><div aria-hidden="true" class="reading-progress"><i id="readingProgress"></i></div><div class="app-view" id="view-home">
 <div class="mmenu" id="home-mmenu">
-  <a href="#/home/about" data-close>Обо мне</a>
-  <a href="#/home/favorite" data-close>Любимая работа</a>
-  <a href="#/home/pack" data-close>Пак для монтажа</a>
-  <a href="#/home/join" data-close>В команду</a>
-  <a href="#/home/reviews" data-close>Отзывы</a>
-  <a href="#/home/questions" data-close>Вопросы</a>
-  <a href="#" id="home-teamMobile">👥 Команда</a>
-  <button class="mmenu__back" id="home-mmenuBack" type="button" aria-label="Вернуться назад">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-    <span>Назад</span>
-  </button>
+<a data-close="" href="#/home/about">Обо мне</a>
+<a data-close="" href="#/home/favorite">Любимая работа</a>
+<a data-close="" href="#/home/pack">Пак для монтажа</a>
+<a data-close="" href="#/home/join">В команду</a>
+<a data-close="" href="#/home/reviews">Отзывы</a>
+<a data-close="" href="#/home/questions">Вопросы</a>
+<a href="#/team" id="home-teamMobile">👥 Команда</a>
+<button aria-label="Вернуться назад" class="mmenu__back" id="home-mmenuBack" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
+<span>Назад</span>
+</button>
 </div>
-
 <div id="home-mainSite">
-
-  <header class="header">
-    <div class="header__bg"></div>
-    <div class="header__ov"></div>
-    <div class="container">
-      <nav class="nav">
-        <a href="#" class="nav__logo">Nikitosich</a>
-        <ul class="nav__list">
-          <li><a href="#/home/about" class="nav__link">Обо мне</a></li>
-          <li><a href="#/home/favorite" class="nav__link">Любимая работа</a></li>
-          <li><a href="#/home/pack" class="nav__link">Пак для монтажа</a></li>
-          <li><a href="#/home/join" class="nav__link">В команду</a></li>
-          <li><a href="#/home/reviews" class="nav__link">Отзывы</a></li>
-          <li><a href="#/home/questions" class="nav__link">Вопросы</a></li>
-        </ul>
-        <button class="nav__team" id="home-teamBtn">👥 Команда</button>
-        <button class="burger" id="home-burger" aria-label="Меню"><span></span><span></span><span></span></button>
-      </nav>
-
-      <div class="hero-grid"><div class="header__content">
-        <p class="studio-kicker"><span></span> ВИДЕОМОНТАЖ · MOTION DESIGN</p><h1 class="header__title">
-          <span class="header__acc">Привет, в жизни я</span>
-          НИКИТА<br>АНДРИАНОВ
+<header class="header">
+<div class="header__bg"></div>
+<div class="header__ov"></div>
+<div class="container">
+<nav class="nav">
+<a class="nav__logo" href="#">Nikitosich</a>
+<ul class="nav__list">
+<li><a class="nav__link" href="#/home/about">Обо мне</a></li>
+<li><a class="nav__link" href="#/home/favorite">Любимая работа</a></li>
+<li><a class="nav__link" href="#/home/pack">Пак для монтажа</a></li>
+<li><a class="nav__link" href="#/home/join">В команду</a></li>
+<li><a class="nav__link" href="#/home/reviews">Отзывы</a></li>
+<li><a class="nav__link" href="#/home/questions">Вопросы</a></li>
+</ul>
+<button class="nav__team" id="home-teamBtn">👥 Команда</button>
+<button aria-label="Меню" class="burger" id="home-burger"><span></span><span></span><span></span></button>
+</nav>
+<div class="hero-grid"><div class="header__content">
+<p class="studio-kicker"><span></span> ВИДЕОМОНТАЖ · MOTION DESIGN</p><h1 class="header__title">
+<span class="header__acc">Привет, в жизни я</span>
+          НИКИТА<br/>АНДРИАНОВ
         </h1>
-        <p class="header__sub">
-          <span class="header__acc">в интернете</span>
+<p class="header__sub">
+<span class="header__acc">в интернете</span>
           Nikitosich
         </p>
-        <div class="header__btns">
-          <button type="button" class="order-btn" id="home-orderBtnHeader">
-            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+<div class="header__btns">
+<button class="order-btn" id="home-orderBtnHeader" type="button">
+<svg viewbox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
             Заказать монтаж
           </button>
-          <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="btn-h">связаться со мной</a>
-          <a href="https://t.me/NikitaAndrianov" target="_blank" rel="noopener" class="btn-ch">
-            <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+<a class="btn-h" href="https://t.me/ModerationNikitosich" rel="noopener" target="_blank">связаться со мной</a>
+<a class="btn-ch" href="https://t.me/NikitaAndrianov" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg>
             мой телеграм канал
           </a>
-          <a href="#/portfolio" class="btn-portfolio">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l1.2 2.2a1 1 0 0 1-.87 1.5H9.87A1 1 0 0 1 9 19.2L10.2 17H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v9h16V6H4zm3 2h5v1.8H7V8zm0 3.4h8V13H7v-1.6z"/>
-            </svg>
+<a class="btn-portfolio" href="#/portfolio">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l1.2 2.2a1 1 0 0 1-.87 1.5H9.87A1 1 0 0 1 9 19.2L10.2 17H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v9h16V6H4zm3 2h5v1.8H7V8zm0 3.4h8V13H7v-1.6z"></path>
+</svg>
             моё портфолио
           </a>
-          <button type="button" class="btn-team" id="home-teamBtnHeader">👥 Команда</button>
-        </div>
-      </div><div class="edit-console" aria-label="Интерактивная монтажная шкала">
+<button class="btn-team" id="home-teamBtnHeader" type="button">👥 Команда</button>
+</div>
+</div><div aria-label="Интерактивная монтажная шкала" class="edit-console">
 <div class="console-top"><span><i></i> NIKITOSICH / EDIT LAB</span><span id="timecode">00:00:04:12</span></div>
-<div class="console-stage"><div class="stage-word" id="stageWord">СОЗДАЁМ<br><em>ДИНАМИКУ.</em></div><span class="stage-badge">1080p / 60 fps</span><span class="stage-corner">↗</span></div>
-<div class="console-tracks"><div class="track"><span>V1</span><div class="clip purple">ИСТОРИЯ</div><div class="clip cyan">МОНТАЖ</div><div class="clip violet">MOTION</div></div><div class="track"><span>A1</span><div class="waveform" aria-hidden="true"></div></div><div class="playhead" id="playhead"></div></div>
-<label class="scrub-label" for="scrubber">Прокрути таймлайн <span>↔</span></label><input id="scrubber" type="range" min="0" max="100" value="35" aria-label="Позиция монтажной шкалы">
-<div class="console-bottom"><span>Исходники → эмоции</span><button id="timelinePlay" type="button" aria-pressed="false">▶ Preview</button></div></div></div>
-    </div>
-  </header><section class="gem-playground" aria-labelledby="gemTitle"><div class="container"><div class="gem-layout"><div class="gem-stage" id="gemStage"><span class="gem-mark">INTERACTIVE / DIAMOND</span><div class="gem-ring ring-one" aria-hidden="true"></div><div class="gem-ring ring-two" aria-hidden="true"></div><canvas id="gemCanvas" tabindex="0" role="img" aria-label="Интерактивный алмаз. Вращение перетаскиванием или стрелками. Пробел — пауза, Enter — смена цвета." aria-describedby="gemHint"></canvas><div class="gem-floor" aria-hidden="true"></div><span class="gem-stage-note">DRAG TO ROTATE · TAP TO CHANGE</span></div><div class="gem-info"><p class="gem-eyebrow"><svg class="spinning-reel" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="3"/><circle cx="20" cy="10" r="3"/><circle cx="10" cy="20" r="3"/><circle cx="20" cy="30" r="3"/><circle cx="30" cy="20" r="3"/></svg> PLAYGROUND / DIAMOND</p><h2 id="gemTitle">Поверни идею.<br><span>Поймай блик.</span></h2><p id="gemHint">Перетаскивай алмаз мышью или пальцем. Нажми на него, чтобы сменить цвет. Стрелки на клавиатуре тоже работают.</p><div class="gem-colors" role="group" aria-label="Цвет алмаза"><button type="button" data-gem-color="duo" aria-pressed="true">Красно-синий</button><button type="button" data-gem-color="blue" aria-pressed="false">Синий</button><button type="button" data-gem-color="red" aria-pressed="false">Красный</button></div><label class="gem-speed-label" for="gemSpeed">Скорость вращения <output id="gemSpeedValue">45%</output></label><input id="gemSpeed" type="range" min="0" max="100" value="45"><div class="gem-actions"><button id="gemPause" type="button" aria-pressed="false">Пауза</button><button id="gemReset" type="button">Сбросить поворот</button></div><p id="gemStatus" class="gem-status" role="status" aria-live="polite">Автовращение включено. Попробуй повернуть алмаз.</p></div></div></div></section><section class="creative-lab" aria-labelledby="labTitle">
-<div class="container"><div class="lab-intro"><div><p class="lab-eyebrow">PLAYGROUND / 01</p><h2 id="labTitle">Настроение — тоже монтаж.</h2></div><p>Покрути цвет, сравни версии и поймай ритм. Маленькая монтажная для твоих идей.</p></div>
-<div class="lab-desk"><div class="lab-monitor"><div class="monitor-toolbar"><span><i></i> COLOR / PREVIEW</span><span id="lookName">Мягкий</span></div>
-<div class="grade-scene" id="gradeScene" role="img" aria-label="Демо-плашка для сравнения исходного и обработанного оформления"><div class="scene-layer before"><b>ИЗ ИСХОДНИКОВ<br><em>В ИСТОРИЮ.</em></b></div><div class="scene-layer after"><b>ИЗ ИСХОДНИКОВ<br><em>В ИСТОРИЮ.</em></b></div><div class="compare-divider"></div><div class="compare-tags"><span>ДО</span><span>ПОСЛЕ</span></div></div>
-<label for="compareRange">Сравнение до / после <output id="compareValue">50%</output></label><input type="range" id="compareRange" min="0" max="100" value="50"><p class="lab-caption">Передвигай границу ползунком. Это дизайн-демо, не видео из портфолио.</p></div>
-<div class="lab-controls"><div><h3>Выбери настроение</h3><p>Один кадр. Три разных характера.</p><div class="look-options" role="group" aria-label="Цветовой стиль"><button type="button" data-look="soft" aria-pressed="true">Мягкий</button><button type="button" data-look="cool" aria-pressed="false">Холодный</button><button type="button" data-look="contrast" aria-pressed="false">Контраст</button></div><label for="exposureRange">Яркость обработки <output id="exposureValue">0%</output></label><input id="exposureRange" type="range" min="-20" max="25" value="0"></div>
-<div class="bpm-box"><div class="bpm-reading"><span id="bpmValue" aria-live="polite">—</span> <small>BPM</small></div><button type="button" id="tapTempo">Поймать ритм</button><p id="bpmHint">Нажимай в ритм любимого трека. Звук не включается.</p></div></div></div>
-<p class="lab-note">Цвет задаёт атмосферу. Ритм держит внимание. История связывает всё вместе.</p></div></section>
+<div class="console-stage"><div class="stage-word" id="stageWord">СОЗДАЁМ<br/><em>ДИНАМИКУ.</em></div><span class="stage-badge">1080p / 60 fps</span><span class="stage-corner">↗</span></div>
+<div class="console-tracks"><div class="track"><span>V1</span><div class="clip purple">ИСТОРИЯ</div><div class="clip cyan">МОНТАЖ</div><div class="clip violet">MOTION</div></div><div class="track"><span>A1</span><div aria-hidden="true" class="waveform"></div></div><div class="playhead" id="playhead"></div></div>
+<label class="scrub-label" for="scrubber">Прокрути таймлайн <span>↔</span></label><input aria-label="Позиция монтажной шкалы" id="scrubber" max="100" min="0" type="range" value="35"/>
+<div class="console-bottom"><span>Исходники → эмоции</span><button aria-pressed="false" id="timelinePlay" type="button">▶ Preview</button></div></div></div>
+</div>
+</header>
+<main>
+<section id="home-about">
+<div class="glow glow-blue" style="width:500px;height:500px;top:-100px;left:-150px"></div>
+<div class="glow glow-white" style="width:400px;height:400px;bottom:-100px;right:-100px"></div>
+<div class="container">
+<h2 class="title anim">Обо <span class="a">мне</span></h2>
+<div class="about__grid">
+<div>
+<img alt="Фото Никиты" class="about__photo anim" decoding="async" loading="lazy" src="img/images/nikita.jpg"/>
+</div>
+<div>
+<p class="about__txt anim d1">Привет! Меня зовут <span class="a">Никита</span>, а в интернете я — <span class="a">Nikitosich</span>.</p>
+<p class="about__txt anim d2">Уже около года занимаюсь монтажом игровых видео и помогаю авторам превращать исходники в <span class="a">динамичный</span> и <span class="a">увлекательный</span> контент.</p>
+<p class="about__txt anim d3">В работе могу помочь с:</p>
+<ul class="about__list anim d3">
+<li>🎮 монтажом игровых видео;</li>
+<li>🎙️ монтажом подкастов;</li>
+<li>📱 монтажом Reels и коротких вертикальных видео.</li>
+</ul>
+<p class="about__txt anim d4">Если вам нужен монтаж, который <span class="a">удерживает внимание</span> зрителя и <span class="a">подчёркивает стиль</span> вашего контента — буду рад поработать вместе!</p>
+<div class="about__skills-blk anim d4">
+<span class="about__skills-btn">мои навыки</span>
+<div class="about__skills">
+<img alt="Premiere Pro" decoding="async" loading="lazy" src="img/images/about-pr.png"/>
+<img alt="After Effects" decoding="async" loading="lazy" src="img/images/about-ae.png"/>
+<img alt="Photoshop" decoding="async" loading="lazy" src="img/images/about-ps.png"/>
+<img alt="Media Encoder" decoding="async" loading="lazy" src="img/images/about-me.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section aria-labelledby="gemTitle" class="gem-playground" id="home-tips"><div class="container"><div class="gem-layout"><div class="gem-stage" id="gemStage"><span class="gem-mark">DIAMOND / IN MOTION</span><div aria-hidden="true" class="gem-ring ring-one"></div><div aria-hidden="true" class="gem-ring ring-two"></div><canvas aria-hidden="true" id="gemCanvas"></canvas><div aria-hidden="true" class="gem-floor"></div><span class="gem-stage-note">ИСТОРИЯ · РИТМ · ДЕТАЛИ</span></div><div class="gem-info"><p class="gem-eyebrow">НА МОНТАЖНОМ СТОЛЕ / СОВЕТЫ</p><h2 id="gemTitle">Всё решают детали.</h2><div class="tip-copy"><span id="tipNumber">01 / 04</span><h3 id="tipTitle">Сначала история — потом эффекты.</h3><p id="tipText">Собери понятную последовательность кадров. Переходы и графика должны помогать ей, а не отвлекать.</p></div><div class="tip-footer"><div aria-label="Советы по монтажу" class="tip-dots"><button aria-label="Совет 1" aria-pressed="true" data-tip="0" type="button"></button><button aria-label="Совет 2" aria-pressed="false" data-tip="1" type="button"></button><button aria-label="Совет 3" aria-pressed="false" data-tip="2" type="button"></button><button aria-label="Совет 4" aria-pressed="false" data-tip="3" type="button"></button></div><button aria-pressed="false" id="tipsPause" type="button">Пауза анимации</button></div></div></div></div></section>
+<section id="home-favorite">
+<div class="glow glow-blue" style="width:550px;height:550px;top:-150px;left:-150px"></div>
+<div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
+<div class="container">
+<h2 class="title anim">Любимая <span class="a">работа</span></h2>
+<a class="fav__link anim" href="https://youtu.be/2rd3-0kkmhQ" rel="noopener" target="_blank">
+<img alt="Любимая работа" class="fav__img" decoding="async" loading="lazy" src="img/images/favorite.jpg"/>
+<div class="fav__play"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+</a>
+</div>
+</section>
+<section id="home-pack">
+<div class="glow glow-blue" style="width:550px;height:550px;top:-150px;right:-150px"></div>
+<div class="glow glow-white" style="width:450px;height:450px;bottom:-150px;left:-100px"></div>
+<div class="container">
+<h2 class="title anim">Пак для <span class="a">монтажа</span></h2>
+<div class="pack__box anim">
+<h3 class="pack__title">🎬 Готовый пак для монтажа</h3>
+<p class="pack__txt">А так же у меня можно <span class="a">купить пак для монтажа</span> — в нём собраны готовые проекты, эффекты, переходы и звуки, которые ускорят твою работу в разы.</p>
+<ul class="pack__features">
+<li>Готовый пак для Premiere Pro и After Effects</li>
+<li>Переходы, эффекты и звуки</li>
+<li>Пресеты для цветокоррекции</li>
+<li>А так же есть несколько бесплатных плагинов для монтажа</li>
+</ul>
+<div class="pack__price">💰 Стоимость пака — 2000 ₽</div>
+<div class="pack__btns">
+<a class="pack__btn" href="https://t.me/NIkitosich_bot" rel="noopener" target="_blank">Купить →</a>
+<a class="pack__btn-free" href="https://t.me/freeNikitosichPac" rel="noopener" target="_blank">Бесплатный пак →</a>
+</div>
+</div>
+</div>
+</section>
+<section id="home-join">
+<div class="glow glow-blue" style="width:500px;height:500px;top:-150px;left:-100px"></div>
+<div class="glow glow-white" style="width:450px;height:450px;bottom:-150px;right:-100px"></div>
+<div class="container">
+<h2 class="title anim">Ищем <span class="a">видеомонтажёров</span></h2>
+<div class="join__box anim">
+<div>
+<h3 class="join__title">🎬 Ищем видеомонтажёров любого уровня!</h3>
+<p class="join__txt">Если ты шаришь в TikTok трендах, чувствуешь ритм и умеешь создавать динамичные ролики — <span class="a">Добро Пожаловать в команду!</span></p>
+<a class="join__btn" href="#/join" rel="noopener">Заполнить анкету →</a>
+</div>
 
-  <main>
-
-    <section id="home-about">
-      <div class="glow glow-blue" style="width:500px;height:500px;top:-100px;left:-150px"></div>
-      <div class="glow glow-white" style="width:400px;height:400px;bottom:-100px;right:-100px"></div>
-      <div class="container">
-        <h2 class="title anim">Обо <span class="a">мне</span></h2>
-        <div class="about__grid">
-          <div>
-            <img src="img/images/nikita.jpg" alt="Фото Никиты" class="about__photo anim" loading="lazy" decoding="async">
-          </div>
-          <div>
-            <p class="about__txt anim d1">Привет! Меня зовут <span class="a">Никита</span>, а в интернете я — <span class="a">Nikitosich</span>.</p>
-            <p class="about__txt anim d2">Уже около года занимаюсь монтажом игровых видео и помогаю авторам превращать исходники в <span class="a">динамичный</span> и <span class="a">увлекательный</span> контент.</p>
-            <p class="about__txt anim d3">В работе могу помочь с:</p>
-            <ul class="about__list anim d3">
-              <li>🎮 монтажом игровых видео;</li>
-              <li>🎙️ монтажом подкастов;</li>
-              <li>📱 монтажом Reels и коротких вертикальных видео.</li>
-            </ul>
-            <p class="about__txt anim d4">Если вам нужен монтаж, который <span class="a">удерживает внимание</span> зрителя и <span class="a">подчёркивает стиль</span> вашего контента — буду рад поработать вместе!</p>
-            <div class="about__skills-blk anim d4">
-              <span class="about__skills-btn">мои навыки</span>
-              <div class="about__skills">
-                <img src="img/images/about-pr.png" alt="Premiere Pro" loading="lazy" decoding="async">
-                <img src="img/images/about-ae.png" alt="After Effects" loading="lazy" decoding="async">
-                <img src="img/images/about-ps.png" alt="Photoshop" loading="lazy" decoding="async">
-                <img src="img/images/about-me.png" alt="Media Encoder" loading="lazy" decoding="async">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="home-favorite">
-      <div class="glow glow-blue" style="width:550px;height:550px;top:-150px;left:-150px"></div>
-      <div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
-      <div class="container">
-        <h2 class="title anim">Любимая <span class="a">работа</span></h2>
-        <a href="https://youtu.be/2rd3-0kkmhQ" target="_blank" rel="noopener" class="fav__link anim">
-          <img src="img/images/favorite.jpg" alt="Любимая работа" class="fav__img" loading="lazy" decoding="async">
-          <div class="fav__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </a>
-      </div>
-    </section>
-
-    <section id="home-pack">
-      <div class="glow glow-blue" style="width:550px;height:550px;top:-150px;right:-150px"></div>
-      <div class="glow glow-white" style="width:450px;height:450px;bottom:-150px;left:-100px"></div>
-      <div class="container">
-        <h2 class="title anim">Пак для <span class="a">монтажа</span></h2>
-        <div class="pack__box anim">
-          <h3 class="pack__title">🎬 Готовый пак для монтажа</h3>
-          <p class="pack__txt">А так же у меня можно <span class="a">купить пак для монтажа</span> — в нём собраны готовые проекты, эффекты, переходы и звуки, которые ускорят твою работу в разы.</p>
-          <ul class="pack__features">
-            <li>Готовый пак для Premiere Pro и After Effects</li>
-            <li>Переходы, эффекты и звуки</li>
-            <li>Пресеты для цветокоррекции</li>
-            <li>А так же есть несколько бесплатных плагинов для монтажа</li>
-          </ul>
-          <div class="pack__price">💰 Стоимость пака — 2000 ₽</div>
-          <div class="pack__btns">
-            <a href="https://t.me/NIkitosich_bot" target="_blank" rel="noopener" class="pack__btn">Купить →</a>
-            <a href="https://t.me/freeNikitosichPac" target="_blank" rel="noopener" class="pack__btn-free">Бесплатный пак →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="home-join">
-      <div class="glow glow-blue" style="width:500px;height:500px;top:-150px;left:-100px"></div>
-      <div class="glow glow-white" style="width:450px;height:450px;bottom:-150px;right:-100px"></div>
-      <div class="container">
-        <h2 class="title anim">Ищем <span class="a">видеомонтажёров</span></h2>
-        <div class="join__box anim">
-          <div>
-            <h3 class="join__title">🎬 Ищем видеомонтажёров любого уровня!</h3>
-            <p class="join__txt">Если ты шаришь в TikTok трендах, чувствуешь ритм и умеешь создавать динамичные ролики — <span class="a">Добро Пожаловать в команду!</span></p>
-            <a href="#/join" rel="noopener" class="join__btn">Заполнить анкету →</a>
-          </div>
-          <img src="img/images/team-searching-img.png" alt="" class="join__img" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </section>
-
-    <section id="home-order-cta">
-      <div class="glow glow-blue" style="width:550px;height:550px;top:-150px;left:-150px"></div>
-      <div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
-      <div class="container">
-        <h2 class="title anim">Заказать <span class="a">монтаж</span></h2>
-        <div class="cta-block anim">
-          <h3>Готовы заказать монтаж?</h3>
-          <p>Заполните короткую анкету — я свяжусь с вами в ближайшее время, обсудим детали и стоимость.</p>
-          <button type="button" class="order-btn order-btn--lg" id="home-orderBtnCta">
-            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+<aside class="join-challenge"><p class="challenge-label">ТВОЙ СЛЕДУЮЩИЙ КАДР</p><h3>Как бы ты это смонтировал?</h3><div aria-label="Выбери монтажный приём" class="brief-options"><button aria-pressed="true" data-brief="0" type="button">Ритм</button><button aria-pressed="false" data-brief="1" type="button">История</button><button aria-pressed="false" data-brief="2" type="button">Звук</button></div><div aria-hidden="true" class="brief-visual"><span></span><span></span><span></span><span></span><span></span><span></span><i></i></div><p aria-live="polite" id="briefText">Пять кадров, один бит. Где поставишь склейку, чтобы ролик зацепил с первой секунды?</p><small>Идея для портфолио: покажи свой подход в анкете.</small><a href="#/join">Хочу в команду ↗</a></aside></div>
+</div>
+</section>
+<section id="home-order-cta">
+<div class="glow glow-blue" style="width:550px;height:550px;top:-150px;left:-150px"></div>
+<div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
+<div class="container">
+<h2 class="title anim">Заказать <span class="a">монтаж</span></h2>
+<div class="cta-block anim">
+<h3>Готовы заказать монтаж?</h3>
+<p>Заполните короткую анкету — я свяжусь с вами в ближайшее время, обсудим детали и стоимость.</p>
+<button class="order-btn order-btn--lg" id="home-orderBtnCta" type="button">
+<svg viewbox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
             Заказать монтаж
           </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="home-reviews">
-      <div class="glow glow-blue" style="width:500px;height:500px;top:-100px;left:-100px"></div>
-      <div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
-      <div class="container">
-        <h2 class="title anim">Отзывы</h2>
-        <div class="reviews__grid">
-          <div class="review anim" data-t="Алексей — YouTube-блогер" data-x="Обратился за монтажом игровых роликов и остался очень доволен. Особенно понравилось, что монтажёр не просто нарезает видео, а реально чувствует темп и понимает, где нужно оставить момент, а где добавить динамики.">
-            <p class="review__t">Алексей — YouTube-блогер</p>
-            <p class="review__x">Обратился за монтажом игровых роликов и остался очень доволен. Особенно понравилось, что монтажёр не просто нарезает видео, а реально чувствует темп и понимает, где нужно оставить момент, а где добавить динамики.</p>
-            <span class="review__more">Читать полностью →</span>
-          </div>
-          <div class="review anim d1" data-t="Дмитрий — стример" data-x="До этого монтировал всё сам, но на один ролик решил попробовать отдать монтаж. Разница оказалась огромной. Хороший подбор моментов, мемов, звуков и переходов, при этом ничего не выглядит перегруженным.">
-            <p class="review__t">Дмитрий — стример</p>
-            <p class="review__x">До этого монтировал всё сам, но на один ролик решил попробовать отдать монтаж. Разница оказалась огромной.</p>
-            <span class="review__more">Читать полностью →</span>
-          </div>
-          <div class="review anim d2" data-t="Максим — подкаст" data-x="Нужно было превратить длинную запись подкаста в полноценный выпуск и несколько коротких роликов. Всё получилось именно так, как я хотел.">
-            <p class="review__t">Максим — подкаст</p>
-            <p class="review__x">Нужно было превратить длинную запись подкаста в полноценный выпуск и несколько коротких роликов. Всё получилось именно так, как я хотел.</p>
-            <span class="review__more">Читать полностью →</span>
-          </div>
-          <div class="review anim d3" data-t="Влад — игровой контент" data-x="Очень понравилось чувство юмора в монтаже. Мемы, звуки и вставки появляются именно в нужный момент и не перебивают сам контент.">
-            <p class="review__t">Влад — игровой контент</p>
-            <p class="review__x">Очень понравилось чувство юмора в монтаже. Мемы, звуки и вставки появляются именно в нужный момент и не перебивают сам контент.</p>
-            <span class="review__more">Читать полностью →</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="home-questions">
-      <div class="glow glow-white" style="width:500px;height:500px;top:10%;right:-100px"></div>
-      <div class="glow glow-blue" style="width:450px;height:450px;bottom:-150px;left:-100px"></div>
-      <div class="container">
-        <h2 class="title anim">Вопросы</h2>
-        <div class="faq">
-          <div class="faq__i anim"><div class="faq__q">Как заказать монтаж?</div><div class="faq__a"><p>Нажмите кнопку <a href="#/home/order-cta" style="color:#fff;text-decoration:underline">«Заказать монтаж»</a> на этой странице, заполните короткую анкету — я свяжусь с вами, обсудим детали, сроки и стоимость. Или напишите напрямую в <a href="https://t.me/ModerationNikitosich" style="color:#fff;text-decoration:underline" target="_blank" rel="noopener">Telegram</a>.</p></div></div>
-          <div class="faq__i anim d1"><div class="faq__q">Сколько стоит монтаж?</div><div class="faq__a"><p>Стоимость индивидуальна — точную цену можно назвать только после осмотра материала.</p></div></div>
-          <div class="faq__i anim d2"><div class="faq__q">Сколько времени занимает монтаж?</div><div class="faq__a"><p>Сроки индивидуальны для каждого проекта. Точное время — после оценки материала.</p></div></div>
-          <div class="faq__i anim d3"><div class="faq__q">Нужно ли платить за правки?</div><div class="faq__a"><p>Незначительные корректировки выполняем бесплатно. Сложные правки — за отдельную плату.</p></div></div>
-          <div class="faq__i anim d4"><div class="faq__q">Как оплачивается монтаж?</div><div class="faq__a"><p>Для новых клиентов — предоплата 50%, оставшиеся 50% после завершения.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="glow glow-blue" style="width:500px;height:500px;top:-150px;left:-150px"></div>
-    <div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-150px"></div>
-    <div class="container">
-      <div class="footer__stars"><span></span><span></span><span></span><span></span><span></span></div>
-      <h2 class="footer__title">Свяжитесь со мной, чтобы получить <span class="a">консультацию</span></h2>
-      <button type="button" class="order-btn order-btn--lg" id="home-orderBtnFooter" style="margin:0 auto 30px;display:flex">
-        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+</div>
+</div>
+</section>
+<section id="home-reviews">
+<div class="glow glow-blue" style="width:500px;height:500px;top:-100px;left:-100px"></div>
+<div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
+<div class="container">
+<h2 class="title anim">Отзывы</h2>
+<div class="reviews__grid">
+<div class="review anim" data-t="Алексей — YouTube-блогер" data-x="Обратился за монтажом игровых роликов и остался очень доволен. Особенно понравилось, что монтажёр не просто нарезает видео, а реально чувствует темп и понимает, где нужно оставить момент, а где добавить динамики.">
+<p class="review__t">Алексей — YouTube-блогер</p>
+<p class="review__x">Обратился за монтажом игровых роликов и остался очень доволен. Особенно понравилось, что монтажёр не просто нарезает видео, а реально чувствует темп и понимает, где нужно оставить момент, а где добавить динамики.</p>
+<span class="review__more">Читать полностью →</span>
+</div>
+<div class="review anim d1" data-t="Дмитрий — стример" data-x="До этого монтировал всё сам, но на один ролик решил попробовать отдать монтаж. Разница оказалась огромной. Хороший подбор моментов, мемов, звуков и переходов, при этом ничего не выглядит перегруженным.">
+<p class="review__t">Дмитрий — стример</p>
+<p class="review__x">До этого монтировал всё сам, но на один ролик решил попробовать отдать монтаж. Разница оказалась огромной.</p>
+<span class="review__more">Читать полностью →</span>
+</div>
+<div class="review anim d2" data-t="Максим — подкаст" data-x="Нужно было превратить длинную запись подкаста в полноценный выпуск и несколько коротких роликов. Всё получилось именно так, как я хотел.">
+<p class="review__t">Максим — подкаст</p>
+<p class="review__x">Нужно было превратить длинную запись подкаста в полноценный выпуск и несколько коротких роликов. Всё получилось именно так, как я хотел.</p>
+<span class="review__more">Читать полностью →</span>
+</div>
+<div class="review anim d3" data-t="Влад — игровой контент" data-x="Очень понравилось чувство юмора в монтаже. Мемы, звуки и вставки появляются именно в нужный момент и не перебивают сам контент.">
+<p class="review__t">Влад — игровой контент</p>
+<p class="review__x">Очень понравилось чувство юмора в монтаже. Мемы, звуки и вставки появляются именно в нужный момент и не перебивают сам контент.</p>
+<span class="review__more">Читать полностью →</span>
+</div>
+</div>
+</div>
+</section>
+<section id="home-questions">
+<div class="glow glow-white" style="width:500px;height:500px;top:10%;right:-100px"></div>
+<div class="glow glow-blue" style="width:450px;height:450px;bottom:-150px;left:-100px"></div>
+<div class="container">
+<h2 class="title anim">Вопросы</h2>
+<div class="faq">
+<div class="faq__i anim"><div class="faq__q">Как заказать монтаж?</div><div class="faq__a"><p>Нажмите кнопку <a href="#/home/order-cta" style="color:#fff;text-decoration:underline">«Заказать монтаж»</a> на этой странице, заполните короткую анкету — я свяжусь с вами, обсудим детали, сроки и стоимость. Или напишите напрямую в <a href="https://t.me/ModerationNikitosich" rel="noopener" style="color:#fff;text-decoration:underline" target="_blank">Telegram</a>.</p></div></div>
+<div class="faq__i anim d1"><div class="faq__q">Сколько стоит монтаж?</div><div class="faq__a"><p>Стоимость индивидуальна — точную цену можно назвать только после осмотра материала.</p></div></div>
+<div class="faq__i anim d2"><div class="faq__q">Сколько времени занимает монтаж?</div><div class="faq__a"><p>Сроки индивидуальны для каждого проекта. Точное время — после оценки материала.</p></div></div>
+<div class="faq__i anim d3"><div class="faq__q">Нужно ли платить за правки?</div><div class="faq__a"><p>Незначительные корректировки выполняем бесплатно. Сложные правки — за отдельную плату.</p></div></div>
+<div class="faq__i anim d4"><div class="faq__q">Как оплачивается монтаж?</div><div class="faq__a"><p>Для новых клиентов — предоплата 50%, оставшиеся 50% после завершения.</p></div></div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="glow glow-blue" style="width:500px;height:500px;top:-150px;left:-150px"></div>
+<div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-150px"></div>
+<div class="container">
+<div class="footer__stars"><span></span><span></span><span></span><span></span><span></span></div>
+<h2 class="footer__title">Свяжитесь со мной, чтобы получить <span class="a">консультацию</span></h2>
+<button class="order-btn order-btn--lg" id="home-orderBtnFooter" style="margin:0 auto 30px;display:flex" type="button">
+<svg viewbox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
         Заказать монтаж
       </button>
-      <a href="mailto:nik.andrianov.11@mail.ru" class="footer__email">nik.andrianov.11@mail.ru</a>
-      <div class="footer__links">
-        <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="footer__social" aria-label="Telegram">
-          <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/channel/UC7IOeRq6r-kJLE_56_FwA5g" target="_blank" rel="noopener" class="footer__social" aria-label="YouTube">
-          <svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1-1.8-2-2C19.6 3.7 12 3.7 12 3.7s-7.6 0-9.5.5c-1 .3-1.8 1-2 2C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1 1.8 2 2 1.9.5 9.5.5 9.5.5s7.6 0 9.5-.5c1-.3 1.8-1 2-2 .5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
-        </a>
-      </div>
-      <p class="footer__copy">© Nikitosich, <span id="home-year">2026</span></p>
-    </div>
-  </footer>
-
+<a class="footer__email" href="mailto:nik.andrianov.11@mail.ru">nik.andrianov.11@mail.ru</a>
+<div class="footer__links">
+<a aria-label="Telegram" class="footer__social" href="https://t.me/ModerationNikitosich" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg>
+</a>
+<a aria-label="YouTube" class="footer__social" href="https://www.youtube.com/channel/UC7IOeRq6r-kJLE_56_FwA5g" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1-1.8-2-2C19.6 3.7 12 3.7 12 3.7s-7.6 0-9.5.5c-1 .3-1.8 1-2 2C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1 1.8 2 2 1.9.5 9.5.5 9.5.5s7.6 0 9.5-.5c1-.3 1.8-1 2-2 .5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"></path></svg>
+</a>
 </div>
-
+<p class="footer__copy">© Nikitosich, <span id="home-year">2026</span></p>
+</div>
+</footer>
+</div>
 <div id="home-teamView" style="display:none">
-  <section class="team">
-    <button class="back-btn" id="home-backBtn"><span>←</span><span>Вернуться на сайт</span></button>
-
-    <div class="team-page">
-      <div class="team-hero">
-        <h1>Команда Nikitosich</h1>
-        <p>Мы — команда монтажёров, которая превращает сырой материал в кино. Связывайтесь с любым из нас напрямую.</p>
-      </div>
-
-      <div class="main-wrap">
-        <h2 class="tbt gold">👑 Главный <span>монтажёр</span></h2>
-        <p class="tbs">По всем вопросам обращайтесь к нему</p>
-
-        <article class="main-card">
-          <div class="main-photo">
-            <img src="img/images/nikita.jpg" alt="Никита Андрианов" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentNode.classList.add('no')">
-          </div>
-          <div class="main-info">
-            <div class="badge">👑 Главный монтажёр</div>
-            <div class="main-role">Руководитель команды</div>
-            <h3 class="main-name">Никита Андрианов</h3>
-            <p class="main-desc"><strong>Никита Андрианов</strong> — по всем вопросам к нему. Отвечает за координацию команды, приём заказов и контроль качества.</p>
-            <div class="btns main">
-              <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="#/portfolio" class="btn btn-portfolio-team">Портфолио</a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <h2 class="tbt purple">Наши лучшие <span>монтажёры</span></h2>
-      <p class="tbs">Скоро здесь появятся новые участники</p>
-
-      <div class="grid">
-        <article class="card">
-          <div class="card-photo"><div class="ph">01</div></div>
-          <div class="card-info">
-            <div class="card-role">Монтажёр</div>
-            <div class="card-name">Имя Фамилия</div>
-            <p class="card-desc">Краткое описание монтажёра.</p>
-            <div class="btns">
-              <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="#/team-portfolio/editor-0" class="btn btn-portfolio-team">Портфолио</a>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-photo"><div class="ph">02</div></div>
-          <div class="card-info">
-            <div class="card-role">Монтажёр</div>
-            <div class="card-name">Имя Фамилия</div>
-            <p class="card-desc">Краткое описание монтажёра.</p>
-            <div class="btns">
-              <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="#/team-portfolio/editor-1" class="btn btn-portfolio-team">Портфолио</a>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-photo"><div class="ph">03</div></div>
-          <div class="card-info">
-            <div class="card-role">Монтажёр</div>
-            <div class="card-name">Имя Фамилия</div>
-            <p class="card-desc">Краткое описание монтажёра.</p>
-            <div class="btns">
-              <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="#/team-portfolio/editor-2" class="btn btn-portfolio-team">Портфолио</a>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-photo"><div class="ph">04</div></div>
-          <div class="card-info">
-            <div class="card-role">Монтажёр</div>
-            <div class="card-name">Имя Фамилия</div>
-            <p class="card-desc">Краткое описание монтажёра.</p>
-            <div class="btns">
-              <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-contact">Связаться</a>
-              <a href="#/team-portfolio/editor-3" class="btn btn-portfolio-team">Портфолио</a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="team-cta">
-        <h3>Хочешь работать с нами?</h3>
-        <p>Посмотри работы команды или присоединяйся к нам</p>
-        <div class="team-cta-btns">
-          <a href="#/team-portfolio" class="cta-btn cta-btn--gold">Портфолио команды</a>
-          <a href="#/join" rel="noopener" class="cta-btn cta-btn--purple">Вступить в команду</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
+<section class="team">
+<button class="back-btn" id="home-backBtn"><span>←</span><span>Вернуться на сайт</span></button>
+<div class="team-page">
+<div class="team-hero">
+<h1>Команда Nikitosich</h1>
+<p>Мы — команда монтажёров, которая превращает сырой материал в кино. Связывайтесь с любым из нас напрямую.</p>
 </div>
-
-<button class="to-top" id="home-toTop" type="button" aria-label="Вернуться наверх" title="Наверх">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+<div class="main-wrap">
+<h2 class="tbt gold">👑 Главный <span>монтажёр</span></h2>
+<p class="tbs">По всем вопросам обращайтесь к нему</p>
+<article class="main-card">
+<div class="main-photo">
+<img alt="Никита Андрианов" decoding="async" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('no')" src="img/images/nikita.jpg"/>
+</div>
+<div class="main-info">
+<div class="badge">👑 Главный монтажёр</div>
+<div class="main-role">Руководитель команды</div>
+<h3 class="main-name">Никита Андрианов</h3>
+<p class="main-desc"><strong>Никита Андрианов</strong> — по всем вопросам к нему. Отвечает за координацию команды, приём заказов и контроль качества.</p>
+<div class="btns main">
+<a class="btn btn-contact" href="https://t.me/ModerationNikitosich" rel="noopener" target="_blank">Связаться</a>
+<a class="btn btn-portfolio-team" href="#/portfolio">Портфолио</a>
+</div>
+</div>
+</article>
+</div>
+<h2 class="tbt purple">Наши лучшие <span>монтажёры</span></h2>
+<p class="tbs">Скоро здесь появятся новые участники</p>
+<div class="grid">
+<article class="card">
+<div class="card-photo"><div class="ph">01</div></div>
+<div class="card-info">
+<div class="card-role">Монтажёр</div>
+<div class="card-name">Фамилия Имя</div>
+<p class="card-desc">Скоро..</p>
+<div class="btns">
+<a class="btn btn-contact" href="https://t.me/username" rel="noopener" target="_blank">Связаться</a>
+<a class="btn btn-portfolio-team" href="#/team-portfolio/editor-0">Портфолио</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo"><div class="ph">02</div></div>
+<div class="card-info">
+<div class="card-role">Монтажёр</div>
+<div class="card-name">Фамилия Имя</div>
+<p class="card-desc">Скоро..</p>
+<div class="btns">
+<a class="btn btn-contact" href="https://t.me/username" rel="noopener" target="_blank">Связаться</a>
+<a class="btn btn-portfolio-team" href="#/team-portfolio/editor-1">Портфолио</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo"><div class="ph">03</div></div>
+<div class="card-info">
+<div class="card-role">Монтажёр</div>
+<div class="card-name">Фамилия Имя</div>
+<p class="card-desc">Скоро..</p>
+<div class="btns">
+<a class="btn btn-contact" href="https://t.me/username" rel="noopener" target="_blank">Связаться</a>
+<a class="btn btn-portfolio-team" href="#/team-portfolio/editor-2">Портфолио</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo"><div class="ph">04</div></div>
+<div class="card-info">
+<div class="card-role">Монтажёр</div>
+<div class="card-name">Фамилия Имя</div>
+<p class="card-desc">Скоро..</p>
+<div class="btns">
+<a class="btn btn-contact" href="https://t.me/username" rel="noopener" target="_blank">Связаться</a>
+<a class="btn btn-portfolio-team" href="#/team-portfolio/editor-3">Портфолио</a>
+</div>
+</div>
+</article>
+</div>
+<div class="team-cta">
+<h3>Хочешь работать с нами?</h3>
+<p>Посмотри работы команды или присоединяйся к нам</p>
+<div class="team-cta-btns">
+<a class="cta-btn cta-btn--gold" href="#/team-portfolio">Портфолио команды</a>
+<a class="cta-btn cta-btn--purple" href="#/join" rel="noopener">Вступить в команду</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<button aria-label="Вернуться наверх" class="to-top" id="home-toTop" title="Наверх" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
 </button>
-
 <div class="modal" id="home-modal">
-  <div class="modal__ov" data-close></div>
-  <div class="modal__c">
-    <button class="modal__close" data-close aria-label="Закрыть">×</button>
-    <p class="modal__t" id="home-modalT"></p>
-    <p class="modal__x" id="home-modalX"></p>
-  </div>
+<div class="modal__ov" data-close=""></div>
+<div class="modal__c">
+<button aria-label="Закрыть" class="modal__close" data-close="">×</button>
+<p class="modal__t" id="home-modalT"></p>
+<p class="modal__x" id="home-modalX"></p>
 </div>
-
+</div>
 <div class="formmodal" id="home-formmodal">
-  <div class="formmodal__box">
-    <button class="formmodal__close" id="home-fclose" aria-label="Закрыть">×</button>
-    <h2 class="formmodal__title">Заказать монтаж</h2>
-    <p class="formmodal__subtitle">Заполните анкету — я свяжусь с вами, чтобы обсудить детали.</p>
-
-    <form class="order-form" id="home-orderForm">
-      <div class="field">
-        <label for="home-vtype">Какое видео нужно <span class="req">*</span></label>
-        <select id="home-vtype" name="Какое видео" required>
-          <option value="">Выберите тип</option>
-          <option value="Игровое видео">Игровое видео</option>
-          <option value="Подкаст">Подкаст</option>
-          <option value="Reels">Reels</option>
-          <option value="Другое">Другое</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="home-budget">Бюджет <span class="req">*</span></label>
-        <input type="text" id="home-budget" name="Бюджет" placeholder="Сколько вы готовы заплатить" required>
-      </div>
-
-      <div class="field">
-        <label for="home-files">Ссылка на файлы <span class="req">*</span></label>
-        <input type="url" id="home-files" name="Ссылка на файлы" placeholder="Google Drive, Яндекс.Диск или другое" required>
-      </div>
-
-      <div class="field">
-        <label for="home-contact">Как с вами связаться <span class="req">*</span></label>
-        <input type="text" id="home-contact" name="Связь" placeholder="ВК или Telegram" required>
-      </div>
-
-      <div class="field">
-        <label for="home-note">Примечание к работе</label>
-        <textarea id="home-note" name="Примечание" rows="4" placeholder="Пожелания, сроки, ссылки на примеры..."></textarea>
-      </div>
-
-      <button type="submit" class="order-submit" id="home-orderSubmit">Отправить заявку</button>
-      <p class="order-status" id="home-orderStatus" role="status"></p>
-
-      <div class="order-divider"><span>или</span></div>
-      <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="order-tg">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+<div class="formmodal__box">
+<button aria-label="Закрыть" class="formmodal__close" id="home-fclose">×</button>
+<h2 class="formmodal__title">Заказать монтаж</h2>
+<p class="formmodal__subtitle">Заполните анкету — я свяжусь с вами, чтобы обсудить детали.</p>
+<form class="order-form" id="home-orderForm">
+<div class="field">
+<label for="home-vtype">Какое видео нужно <span class="req">*</span></label>
+<select id="home-vtype" name="Какое видео" required="">
+<option value="">Выберите тип</option>
+<option value="Игровое видео">Игровое видео</option>
+<option value="Подкаст">Подкаст</option>
+<option value="Reels">Reels</option>
+<option value="Другое">Другое</option>
+</select>
+</div>
+<div class="field">
+<label for="home-budget">Бюджет <span class="req">*</span></label>
+<input id="home-budget" name="Бюджет" placeholder="Сколько вы готовы заплатить" required="" type="text"/>
+</div>
+<div class="field">
+<label for="home-files">Ссылка на файлы <span class="req">*</span></label>
+<input id="home-files" name="Ссылка на файлы" placeholder="Google Drive, Яндекс.Диск или другое" required="" type="url"/>
+</div>
+<div class="field">
+<label for="home-contact">Как с вами связаться <span class="req">*</span></label>
+<input id="home-contact" name="Связь" placeholder="ВК или Telegram" required="" type="text"/>
+</div>
+<div class="field">
+<label for="home-note">Примечание к работе</label>
+<textarea id="home-note" name="Примечание" placeholder="Пожелания, сроки, ссылки на примеры..." rows="4"></textarea>
+</div>
+<button class="order-submit" id="home-orderSubmit" type="submit">Отправить заявку</button>
+<p class="order-status" id="home-orderStatus" role="status"></p>
+<div class="order-divider"><span>или</span></div>
+<a class="order-tg" href="https://t.me/ModerationNikitosich" rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg>
         Связаться в Telegram
       </a>
-    </form>
-  </div>
+</form>
 </div>
-
-
 </div>
-<div id="view-portfolio" class="app-view" hidden>
-
+</div>
+<div class="app-view" hidden="" id="view-portfolio">
 <!-- ================= NAV ================= -->
 <nav class="pnav">
-  <div class="container pnav__in">
-    <a href="#/home" class="pnav__back" id="portfolio-backBtn">
-      <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+<div class="container pnav__in">
+<a class="pnav__back" href="#/home" id="portfolio-backBtn">
+<svg viewbox="0 0 24 24"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
       Вернуться назад
     </a>
-    <div class="pnav__right">
-      <span class="pnav__logo">Nikitosich • Портфолио</span>
-      <button class="order-btn order-btn--sm" id="portfolio-orderBtnNav" type="button">
-        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+<div class="pnav__right">
+<span class="pnav__logo">Nikitosich • Портфолио</span>
+<button class="order-btn order-btn--sm" id="portfolio-orderBtnNav" type="button">
+<svg viewbox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
         Заказать монтаж
       </button>
-    </div>
-  </div>
+</div>
+</div>
 </nav>
-
 <!-- ================= HERO ================= -->
 <header class="phero">
-  <div class="container">
-    <h1>Моё портфолио</h1>
-    <p>Здесь мои любимые работы и примеры моушен-дизайна. Кликни по карточке — видео откроется прямо на странице.</p>
-    <div class="phero__stats">
-      <div class="pstat"><b>50+</b><span>проектов</span></div>
-      <div class="pstat"><b>1 год</b><span>опыта</span></div>
-      <div class="pstat"><b>100%</b><span>довольных клиентов</span></div>
-    </div>
-    <div class="phero__cta">
-      <button class="order-btn order-btn--lg" id="portfolio-orderBtnHero" type="button">
-        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+<div class="container">
+<h1>Моё портфолио</h1>
+<p>Здесь мои любимые работы и примеры моушен-дизайна. Кликни по карточке — видео откроется прямо на странице.</p>
+<div class="phero__stats">
+<div class="pstat"><b>50+</b><span>проектов</span></div>
+<div class="pstat"><b>1 год</b><span>опыта</span></div>
+<div class="pstat"><b>100%</b><span>довольных клиентов</span></div>
+</div>
+<div class="phero__cta">
+<button class="order-btn order-btn--lg" id="portfolio-orderBtnHero" type="button">
+<svg viewbox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
         Заказать монтаж
       </button>
-    </div>
-  </div>
+</div>
+</div>
 </header>
-
 <!-- ================= MAIN ================= -->
 <main>
+<p class="first-frame-message">MP4 — начальный кадр ролика. YouTube — обложка видео. Нажми на работу, чтобы открыть плеер.</p><div aria-label="Фильтр работ" class="portfolio-filters container" role="group"><button aria-pressed="true" data-filter="all">Все работы</button><button aria-pressed="false" data-filter="favorite">YouTube</button><button aria-pressed="false" data-filter="motion">Motion</button></div><section class="section" id="portfolio-favorite">
+<div class="container">
+<div class="section__head">
+<h2>❤️ Любимое видео</h2>
+<span>Работа, которой я особенно горжусь</span>
+</div>
+<div class="vgrid vgrid--single" data-grid="favorite"></div>
+</div>
+</section>
+<section class="section" id="portfolio-motion">
+<div class="container">
+<div class="section__head">
+<h2>✨ Моушен-дизайн</h2>
+<span>Анимация, эффекты и графика</span>
+</div>
 
-  <p class="first-frame-message">MP4 — начальный кадр ролика. YouTube — обложка видео. Нажми на работу, чтобы открыть плеер.</p><div class="portfolio-filters container" role="group" aria-label="Фильтр работ"><button data-filter="all" aria-pressed="true">Все работы</button><button data-filter="favorite" aria-pressed="false">YouTube</button><button data-filter="motion" aria-pressed="false">Motion</button></div><section class="section" id="portfolio-favorite">
-    <div class="container">
-      <div class="section__head">
-        <h2>❤️ Любимое видео</h2>
-        <span>Работа, которой я особенно горжусь</span>
-      </div>
-      <div class="vgrid vgrid--single" data-grid="favorite"></div>
-    </div>
-  </section>
-
-  <section class="section" id="portfolio-motion">
-    <div class="container">
-      <div class="section__head">
-        <h2>✨ Моушен-дизайн</h2>
-        <span>Анимация, эффекты и графика</span>
-      </div>
-
-      <div class="discount-note">
-        <div class="discount-note__icon">💰</div>
-        <div>
-          <b>При заказе длинного ролика цена ниже!</b>
-          Чем больше хронометраж — тем выгоднее стоимость минуты.
-          Свяжитесь со мной, чтобы обсудить индивидуальную цену под ваш проект.
-        </div>
-      </div>
-
-      <div class="vgrid vgrid--motion" data-grid="motion"></div>
-    </div>
-  </section>
-
-  <section class="section" id="portfolio-order-cta">
-    <div class="container">
-      <div class="cta-block">
-        <h2>Готовы заказать монтаж?</h2>
-        <p>Заполните короткую анкету — я свяжусь с вами в ближайшее время, обсудим детали и стоимость.</p>
-        <button class="order-btn order-btn--lg" id="portfolio-orderBtnCta" type="button">
-          <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+<div class="vgrid vgrid--motion" data-grid="motion"></div>
+</div>
+</section>
+<section class="section" id="portfolio-order-cta">
+<div class="container">
+<div class="cta-block">
+<h2>Готовы заказать монтаж?</h2>
+<p>Заполните короткую анкету — я свяжусь с вами в ближайшее время, обсудим детали и стоимость.</p>
+<button class="order-btn order-btn--lg" id="portfolio-orderBtnCta" type="button">
+<svg viewbox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
           Заказать монтаж
         </button>
-      </div>
-    </div>
-  </section>
-
+</div>
+</div>
+</section>
 </main>
-
 <!-- ================= FOOTER ================= -->
 <footer class="pfoot">
-  <div class="container">
-    <h2>Хочешь заказать монтаж или моушен?</h2>
-    <button class="order-btn order-btn--lg" id="portfolio-orderBtnFooter" type="button">
-      <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+<div class="container">
+<h2>Хочешь заказать монтаж или моушен?</h2>
+<button class="order-btn order-btn--lg" id="portfolio-orderBtnFooter" type="button">
+<svg viewbox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
       Заказать монтаж
     </button>
-    <br>
-    <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="mail">Или напишите в Telegram →</a>
-    <p class="pfoot__copy">© Nikitosich, <span id="portfolio-year"></span></p>
-  </div>
+<br/>
+<a class="mail" href="https://t.me/ModerationNikitosich" rel="noopener" target="_blank">Или напишите в Telegram →</a>
+<p class="pfoot__copy">© Nikitosich, <span id="portfolio-year"></span></p>
+</div>
 </footer>
-
 <!-- ================= VIDEO MODAL ================= -->
 <div class="vmodal" id="portfolio-vmodal">
-  <div class="vmodal__box">
-    <button class="vmodal__close" id="portfolio-vclose" aria-label="Закрыть">×</button>
-    <div id="portfolio-vframe"></div>
-  </div>
+<div class="vmodal__box">
+<button aria-label="Закрыть" class="vmodal__close" id="portfolio-vclose">×</button>
+<div id="portfolio-vframe"></div>
 </div>
-
+</div>
 <!-- ================= ORDER FORM MODAL ================= -->
 <div class="formmodal" id="portfolio-formmodal">
-  <div class="formmodal__box">
-    <button class="formmodal__close" id="portfolio-fclose" aria-label="Закрыть">×</button>
-    <h2 class="formmodal__title">Заказать монтаж</h2>
-    <p class="formmodal__subtitle">Заполните анкету — я свяжусь с вами, чтобы обсудить детали.</p>
-
-    <form class="order-form" id="portfolio-orderForm">
-      <div class="field">
-        <label for="portfolio-vtype">Какое видео нужно <span class="req">*</span></label>
-        <select id="portfolio-vtype" name="Какое видео" required>
-          <option value="">Выберите тип</option>
-          <option value="Игровое видео">Игровое видео</option>
-          <option value="Подкаст">Подкаст</option>
-          <option value="Reels">Reels</option>
-          <option value="Другое">Другое</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="portfolio-budget">Бюджет <span class="req">*</span></label>
-        <input type="text" id="portfolio-budget" name="Бюджет" placeholder="Сколько вы готовы заплатить" required>
-      </div>
-
-      <div class="field">
-        <label for="portfolio-files">Ссылка на файлы <span class="req">*</span></label>
-        <input type="url" id="portfolio-files" name="Ссылка на файлы" placeholder="Google Drive, Яндекс.Диск или другое" required>
-      </div>
-
-      <div class="field">
-        <label for="portfolio-contact">Как с вами связаться <span class="req">*</span></label>
-        <input type="text" id="portfolio-contact" name="Связь" placeholder="ВК или Telegram" required>
-      </div>
-
-      <div class="field">
-        <label for="portfolio-note">Примечание к работе</label>
-        <textarea id="portfolio-note" name="Примечание" rows="4" placeholder="Пожелания, сроки, ссылки на примеры..."></textarea>
-      </div>
-
-      <button type="submit" class="order-submit" id="portfolio-orderSubmit">Отправить заявку</button>
-      <p class="order-status" id="portfolio-orderStatus" role="status"></p>
-
-      <div class="order-divider"><span>или</span></div>
-      <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="order-tg">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+<div class="formmodal__box">
+<button aria-label="Закрыть" class="formmodal__close" id="portfolio-fclose">×</button>
+<h2 class="formmodal__title">Заказать монтаж</h2>
+<p class="formmodal__subtitle">Заполните анкету — я свяжусь с вами, чтобы обсудить детали.</p>
+<form class="order-form" id="portfolio-orderForm">
+<div class="field">
+<label for="portfolio-vtype">Какое видео нужно <span class="req">*</span></label>
+<select id="portfolio-vtype" name="Какое видео" required="">
+<option value="">Выберите тип</option>
+<option value="Игровое видео">Игровое видео</option>
+<option value="Подкаст">Подкаст</option>
+<option value="Reels">Reels</option>
+<option value="Другое">Другое</option>
+</select>
+</div>
+<div class="field">
+<label for="portfolio-budget">Бюджет <span class="req">*</span></label>
+<input id="portfolio-budget" name="Бюджет" placeholder="Сколько вы готовы заплатить" required="" type="text"/>
+</div>
+<div class="field">
+<label for="portfolio-files">Ссылка на файлы <span class="req">*</span></label>
+<input id="portfolio-files" name="Ссылка на файлы" placeholder="Google Drive, Яндекс.Диск или другое" required="" type="url"/>
+</div>
+<div class="field">
+<label for="portfolio-contact">Как с вами связаться <span class="req">*</span></label>
+<input id="portfolio-contact" name="Связь" placeholder="ВК или Telegram" required="" type="text"/>
+</div>
+<div class="field">
+<label for="portfolio-note">Примечание к работе</label>
+<textarea id="portfolio-note" name="Примечание" placeholder="Пожелания, сроки, ссылки на примеры..." rows="4"></textarea>
+</div>
+<button class="order-submit" id="portfolio-orderSubmit" type="submit">Отправить заявку</button>
+<p class="order-status" id="portfolio-orderStatus" role="status"></p>
+<div class="order-divider"><span>или</span></div>
+<a class="order-tg" href="https://t.me/ModerationNikitosich" rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg>
         Связаться в Telegram
       </a>
-    </form>
-  </div>
+</form>
 </div>
-
+</div>
 <!-- ================= TO-TOP ================= -->
-<button class="to-top" id="portfolio-toTop" type="button" aria-label="Вернуться наверх" title="Наверх">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 19V5"/>
-    <path d="M5 12l7-7 7 7"/>
-  </svg>
+<button aria-label="Вернуться наверх" class="to-top" id="portfolio-toTop" title="Наверх" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 19V5"></path>
+<path d="M5 12l7-7 7 7"></path>
+</svg>
 </button>
-
-
 </div>
-<div id="view-join" class="app-view" hidden>
-
-<a href="#/home" class="back"><span>←</span><span>На главную</span></a>
-
+<div class="app-view" hidden="" id="view-join">
+<a class="back" href="#/home"><span>←</span><span>На главную</span></a>
 <div class="container">
-  <h1 class="title">Вступить в команду</h1>
-  <p class="subtitle">Заполни анкету — мы свяжемся с тобой и обсудим детали. В вопросах с выбором можно отметить <b>несколько вариантов</b>.</p>
-
-  <div class="join-progress"><span id="joinProgressText">Анкета · 0%</span><div><i id="joinProgressBar"></i></div></div><div class="form-box">
-    <form id="join-joinForm">
-
-      <!-- 1 -->
-      <div class="q">
-        <label class="q-label" for="join-name">Как вас зовут? Достаточно имени. <span class="req">*</span></label>
-        <input type="text" id="join-name" name="Имя" placeholder="Мой ответ" required>
-      </div>
-
-      <!-- 2 -->
-      <div class="q">
-        <label class="q-label" for="join-age">Сколько вам лет? (Только честно) <span class="req">*</span></label>
-        <input type="number" id="join-age" name="Возраст" placeholder="Мой ответ" min="10" max="99" required>
-      </div>
-
-      <!-- 3 -->
-      <div class="q">
-        <label class="q-label" for="join-experience">Какой у вас опыт работы? <span class="req">*</span></label>
-        <input type="text" id="join-experience" name="Опыт работы" placeholder="Мой ответ" required>
-      </div>
-
-      <!-- 4 -->
-      <div class="q">
-        <label class="q-label">В каких программах вы работаете? <span class="req">*</span>
-          <span class="hint">Можно выбрать несколько</span>
-        </label>
-        <div class="check-group">
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="Premiere Pro"><span>Premiere Pro</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="After Effects"><span>After Effects</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="Photoshop"><span>Photoshop</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="Adobe Audition"><span>Adobe Audition</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="Blender"><span>Blender</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="Cinema 4D"><span>Cinema 4D</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="DaVinci Resolve"><span>DaVinci Resolve</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="Vegas Pro"><span>Vegas Pro</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="Cap Cut"><span>Cap Cut</span></label>
-          <label class="check-item"><input type="checkbox" name="Программы[]" value="Монтирую на телефоне"><span>Монтирую на телефоне</span></label>
-          <label class="check-item">
-            <input type="checkbox" name="Программы[]" value="Другое" id="join-progOther">
-            <span>Другое:</span>
-            <input type="text" class="other-input" name="Программы_другое" placeholder="Укажите..." oninput="document.getElementById('join-progOther').checked=this.value.length>0">
-          </label>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="q">
-        <label class="q-label">С какой версией Adobe вы работаете? <span class="req">*</span>
-          <span class="hint">Можно выбрать несколько</span>
-        </label>
-        <div class="check-group">
-          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2026"><span>2026</span></label>
-          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2025"><span>2025</span></label>
-          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2024"><span>2024</span></label>
-          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2023"><span>2023</span></label>
-          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2022"><span>2022</span></label>
-          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="2021 и ниже"><span>2021 и ниже</span></label>
-          <label class="check-item"><input type="checkbox" name="Версия Adobe[]" value="Не работаю в Adobe"><span>Не работаю в Adobe</span></label>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="q">
-        <label class="q-label" for="join-plugins">Какими плагинами для монтажа вы пользуетесь? (Хотя бы основные)</label>
-        <input type="text" id="join-plugins" name="Плагины" placeholder="Мой ответ">
-      </div>
-
-      <!-- 7 -->
-      <div class="q">
-        <label class="q-label">Какие видео монтируете? (С какими работали больше всего) <span class="req">*</span>
-          <span class="hint">Можно выбрать несколько</span>
-        </label>
-        <div class="check-group">
-          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Shorts/Reels"><span>Shorts/Reels</span></label>
-          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Подкасты"><span>Подкасты</span></label>
-          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Динамичный/мемный"><span>Динамичный/мемный</span></label>
-          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Кинематографичный"><span>Кинематографичный</span></label>
-          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Классический монтаж"><span>Классический монтаж (Простые Влоги и т.п.)</span></label>
-          <label class="check-item"><input type="checkbox" name="Тип видео[]" value="Динамичный СДВГ"><span>Динамичный "СДВГ"</span></label>
-          <label class="check-item">
-            <input type="checkbox" name="Тип видео[]" value="Другое" id="join-videoOther">
-            <span>Другое:</span>
-            <input type="text" class="other-input" name="Тип видео_другое" placeholder="Укажите..." oninput="document.getElementById('join-videoOther').checked=this.value.length>0">
-          </label>
-        </div>
-      </div>
-
-      <!-- 8 -->
-      <div class="q">
-        <label class="q-label" for="join-portfolio">Есть ли портфолио? Прикрепите ссылку на него. <span class="req">*</span></label>
-        <input type="text" id="join-portfolio" name="Портфолио" placeholder="Мой ответ" required>
-      </div>
-
-      <!-- 9 -->
-      <div class="q">
-        <label class="q-label" for="join-currentJob">Где сейчас работаете? (чем занимаетесь в плане монтажа) <span class="req">*</span></label>
-        <input type="text" id="join-currentJob" name="Текущая работа" placeholder="Мой ответ" required>
-      </div>
-
-      <!-- 10 -->
-      <div class="q">
-        <label class="q-label" for="join-hardest">Что для вас самое сложное в процессе монтажа? <span class="req">*</span></label>
-        <input type="text" id="join-hardest" name="Самое сложное" placeholder="Мой ответ" required>
-      </div>
-
-      <!-- 11 -->
-      <div class="q">
-        <label class="q-label" for="join-deadlines">Делаете ли работу в сроки? (Часто ли не укладываетесь в дедлайны) <span class="req">*</span></label>
-        <input type="text" id="join-deadlines" name="Сроки" placeholder="Мой ответ" required>
-      </div>
-
-      <!-- 12 -->
-      <div class="q">
-        <label class="q-label" for="join-contact">Укажите, как с вами связаться. (VK/TG) <span class="req">*</span></label>
-        <input type="text" id="join-contact" name="Контакт" placeholder="Мой ответ" required>
-      </div>
-
-      <button type="submit" class="submit-btn" id="join-submitBtn">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+<h1 class="title">Вступить в команду</h1>
+<p class="subtitle">Заполни анкету — мы свяжемся с тобой и обсудим детали. В вопросах с выбором можно отметить <b>несколько вариантов</b>.</p>
+<div class="join-progress"><span id="joinProgressText">Анкета · 0%</span><div><i id="joinProgressBar"></i></div></div><div class="form-box">
+<form id="join-joinForm">
+<!-- 1 -->
+<div class="q">
+<label class="q-label" for="join-name">Как вас зовут? Достаточно имени. <span class="req">*</span></label>
+<input id="join-name" name="Имя" placeholder="Мой ответ" required="" type="text"/>
+</div>
+<!-- 2 -->
+<div class="q">
+<label class="q-label" for="join-age">Сколько вам лет? (Только честно) <span class="req">*</span></label>
+<input id="join-age" max="99" min="10" name="Возраст" placeholder="Мой ответ" required="" type="number"/>
+</div>
+<!-- 3 -->
+<div class="q">
+<label class="q-label" for="join-experience">Какой у вас опыт работы? <span class="req">*</span></label>
+<input id="join-experience" name="Опыт работы" placeholder="Мой ответ" required="" type="text"/>
+</div>
+<!-- 4 -->
+<div class="q">
+<label class="q-label">В каких программах вы работаете? <span class="req">*</span>
+<span class="hint">Можно выбрать несколько</span>
+</label>
+<div class="check-group">
+<label class="check-item"><input name="Программы[]" type="checkbox" value="Premiere Pro"/><span>Premiere Pro</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="After Effects"/><span>After Effects</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="Photoshop"/><span>Photoshop</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="Adobe Audition"/><span>Adobe Audition</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="Blender"/><span>Blender</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="Cinema 4D"/><span>Cinema 4D</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="DaVinci Resolve"/><span>DaVinci Resolve</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="Vegas Pro"/><span>Vegas Pro</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="Cap Cut"/><span>Cap Cut</span></label>
+<label class="check-item"><input name="Программы[]" type="checkbox" value="Монтирую на телефоне"/><span>Монтирую на телефоне</span></label>
+<label class="check-item">
+<input id="join-progOther" name="Программы[]" type="checkbox" value="Другое"/>
+<span>Другое:</span>
+<input class="other-input" name="Программы_другое" oninput="document.getElementById('join-progOther').checked=this.value.length&gt;0" placeholder="Укажите..." type="text"/>
+</label>
+</div>
+</div>
+<!-- 5 -->
+<div class="q">
+<label class="q-label">С какой версией Adobe вы работаете? <span class="req">*</span>
+<span class="hint">Можно выбрать несколько</span>
+</label>
+<div class="check-group">
+<label class="check-item"><input name="Версия Adobe[]" type="checkbox" value="2026"/><span>2026</span></label>
+<label class="check-item"><input name="Версия Adobe[]" type="checkbox" value="2025"/><span>2025</span></label>
+<label class="check-item"><input name="Версия Adobe[]" type="checkbox" value="2024"/><span>2024</span></label>
+<label class="check-item"><input name="Версия Adobe[]" type="checkbox" value="2023"/><span>2023</span></label>
+<label class="check-item"><input name="Версия Adobe[]" type="checkbox" value="2022"/><span>2022</span></label>
+<label class="check-item"><input name="Версия Adobe[]" type="checkbox" value="2021 и ниже"/><span>2021 и ниже</span></label>
+<label class="check-item"><input name="Версия Adobe[]" type="checkbox" value="Не работаю в Adobe"/><span>Не работаю в Adobe</span></label>
+</div>
+</div>
+<!-- 6 -->
+<div class="q">
+<label class="q-label" for="join-plugins">Какими плагинами для монтажа вы пользуетесь? (Хотя бы основные)</label>
+<input id="join-plugins" name="Плагины" placeholder="Мой ответ" type="text"/>
+</div>
+<!-- 7 -->
+<div class="q">
+<label class="q-label">Какие видео монтируете? (С какими работали больше всего) <span class="req">*</span>
+<span class="hint">Можно выбрать несколько</span>
+</label>
+<div class="check-group">
+<label class="check-item"><input name="Тип видео[]" type="checkbox" value="Shorts/Reels"/><span>Shorts/Reels</span></label>
+<label class="check-item"><input name="Тип видео[]" type="checkbox" value="Подкасты"/><span>Подкасты</span></label>
+<label class="check-item"><input name="Тип видео[]" type="checkbox" value="Динамичный/мемный"/><span>Динамичный/мемный</span></label>
+<label class="check-item"><input name="Тип видео[]" type="checkbox" value="Кинематографичный"/><span>Кинематографичный</span></label>
+<label class="check-item"><input name="Тип видео[]" type="checkbox" value="Классический монтаж"/><span>Классический монтаж (Простые Влоги и т.п.)</span></label>
+<label class="check-item"><input name="Тип видео[]" type="checkbox" value="Динамичный СДВГ"/><span>Динамичный "СДВГ"</span></label>
+<label class="check-item">
+<input id="join-videoOther" name="Тип видео[]" type="checkbox" value="Другое"/>
+<span>Другое:</span>
+<input class="other-input" name="Тип видео_другое" oninput="document.getElementById('join-videoOther').checked=this.value.length&gt;0" placeholder="Укажите..." type="text"/>
+</label>
+</div>
+</div>
+<!-- 8 -->
+<div class="q">
+<label class="q-label" for="join-portfolio">Есть ли портфолио? Прикрепите ссылку на него. <span class="req">*</span></label>
+<input id="join-portfolio" name="Портфолио" placeholder="Мой ответ" required="" type="text"/>
+</div>
+<!-- 9 -->
+<div class="q">
+<label class="q-label" for="join-currentJob">Где сейчас работаете? (чем занимаетесь в плане монтажа) <span class="req">*</span></label>
+<input id="join-currentJob" name="Текущая работа" placeholder="Мой ответ" required="" type="text"/>
+</div>
+<!-- 10 -->
+<div class="q">
+<label class="q-label" for="join-hardest">Что для вас самое сложное в процессе монтажа? <span class="req">*</span></label>
+<input id="join-hardest" name="Самое сложное" placeholder="Мой ответ" required="" type="text"/>
+</div>
+<!-- 11 -->
+<div class="q">
+<label class="q-label" for="join-deadlines">Делаете ли работу в сроки? (Часто ли не укладываетесь в дедлайны) <span class="req">*</span></label>
+<input id="join-deadlines" name="Сроки" placeholder="Мой ответ" required="" type="text"/>
+</div>
+<!-- 12 -->
+<div class="q">
+<label class="q-label" for="join-contact">Укажите, как с вами связаться. (VK/TG) <span class="req">*</span></label>
+<input id="join-contact" name="Контакт" placeholder="Мой ответ" required="" type="text"/>
+</div>
+<button class="submit-btn" id="join-submitBtn" type="submit">
+<svg viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
         Вступить в команду
       </button>
-
-      <div class="form-message" id="join-formMessage" role="status" aria-live="polite"></div>
-    </form>
-  </div>
+<div aria-live="polite" class="form-message" id="join-formMessage" role="status"></div>
+</form>
 </div>
-
-
 </div>
-<div id="view-team-portfolio" class="app-view" hidden>
-
+</div>
+<div class="app-view" hidden="" id="view-team-portfolio">
 <nav class="pnav">
-  <div class="container pnav__in">
-    <a href="#/home" class="pnav__back" id="team-portfolio-backBtn">
-      <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+<div class="container pnav__in">
+<a class="pnav__back" href="#/home" id="team-portfolio-backBtn">
+<svg viewbox="0 0 24 24"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
       Вернуться назад
     </a>
-    <span class="pnav__logo">Nikitosich • Команда</span>
-  </div>
+<span class="pnav__logo">Nikitosich • Команда</span>
+</div>
 </nav>
-
 <header class="phero">
-  <div class="container">
-    <h1>Портфолио команды</h1>
-    <p>Работы монтажёров команды Nikitosich. У каждого — по 2 лучших проекта и прямая связь.</p>
-  </div>
+<div class="container">
+<h1>Портфолио команды</h1>
+<p>Команда растёт. Здесь будут работы наших монтажёров — видео 1 и видео 2.</p>
+</div>
 </header>
-
-<p class="template-note container">Карточки ниже — примеры из исходника. Имена, контакты и работы нужно заменить перед публикацией.</p><main id="team-portfolio-team-list"></main>
-
+<p class="template-note container">Скоро здесь появятся новые участники и их работы.</p><main id="team-portfolio-team-list"></main>
 <section class="container" style="padding-top:20px;padding-bottom:20px">
-  <div class="join-cta">
-    <h3>Хочешь работать с нами?</h3>
-    <p>Присоединяйся к команде Nikitosich — мы всегда ищем талантливых монтажёров.</p>
-    <a href="#/join" class="join-cta__btn">
-      <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-4.42 0-8 2.24-8 5v3h16v-3c0-2.76-3.58-5-8-5z"/></svg>
+<div class="join-cta">
+<h3>Хочешь работать с нами?</h3>
+<p>Присоединяйся к команде Nikitosich — мы всегда ищем талантливых монтажёров.</p>
+<a class="join-cta__btn" href="#/join">
+<svg viewbox="0 0 24 24"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-4.42 0-8 2.24-8 5v3h16v-3c0-2.76-3.58-5-8-5z"></path></svg>
       Вступить в команду
     </a>
-  </div>
+</div>
 </section>
-
 <footer class="pfoot">
-  <div class="container">
-    <a href="https://t.me/ModerationNikitosich" target="_blank" rel="noopener" class="mail">Написать руководителю →</a>
-    <p class="pfoot__copy">© Nikitosich, <span id="team-portfolio-year"></span></p>
-  </div>
+<div class="container">
+<a class="mail" href="https://t.me/ModerationNikitosich" rel="noopener" target="_blank">Написать руководителю →</a>
+<p class="pfoot__copy">© Nikitosich, <span id="team-portfolio-year"></span></p>
+</div>
 </footer>
-
 <div class="vmodal" id="team-portfolio-vmodal">
-  <div class="vmodal__box">
-    <button class="vmodal__close" id="team-portfolio-vclose" aria-label="Закрыть">×</button>
-    <div id="team-portfolio-vframe"></div>
-  </div>
+<div class="vmodal__box">
+<button aria-label="Закрыть" class="vmodal__close" id="team-portfolio-vclose">×</button>
+<div id="team-portfolio-vframe"></div>
 </div>
-
-<button class="to-top" id="team-portfolio-toTop" type="button" aria-label="Вернуться наверх" title="Наверх">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 19V5"/>
-    <path d="M5 12l7-7 7 7"/>
-  </svg>
+</div>
+<button aria-label="Вернуться наверх" class="to-top" id="team-portfolio-toTop" title="Наверх" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 19V5"></path>
+<path d="M5 12l7-7 7 7"></path>
+</svg>
 </button>
-
-
 </div>
-<aside class="mode-control"><button id="modeToggle" type="button" aria-pressed="false" title="Переключить облегчённый режим">◌ <span id="modeLabel">Лёгкий режим</span></button></aside>
-<nav class="quick-nav" aria-label="Быстрая навигация"><a href="#/home" data-nav="home"><span>⌂</span>Главная</a><a href="#/portfolio" data-nav="portfolio"><span>▷</span>Работы</a><a href="#/team" data-nav="team"><span>◎</span>Команда</a><button id="quickOrder" type="button"><span>↗</span>Заказать</button></nav>
-<div id="toast" class="toast" role="status" aria-live="polite"></div><div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+<aside class="mode-control"><button aria-pressed="false" id="modeToggle" title="Переключить облегчённый режим" type="button">◌ <span id="modeLabel">Лёгкий режим</span></button></aside>
+<nav aria-label="Быстрая навигация" class="quick-nav"><a data-nav="home" href="#/home"><span>⌂</span>Главная</a><a data-nav="portfolio" href="#/portfolio"><span>▷</span>Работы</a><a data-nav="team" href="#/team"><span>◎</span>Команда</a><button id="quickOrder" type="button"><span>↗</span>Заказать</button></nav>
+<div aria-live="polite" class="toast" id="toast" role="status"></div><div aria-hidden="true" class="cursor-light" id="cursorLight"></div>
 <script>
 // Public browser form configuration, copied from the original source.
 const CONFIG = { web3formsKey: 'a2d85d28-b59e-462c-8788-556339b31b71', joinEndpoint: 'https://formspree.io/f/mwlpvgzd' };
@@ -2322,46 +2263,46 @@ window.Site = (() => {
   var EDITORS = [
 
     {
-      name: 'Пример участника',
+      name: 'Фамилия Имя',
       desc: '',
       avatar: '',
       telegram: 'https://t.me/username',
       works: [
-        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Работа #1', desc: '', tag: 'Топ' },
-        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Работа #2', desc: '', tag: 'Топ' }
+        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Видео 1', desc: 'Скоро..', tag: '' },
+        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Видео 2', desc: 'Скоро..', tag: '' }
       ]
     },
 
     {
-      name: 'Пример участника',
+      name: 'Фамилия Имя',
       desc: '',
       avatar: '',
       telegram: 'https://t.me/username',
       works: [
-        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Работа #1', desc: '', tag: 'Топ' },
-        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Работа #2', desc: '', tag: 'Топ' }
+        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Видео 1', desc: 'Скоро..', tag: '' },
+        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Видео 2', desc: 'Скоро..', tag: '' }
       ]
     },
 
     {
-      name: 'Пример участника',
+      name: 'Фамилия Имя',
       desc: '',
       avatar: '',
       telegram: 'https://t.me/username',
       works: [
-        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Работа #1', desc: '', tag: 'Топ' },
-        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Работа #2', desc: '', tag: 'Топ' }
+        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Видео 1', desc: 'Скоро..', tag: '' },
+        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Видео 2', desc: 'Скоро..', tag: '' }
       ]
     },
 
     {
-      name: 'Пример участника',
+      name: 'Фамилия Имя',
       desc: '',
       avatar: '',
       telegram: 'https://t.me/username',
       works: [
-        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Работа #1', desc: '', tag: 'Топ' },
-        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Работа #2', desc: '', tag: 'Топ' }
+        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Видео 1', desc: 'Скоро..', tag: '' },
+        { type: 'youtube', id: '2rd3-0kkmhQ', title: 'Видео 2', desc: 'Скоро..', tag: '' }
       ]
     }
 
@@ -2379,7 +2320,7 @@ window.Site = (() => {
     var num = workIdx + 1;
     return '<article class="wcard" data-editor="' + editorIdx + '" data-work="' + workIdx + '">' +
       '<div class="wcard__num">' +
-        '<span class="wcard__num-text">' + num + '</span>' +
+        '<span class="wcard__num-text">Видео ' + num + '</span>' +
         '<div class="wcard__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>' +
       '</div>' +
       '<div class="wcard__body">' +
@@ -2404,7 +2345,7 @@ window.Site = (() => {
 
     var descHTML = ed.desc
       ? '<p class="editor__desc">' + esc(ed.desc) + '</p>'
-      : '<p class="editor__desc">Шаблонная карточка — замените данными монтажёра.</p>';
+      : '<p class="editor__desc">Скоро..</p>';
 
     return '<section class="editor" id="team-portfolio-editor-' + idx + '">' +
       '<div class="container">' +
@@ -2596,7 +2537,7 @@ window.Site = (() => {
   });
   // Placeholder Telegram accounts are never presented as real contacts.
   document.querySelectorAll('a[href="https://t.me/username"]').forEach(a=>{a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.classList.add('template-contact');a.title='Шаблонный контакт: замените username';a.textContent='Контакт не задан'});
-  document.querySelectorAll('#home-teamView .card-name').forEach(el=>el.textContent='Пример участника');
+  document.querySelectorAll('#home-teamView .card-name').forEach(el=>el.textContent='Фамилия Имя');
   // Add keyboard support to cards, reviews and FAQ rows from the originals.
   document.querySelectorAll('.vcard,.wcard,.review').forEach(el=>{el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',el.querySelector('h3,.review__t')?.textContent||'Открыть работу');el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click()}})});
   document.querySelectorAll('.faq__q').forEach((el,i)=>{el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-expanded','false');const answer=el.nextElementSibling;answer.id='faq-answer-'+i;el.setAttribute('aria-controls',answer.id);el.addEventListener('click',()=>el.setAttribute('aria-expanded',String(el.parentElement.classList.contains('on'))));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click()}})});
@@ -2668,12 +2609,6 @@ window.Site = (() => {
     if(data.type==='youtube')thumbnail(target,data.id,data.title);
     if(data.type==='mp4')frame(target,data.src);
   });
-  document.querySelectorAll('#view-team-portfolio .wcard').forEach(card=>{
-    const data=window.STUDIO_EDITORS?.[Number(card.dataset.editor)]?.works?.[Number(card.dataset.work)];if(!data)return;
-    const target=card.querySelector('.wcard__num');target.querySelector('.wcard__num-text')?.remove();
-    if(data.type==='youtube')thumbnail(target,data.id,data.title);
-    if(data.type==='mp4')frame(target,data.src);
-  });
   const favorite=document.querySelector('#home-favorite .fav__link');if(favorite)thumbnail(favorite,'2rd3-0kkmhQ','Любимая работа');
   // MP4 decoding is lazy, limited to two simultaneous loads. Clips stay paused.
   let active=0;const queue=[];
@@ -2693,20 +2628,8 @@ window.Site = (() => {
     if(navigator.connection?.saveData){item.status.textContent='Экономия трафика включена';const button=document.createElement('button');button.type='button';button.textContent='Загрузить кадр';button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();item.status.textContent='Подготавливаем кадр…';request(item)});item.status.append(button)}else request(item);
   }},{rootMargin:'180px 0px',threshold:0});
   previews.forEach(item=>mediaObserver.observe(item.video));
-  // Interactive color grading: compare, style and exposure, without a video dependency.
-  const scene=document.getElementById('gradeScene'),compare=document.getElementById('compareRange'),exposure=document.getElementById('exposureRange');
-  const palettes={soft:['#486786','#273d58','#d6e8fb'],cool:['#366879','#173c4a','#d6f3f2'],contrast:['#3b5077','#121d31','#f1f6ff']};
-  document.querySelectorAll('[data-look]').forEach(button=>button.addEventListener('click',()=>{const palette=palettes[button.dataset.look];scene.style.setProperty('--look-a',palette[0]);scene.style.setProperty('--look-b',palette[1]);scene.style.setProperty('--look-t',palette[2]);document.querySelectorAll('[data-look]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));document.getElementById('lookName').textContent=button.textContent.trim()}));
-  compare.addEventListener('input',()=>{scene.style.setProperty('--mix',compare.value+'%');document.getElementById('compareValue').textContent=compare.value+'%'});
-  exposure.addEventListener('input',()=>{scene.style.setProperty('--intensity',String(1+Number(exposure.value)/100));document.getElementById('exposureValue').textContent=(Number(exposure.value)>0?'+':'')+exposure.value+'%'});
-  // Tap tempo measures the user's rhythm. No sound is played, nothing is recorded.
-  const tap=document.getElementById('tapTempo');let taps=[],resetTimer;
-  tap.addEventListener('click',()=>{const now=performance.now();if(taps.length&&now-taps.at(-1)>2200)taps=[];taps.push(now);taps=taps.slice(-8);clearTimeout(resetTimer);
-    const result=document.getElementById('bpmValue');if(taps.length>1){const bpm=Math.round(60000*(taps.length-1)/(taps.at(-1)-taps[0]));result.textContent=bpm<=400?String(bpm):'—';document.getElementById('bpmHint').textContent=bpm<=400?'Продолжай нажимать в ритм — среднее по последним ударам.':'Нажимай чуть медленнее, в темп музыки.'}else{result.textContent='—';document.getElementById('bpmHint').textContent='Ещё пару нажатий в ритм — и появится BPM.'}
-    resetTimer=setTimeout(()=>{taps=[];result.textContent='—';document.getElementById('bpmHint').textContent='Нажимай в ритм любимого трека. Звук не включается.'},6000)
-  });
-})();
-</script><script>(() => {
+
+})();</script><script>(() => {
   'use strict';
   const reduced=matchMedia('(prefers-reduced-motion:reduce)');
   // A single fixed toolbar replaces route-local back buttons.
@@ -2721,11 +2644,6 @@ window.Site = (() => {
     else window.scrollTo({top:0,behavior:reduced.matches?'instant':'smooth'});
     backLabel();
   });
-  document.getElementById('globalMenu').addEventListener('click',()=>{function open(){document.getElementById('home-burger').click()}
-    if(Site.current==='home')open();else{Site.navigate('home');setTimeout(open,100)}
-  });
-  const originalMenu=document.getElementById('home-mmenu');
-  new MutationObserver(()=>document.getElementById('globalMenu').setAttribute('aria-expanded',String(originalMenu.classList.contains('on')))).observe(originalMenu,{attributes:true,attributeFilter:['class']});
   backLabel();
   // Preserve the source review text. Only presentation and disclosure change.
   const grid=document.querySelector('#home-reviews .reviews__grid');
@@ -2749,10 +2667,8 @@ window.Site = (() => {
   const newObserver=new IntersectionObserver(entries=>{entries.forEach(e=>e.target.classList.toggle('is-visible',e.isIntersecting))},{rootMargin:'-20px 0px -48px 0px',threshold:0});
   cards.forEach(c=>newObserver.observe(c));
   document.querySelectorAll('.vcard,.wcard,.main-card,.card,.pack__box,.join__box,.faq__i,.q,.discount-note,.cta-block,.join-cta,.lab-desk,.gem-stage').forEach(el=>{el.classList.add('motion-tile');if(!el.classList.contains('scroll-reveal'))newObserver.observe(el)});
-  // Projected faceted diamond: no third-party library, no downloads or sound.
   const canvas=document.getElementById('gemCanvas'),stage=document.getElementById('gemStage'),ctx=canvas.getContext('2d');
-  const speed=document.getElementById('gemSpeed'),pause=document.getElementById('gemPause'),status=document.getElementById('gemStatus');
-  let yaw=.5,pitch=-.18,color='duo',paused=reduced.matches,visible=false,drag=null,frame=0,previous=0,width=0,height=0,flashTimer;
+  let yaw=.5,pitch=-.18,visible=false,frame=0,previous=0,width=0,height=0,color='duo';
   const vertices=[],faces=[],count=8;
   for(let i=0;i<count;i++){const a=2*Math.PI*i/count;vertices.push([Math.cos(a)*.48,-.78,Math.sin(a)*.48])}
   for(let i=0;i<count;i++){const a=2*Math.PI*i/count;vertices.push([Math.cos(a)*1.04,-.12,Math.sin(a)*1.04])}
@@ -2774,24 +2690,37 @@ window.Site = (() => {
     }
   }
   function resize(){const r=canvas.getBoundingClientRect();width=r.width;height=r.height;const dpr=Math.min(2,devicePixelRatio||1);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);ctx?.setTransform(dpr,0,0,dpr,0,0);draw()}
-  function running(){return visible&&!document.hidden&&!paused&&!reduced.matches&&Number(speed.value)>0}
-  function tick(time){if(!running()){frame=0;return}const interval=document.documentElement.classList.contains('lite')?46:32;if(time-previous>=interval){const dt=Math.min(80,previous?time-previous:interval);if(!drag)yaw+=dt*.0006*(Number(speed.value)/45);previous=time;draw()}frame=requestAnimationFrame(tick)}
-  function sync(){cancelAnimationFrame(frame);frame=0;previous=0;draw();if(running())frame=requestAnimationFrame(tick);pause.setAttribute('aria-pressed',String(paused));pause.textContent=paused?'Продолжить':'Пауза'}
-  function flash(){stage.classList.remove('flash');void stage.offsetWidth;stage.classList.add('flash');clearTimeout(flashTimer);flashTimer=setTimeout(()=>stage.classList.remove('flash'),750)}
-  function choose(next){color=next;document.querySelectorAll('[data-gem-color]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.gemColor===color)));status.textContent='Цвет: '+({duo:'красно-синий',blue:'синий',red:'красный'}[color])+'. Перетаскивай, чтобы посмотреть грани.';draw();flash()}
-  function cycle(){const values=['duo','blue','red'];choose(values[(values.indexOf(color)+1)%values.length])}
-  document.querySelectorAll('[data-gem-color]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.gemColor)));
-  canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,yaw,pitch,moved:false};canvas.setPointerCapture(e.pointerId)});
-  canvas.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>5)drag.moved=true;yaw=drag.yaw+dx*.012;pitch=Math.max(-1.05,Math.min(1.05,drag.pitch+dy*.01));draw()});
-  canvas.addEventListener('pointerup',()=>{if(drag&&!drag.moved)cycle();drag=null});canvas.addEventListener('pointercancel',()=>drag=null);
-  canvas.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' ','Enter'].includes(e.key))e.preventDefault();if(e.key==='ArrowLeft')yaw-=.15;if(e.key==='ArrowRight')yaw+=.15;if(e.key==='ArrowUp')pitch=Math.max(-1.05,pitch-.12);if(e.key==='ArrowDown')pitch=Math.min(1.05,pitch+.12);if(e.key==='Enter')cycle();if(e.key===' ')pause.click();draw()});
-  pause.addEventListener('click',()=>{paused=!paused;if(reduced.matches&&!paused){paused=true;status.textContent='Автовращение отключено настройкой уменьшения движения. Алмаз можно поворачивать вручную.'}else status.textContent=paused?'Автовращение на паузе. Поворачивай алмаз вручную.':'Автовращение включено.';sync()});
-  speed.addEventListener('input',()=>{document.getElementById('gemSpeedValue').textContent=speed.value+'%';sync()});
-  document.getElementById('gemReset').addEventListener('click',()=>{yaw=.5;pitch=-.18;speed.value=45;document.getElementById('gemSpeedValue').textContent='45%';paused=reduced.matches;choose('duo');sync();status.textContent='Исходный поворот восстановлен.'});
-  reduced.addEventListener('change',()=>{if(reduced.matches)paused=true;sync()});document.addEventListener('visibilitychange',sync);
-  new ResizeObserver(resize).observe(canvas);new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync()},{threshold:.05}).observe(stage);
-  if(!ctx){status.textContent='Браузер не поддерживает Canvas. Остальной сайт работает.';canvas.setAttribute('aria-label','Алмаз недоступен: Canvas не поддерживается')}
-  if(reduced.matches)status.textContent='Автовращение отключено системной настройкой. Вращение стрелками и перетаскиванием доступно.';
+  const pause=document.getElementById('tipsPause');
+  function running(){return visible&&!document.hidden&&!window.studioPaused&&!reduced.matches}
+  function tick(time){if(!running()){frame=0;return}if(time-previous>=(document.documentElement.classList.contains('lite')?66:33)){const dt=Math.min(80,previous?time-previous:33);yaw+=dt*.00035;pitch=-.18+Math.sin(time*.00025)*.08;previous=time;draw()}frame=requestAnimationFrame(tick)}
+  function sync(){cancelAnimationFrame(frame);previous=0;draw();if(running())frame=requestAnimationFrame(tick)}
+  new ResizeObserver(resize).observe(canvas);
+  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync()},{threshold:.05}).observe(stage);
+  new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+  reduced.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);window.addEventListener('studio-motion',sync);
   resize();sync();
+
+})();</script><div class="site-nav" hidden="" id="siteNav"><div class="site-nav-head"><span>Куда дальше?</span><button aria-label="Закрыть меню" id="siteNavClose" type="button">×</button></div><div class="site-nav-links"><a data-nav="home" href="#/home">Главная <span>01</span></a><a data-nav="portfolio" href="#/portfolio">Моё портфолио <span>02</span></a><a data-nav="team" href="#/team">Команда <span>03</span></a><a data-nav="team-portfolio" href="#/team-portfolio">Работы команды <span>04</span></a><a data-nav="join" href="#/join">Вступить в команду <span>05</span></a></div><div class="site-nav-anchors"><a href="#/home/about">Обо мне</a><a href="#/home/tips">Советы по монтажу</a><a href="#/home/pack">Пак для монтажа</a><a href="#/home/reviews">Отзывы</a><a href="#/home/questions">Вопросы</a></div></div><script>(() => {
+  'use strict';
+  const reduced=matchMedia('(prefers-reduced-motion:reduce)'),menu=document.getElementById('siteNav'),menuButton=document.getElementById('globalMenu');
+  function setMenu(open){menu.hidden=!open;menuButton.setAttribute('aria-expanded',String(open));if(open)menu.querySelector('a')?.focus();else menuButton.focus({preventScroll:true})}
+  menuButton.addEventListener('click',()=>setMenu(menu.hidden));document.getElementById('siteNavClose').addEventListener('click',()=>setMenu(false));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('click',e=>{if(!menu.hidden&&!menu.contains(e.target)&&!menuButton.contains(e.target))setMenu(false)});
+  document.addEventListener('keydown',e=>{if(menu.hidden)return;if(e.key==='Escape'){e.preventDefault();setMenu(false)}if(e.key==='Tab'){const all=[...menu.querySelectorAll('a,button')];if(e.shiftKey&&document.activeElement===all[0]){e.preventDefault();all.at(-1).focus()}else if(!e.shiftKey&&document.activeElement===all.at(-1)){e.preventDefault();all[0].focus()}}});
+  window.addEventListener('hashchange',()=>{menu.hidden=true;menuButton.setAttribute('aria-expanded','false')});
+  const tips=[['Сначала история — потом эффекты.','Собери понятную последовательность кадров. Переходы и графика должны помогать ей, а не отвлекать.'],['Ритм не равен скорости.','Чередуй плотные склейки с паузами. Иногда один спокойный кадр удерживает внимание лучше десятка переходов.'],['Хороший звук делает кадр сильнее.','Сначала выровняй голос и музыку. Добавляй звуковые акценты только там, где они поддерживают действие.'],['Проверь ролик на маленьком экране.','Титры должны читаться с телефона. Следи за размером текста, контрастом и безопасными отступами.']];
+  const copy=document.querySelector('.tip-copy'),dots=[...document.querySelectorAll('[data-tip]')],pause=document.getElementById('tipsPause');let index=0,visible=false,timer,changeTimer;
+  function show(n,animate=true){index=n;clearTimeout(changeTimer);const update=()=>{document.getElementById('tipTitle').textContent=tips[n][0];document.getElementById('tipText').textContent=tips[n][1];document.getElementById('tipNumber').textContent=String(n+1).padStart(2,'0')+' / 04';dots.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));copy.classList.remove('changing')};if(animate&&!reduced.matches){copy.classList.add('changing');changeTimer=setTimeout(update,250)}else update()}
+  function sync(){clearInterval(timer);if(visible&&!window.studioPaused&&!document.hidden&&!reduced.matches)timer=setInterval(()=>show((index+1)%tips.length),6500);pause.setAttribute('aria-pressed',String(!!window.studioPaused));pause.textContent=window.studioPaused?'Продолжить анимацию':'Пауза анимации'}
+  pause.addEventListener('click',()=>{window.studioPaused=!window.studioPaused;document.documentElement.classList.toggle('motion-paused',window.studioPaused);window.dispatchEvent(new Event('studio-motion'));sync()});
+  dots.forEach(b=>b.addEventListener('click',()=>{show(Number(b.dataset.tip),false);sync()}));
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting;sync()},{threshold:.15}).observe(document.getElementById('home-tips'));
+  document.addEventListener('visibilitychange',sync);reduced.addEventListener('change',sync);new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+  const briefs=['Пять кадров, один бит. Где поставишь склейку, чтобы ролик зацепил с первой секунды?','Из обычного дня — маленькая история. Какой кадр станет началом, а какой оставишь для финала?','Одна сцена, три слоя звука. Что оставишь главным: голос, атмосферу или музыку?'];
+  document.querySelectorAll('[data-brief]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-brief]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.getElementById('briefText').textContent=briefs[Number(b.dataset.brief)]}));
+  // Additional supporting panels use repeatable viewport reveals on all routes.
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('studio-visible',e.isIntersecting)),{threshold:0,rootMargin:'-12px 0px -28px 0px'});
+  document.querySelectorAll('.gem-layout,.join-challenge,.join__box,.pack__box,.faq__i,.footer__title,.footer__btns,.team-hero,.team-page>.tbt,.phero h1,.phero p,.pfoot,.title,.join-challenge,.field,.check-item').forEach(el=>{if(!el.classList.contains('scroll-reveal')&&!el.classList.contains('motion-tile')){el.classList.add('studio-reveal');io.observe(el)}});
 })();
 </script></body></html>
