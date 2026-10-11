@@ -1021,6 +1021,41 @@ html.lite .ambient-edit{display:none}html.lite .brief-visual i{animation:none}
 :where(#view-team-portfolio) .wcard__num{aspect-ratio:auto}
 html.motion-paused *{animation-play-state:paused!important}
 @media(max-width:540px){.tip-footer{flex-wrap:wrap;gap:4px 12px}.tip-dots button{width:44px}#tipsPause{margin-left:auto}}
+</style><style>/* New conversion blocks inherit the site's existing dark studio identity. */
+:where(#view-home) .studio-feature{padding:64px 0;position:relative}
+:where(#view-home) .feature-heading{max-width:760px;margin:0 0 32px}
+:where(#view-home) .feature-kicker{font:14px/1.5 Consolas,monospace;letter-spacing:1px;color:#b8c8e5;margin-bottom:12px}
+:where(#view-home) .feature-heading h2{font-size:clamp(30px,3.5vw,44px);line-height:1.2;font-weight:750;margin-bottom:16px;letter-spacing:-1px}
+:where(#view-home) .feature-heading h2 span{color:#a9c4ff}
+:where(#view-home) .feature-heading>p:last-child{font-size:18px;line-height:1.6;color:#ccd5e7;max-width:62ch}
+.compare-panel,.process-timeline,.brief-builder{background:#1c2638;border:1px solid #637394;border-radius:12px;overflow:hidden;position:relative;color:#f5f7fc}
+.compare-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;border-bottom:1px solid #495975}
+.compare-switch{display:flex;gap:8px}.compare-switch button{min-height:44px;padding:10px 20px;border:1px solid #8696b5;border-radius:8px;background:transparent;color:#dce7ff;font-size:16px}.compare-switch button[aria-selected=true]{background:#abc5ff;color:#172541;border-color:#abc5ff;font-weight:700}
+#compareVersion{font:14px Consolas,monospace;color:#c2d0e9;white-space:nowrap}.compare-player{min-height:260px;display:grid;align-items:center;background:#162033}.compare-player video{display:block;width:100%;max-height:560px;background:#0b111d;aspect-ratio:16/9}.compare-empty{padding:40px 48px;max-width:720px}.empty-badge,.result-badge{display:inline-block;font:14px/1.5 Consolas,monospace;letter-spacing:1px;color:#abc5ff;margin-bottom:12px}
+:where(#view-home) .compare-empty h3{font-size:28px;line-height:1.3;margin-bottom:16px}:where(#view-home) .compare-empty p{font-size:16px;line-height:1.7;color:#c3cfe5;max-width:58ch}
+.compare-caption{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;font-size:14px;color:#cad6ed}:where(#view-home) .compare-caption p{font-size:14px;color:#b7c5df}
+.process-timeline{padding:32px}.process-rail{position:absolute;top:60px;left:56px;right:56px;height:2px;background:#556782;pointer-events:none}.process-rail::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#8bb7ff,#c8a8ef);transform-origin:left;transform:scaleX(var(--process-progress,0));transition:transform .5s ease}.process-rail i{position:absolute;top:-7px;left:calc(var(--process-progress,0) * 100%);width:3px;height:16px;background:#e1ecff;transition:left .5s ease}
+:where(#view-home) .process-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;gap:16px;margin:0;padding:0;position:relative}
+.process-steps button{display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;border:0;background:transparent;color:#ccd9ef;padding:0 0 24px;width:100%;min-height:140px;border-radius:8px}
+.process-num{display:grid;place-items:center;width:56px;height:56px;background:#233047;border:1px solid #a3b6d6;border-radius:8px;font:16px Consolas,monospace;margin-bottom:8px}.process-steps button[aria-pressed=true] .process-num{background:#abc5ff;color:#15233d;border-color:#abc5ff}.process-steps strong{font-size:20px;font-weight:700;line-height:1.3}.process-short{font-size:14px;line-height:1.5;color:#becce5}
+.process-detail{padding-top:24px;border-top:1px solid #62738e;max-width:760px;min-height:212px}#processDetailNumber{font:14px Consolas,monospace;color:#abc5ff}:where(#view-home) .process-detail h3{font-size:26px;line-height:1.3;margin:8px 0 12px}:where(#view-home) .process-detail p{font-size:16px;line-height:1.7;color:#d0dbed}.process-detail a{display:inline-flex;min-height:44px;align-items:center;color:#abc5ff;font-size:16px;margin-top:12px;text-decoration:none}
+.brief-builder{display:grid;grid-template-columns:.82fr 1.18fr;gap:0;max-width:1120px;margin:auto}.brief-intro{padding:32px;border-right:1px solid #5a6b88;background:#202e46}
+:where(#view-home) .brief-intro h3{font-size:36px;line-height:1.2;letter-spacing:-1px;margin-bottom:20px}:where(#view-home) .brief-intro>p:not(.feature-kicker){font-size:16px;line-height:1.7;color:#d1dbee}.brief-progress{height:4px;background:#607291;border-radius:2px;margin:32px 0 12px;overflow:hidden}.brief-progress span{display:block;background:#abc5ff;height:100%;width:33.333%;transition:width .3s ease}.brief-intro a{color:#b8d3ff;display:inline-flex;min-height:44px;align-items:center;text-decoration:none;margin-top:12px;font-size:16px}.brief-workspace{padding:32px;min-width:0}
+:where(#view-home) #projectBrief fieldset{min-width:0;margin:0;padding:0;border:0}:where(#view-home) #projectBrief legend{font-size:26px;font-weight:700;line-height:1.3;margin-bottom:8px;float:none;max-width:100%}.brief-step-hint{color:#c4d1e8;font-size:16px;margin-bottom:24px!important}
+.brief-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.brief-choice-grid label{position:relative;display:flex;align-items:center;gap:12px;min-height:96px;border:1px solid #8193b1;border-radius:8px;padding:16px;background:#23314a;cursor:pointer;min-width:0}.brief-choice-grid label:has(input:checked){background:#344e78;border:1px solid #b5d0ff;box-shadow:inset 0 0 0 1px #b5d0ff}.brief-choice-grid input{accent-color:#abc5ff;width:20px;height:20px;flex:0 0 auto;margin:0}.brief-choice-grid b{display:block;font-size:16px;line-height:1.4;font-weight:650}.brief-choice-grid small{display:block;font-size:14px;line-height:1.5;color:#ccdaef;margin-top:4px}.extras-grid label{min-height:72px;padding:12px}
+.brief-notes-label{display:block;font-size:16px;margin:24px 0 8px!important}.brief-notes-label span{display:block;font-size:14px;color:#bac9e3}.brief-workspace textarea{width:100%;min-height:100px;background:#152036;color:#e9f0ff;border:1px solid #8c9cba;border-radius:8px;padding:12px;font:16px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;resize:vertical}.brief-workspace textarea::placeholder{color:#b1bfd7}
+.brief-navigation{display:flex;justify-content:space-between;gap:12px;margin-top:24px}.brief-workspace button,.brief-result-actions a{min-height:44px;padding:12px 20px;font-size:16px;font-weight:600;border-radius:8px;border:1px solid #93a5c4;background:transparent;color:#e3edff;text-decoration:none}.brief-workspace .brief-primary{background:#abc5ff;border-color:#abc5ff;color:#15233d}.brief-navigation .brief-primary{margin-left:auto}
+:where(#view-home) .brief-result h4{font-size:26px;line-height:1.3;margin-bottom:20px}.brief-result>label{display:block;margin-bottom:8px;font-size:14px;color:#c9d7ef}.brief-result textarea{min-height:230px}.brief-result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.brief-result-actions a{display:inline-flex;align-items:center;justify-content:center}.brief-send-note{font-size:14px!important;line-height:1.6;color:#c2d0e8;margin-top:16px!important}#briefStatus{color:#c6e2ff;font-size:14px;min-height:24px;margin-top:8px}.brief-workspace .brief-edit{padding:8px 0;border:0;margin-top:8px;text-align:left;color:#b8d3ff}
+:where(#view-home) .brief-fallback{max-width:1120px;margin:24px auto 0;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:0 4px}:where(#view-home) .brief-fallback p{font-size:16px;color:#c9d6ec}:where(#view-home) .brief-fallback .order-btn{font-size:16px;min-height:44px;background:transparent;color:#dce8ff;border:1px solid #8d9ebc;box-shadow:none;padding:12px 20px;border-radius:8px;white-space:nowrap}
+.feature-reveal{transition:opacity .7s ease,translate .7s cubic-bezier(.22,.61,.36,1)}.feature-reveal:not(.feature-visible){opacity:0;translate:0 24px}.feature-reveal.feature-visible{opacity:1;translate:0 0}
+@media(max-width:860px){.brief-builder{grid-template-columns:1fr}.brief-intro{border-right:0;border-bottom:1px solid #5a6b88}.brief-intro .brief-progress{margin-top:24px}.brief-intro a{display:none}.process-short{max-width:16ch}.process-steps strong{font-size:18px}.process-timeline{padding:24px}.process-rail{left:48px;right:48px;top:52px}}
+@media(max-width:600px){:where(#view-home) .studio-feature{padding:44px 0}:where(#view-home) .feature-heading h2{font-size:30px}:where(#view-home) .feature-heading>p:last-child{font-size:16px}.compare-toolbar{padding:16px;flex-direction:column;align-items:flex-start;gap:12px}.compare-switch{width:100%}.compare-switch button{flex:1;font-size:14px;padding:10px 12px}#compareVersion{font-size:14px}.compare-empty{padding:32px 24px}.compare-player{min-height:240px}:where(#view-home) .compare-empty h3{font-size:24px}.compare-caption{align-items:flex-start;flex-direction:column;padding:16px;gap:8px}.process-timeline{padding:24px}:where(#view-home) .process-steps{grid-template-columns:1fr;gap:16px}.process-steps button{display:grid;grid-template-columns:48px 1fr;gap:4px 16px;padding:0;min-height:64px;align-items:center}.process-num{grid-row:span 2;width:48px;height:48px;margin:0;z-index:1}.process-short{grid-column:2;max-width:none}.process-steps strong{font-size:18px}.process-rail{top:48px;bottom:auto;left:47px;right:auto;height:240px;width:2px}.process-rail::before{transform-origin:top;transform:scaleY(var(--process-progress,0))}.process-rail i{left:-7px;top:calc(var(--process-progress,0)*100%);height:3px;width:16px;transition:top .5s}.process-detail{margin-top:24px;min-height:260px}:where(#view-home) .process-detail h3{font-size:24px}.brief-intro,.brief-workspace{padding:24px}:where(#view-home) .brief-intro h3{font-size:30px}.brief-choice-grid{grid-template-columns:1fr;gap:12px}.brief-choice-grid label{min-height:76px;padding:12px 16px}.extras-grid label{min-height:60px}:where(#view-home) #projectBrief legend{font-size:24px}.brief-result-actions{flex-direction:column;align-items:stretch}.brief-result-actions a{width:100%}:where(#view-home) .brief-fallback{flex-direction:column;align-items:flex-start}.brief-result textarea{min-height:260px}.brief-navigation button{padding:12px 16px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){.feature-reveal{opacity:1!important;translate:none!important;transition:none!important}.process-rail::before,.process-rail i,.brief-progress span{transition:none!important}}
+/* Align the playhead to stage centers, not the outer edge of the panel. */
+.process-rail{left:60px;right:calc(25% - 24px)}
+.brief-workspace{scroll-margin-top:100px}
+@media(max-width:860px){.process-rail{left:52px;right:calc(25% - 28px)}}
+@media(max-width:600px){.process-rail{left:47px;right:auto}}
 </style></head><body><div aria-hidden="true" class="ambient-edit"><div class="ambient-reel reel-a"></div><div class="ambient-reel reel-b"></div><div class="ambient-brackets">[ ]</div><div class="ambient-timeline"><div class="ambient-ruler"></div><div class="ambient-tracks"><div class="ambient-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ambient-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ambient-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><span class="ambient-head"></span></div></div><nav aria-label="Закреплённая навигация" class="route-toolbar" id="routeToolbar"><div class="routebar-inner"><button aria-label="Назад" class="route-back" id="globalBack" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"></path></svg><span>Назад</span></button><a class="route-brand" href="#/home">Nikitosich <span>/ STUDIO</span></a><div class="routebar-controls" id="routebarControls"><a class="route-works" href="#/portfolio">Работы</a><button aria-controls="siteNav" aria-expanded="false" aria-label="Открыть меню" class="route-menu" id="globalMenu" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div></nav><div aria-hidden="true" class="studio-backdrop"><span class="background-reel"></span><div class="bg-film"></div><div class="bg-tracks"><i></i><i></i><i></i></div></div><a class="skip-link" href="#/home/about">Перейти к содержимому</a><div aria-hidden="true" class="reading-progress"><i id="readingProgress"></i></div><div class="app-view" id="view-home">
 <div class="mmenu" id="home-mmenu">
 <a data-close="" href="#/home/about">Обо мне</a>
@@ -1034,7 +1069,7 @@ html.motion-paused *{animation-play-state:paused!important}
 <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
 <span>Назад</span>
 </button>
-</div>
+<a data-close="" href="#/home/process">Как мы работаем</a><a data-close="" href="#/home/order-cta">Собрать бриф</a></div>
 <div id="home-mainSite">
 <header class="header">
 <div class="header__bg"></div>
@@ -1049,7 +1084,7 @@ html.motion-paused *{animation-play-state:paused!important}
 <li><a class="nav__link" href="#/home/join">В команду</a></li>
 <li><a class="nav__link" href="#/home/reviews">Отзывы</a></li>
 <li><a class="nav__link" href="#/home/questions">Вопросы</a></li>
-</ul>
+<li><a class="nav__link" href="#/home/process">Как работаем</a></li></ul>
 <button class="nav__team" id="home-teamBtn">👥 Команда</button>
 <button aria-label="Меню" class="burger" id="home-burger"><span></span><span></span><span></span></button>
 </nav>
@@ -1165,24 +1200,49 @@ html.motion-paused *{animation-play-state:paused!important}
 <p class="join__txt">Если ты шаришь в TikTok трендах, чувствуешь ритм и умеешь создавать динамичные ролики — <span class="a">Добро Пожаловать в команду!</span></p>
 <a class="join__btn" href="#/join" rel="noopener">Заполнить анкету →</a>
 </div>
-
 <aside class="join-challenge"><p class="challenge-label">ТВОЙ СЛЕДУЮЩИЙ КАДР</p><h3>Как бы ты это смонтировал?</h3><div aria-label="Выбери монтажный приём" class="brief-options"><button aria-pressed="true" data-brief="0" type="button">Ритм</button><button aria-pressed="false" data-brief="1" type="button">История</button><button aria-pressed="false" data-brief="2" type="button">Звук</button></div><div aria-hidden="true" class="brief-visual"><span></span><span></span><span></span><span></span><span></span><span></span><i></i></div><p aria-live="polite" id="briefText">Пять кадров, один бит. Где поставишь склейку, чтобы ролик зацепил с первой секунды?</p><small>Идея для портфолио: покажи свой подход в анкете.</small><a href="#/join">Хочу в команду ↗</a></aside></div>
 </div>
 </section>
-<section id="home-order-cta">
+<section aria-labelledby="processHeading" class="studio-feature" id="home-process"><div class="container">
+<div class="feature-heading"><p class="feature-kicker">01 / ОТ ИДЕИ ДО ФИНАЛА</p><h2 id="processHeading">Как мы <span>работаем</span></h2><p>Понятный маршрут проекта — без лишних вопросов и догадок.</p></div>
+<div class="process-timeline feature-reveal"><div aria-hidden="true" class="process-rail"><i id="processCursor"></i></div><ol class="process-steps">
+<li><button aria-controls="processDetail" aria-pressed="true" data-process="0" type="button"><span class="process-num">01</span><strong>Обсуждение</strong><span class="process-short">Задача и настроение</span></button></li>
+<li><button aria-controls="processDetail" aria-pressed="false" data-process="1" type="button"><span class="process-num">02</span><strong>Материалы</strong><span class="process-short">Исходники и ориентиры</span></button></li>
+<li><button aria-controls="processDetail" aria-pressed="false" data-process="2" type="button"><span class="process-num">03</span><strong>Первая версия</strong><span class="process-short">Монтаж и обратная связь</span></button></li>
+<li><button aria-controls="processDetail" aria-pressed="false" data-process="3" type="button"><span class="process-num">04</span><strong>Финал</strong><span class="process-short">Последние штрихи и экспорт</span></button></li>
+</ol><div class="process-detail" id="processDetail"><span id="processDetailNumber">ЭТАП 01</span><h3 id="processDetailTitle">Начинаем с твоей идеи.</h3><p id="processDetailText">Расскажи, для кого ролик и что он должен передать. Обсудим формат, объём работы, стоимость и сроки.</p><a href="#/home/order-cta">Собрать бриф ↗</a></div></div>
+</div></section><section id="home-order-cta">
 <div class="glow glow-blue" style="width:550px;height:550px;top:-150px;left:-150px"></div>
 <div class="glow glow-red" style="width:500px;height:500px;bottom:-150px;right:-100px"></div>
 <div class="container">
 <h2 class="title anim">Заказать <span class="a">монтаж</span></h2>
-<div class="cta-block anim">
-<h3>Готовы заказать монтаж?</h3>
-<p>Заполните короткую анкету — я свяжусь с вами в ближайшее время, обсудим детали и стоимость.</p>
-<button class="order-btn order-btn--lg" id="home-orderBtnCta" type="button">
-<svg viewbox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
-            Заказать монтаж
-          </button>
-</div>
-</div>
+<div class="brief-builder feature-reveal" id="briefBuilder">
+<div class="brief-intro"><p class="feature-kicker">02 / ТВОЙ СЛЕДУЮЩИЙ РОЛИК</p><h3>Собери свой ролик.</h3><p>Три шага — и у тебя готовый бриф для обсуждения проекта. Без регистрации и расчётов наугад.</p><div aria-label="Прогресс брифа" aria-valuemax="3" aria-valuemin="1" aria-valuenow="1" class="brief-progress" role="progressbar"><span id="briefProgressFill"></span></div><p id="briefStepLabel">Шаг 1 из 3 · Формат</p><a href="#/home/process">Как проходит работа ↗</a></div>
+<div class="brief-workspace">
+<form id="projectBrief" novalidate="">
+<fieldset data-brief-step="0"><legend>Что монтируем?</legend><p class="brief-step-hint">Выбери основной формат.</p><div class="brief-choice-grid">
+<label><input checked="" name="projectFormat" type="radio" value="Shorts / Reels"/><span><b>Shorts / Reels</b><small>Коротко и цепко</small></span></label>
+<label><input name="projectFormat" type="radio" value="YouTube"/><span><b>YouTube</b><small>История с развитием</small></span></label>
+<label><input name="projectFormat" type="radio" value="Рекламный ролик"/><span><b>Реклама</b><small>Фокус на продукте</small></span></label>
+<label><input name="projectFormat" type="radio" value="Другой формат"/><span><b>Другой формат</b><small>Обсудим твою идею</small></span></label>
+</div></fieldset>
+<fieldset data-brief-step="1" hidden=""><legend>Какое настроение?</legend><p class="brief-step-hint">Это ориентир, а не ограничение.</p><div class="brief-choice-grid">
+<label><input checked="" name="projectMood" type="radio" value="Динамично"/><span><b>Динамично</b><small>Ритм и акценты</small></span></label>
+<label><input name="projectMood" type="radio" value="Спокойно"/><span><b>Спокойно</b><small>Чисто и по делу</small></span></label>
+<label><input name="projectMood" type="radio" value="Кинематографично"/><span><b>Кинематографично</b><small>Атмосфера и история</small></span></label>
+<label><input name="projectMood" type="radio" value="Нужен совет"/><span><b>Нужен совет</b><small>Подберём вместе</small></span></label>
+</div></fieldset>
+<fieldset data-brief-step="2" hidden=""><legend>Какие детали добавим?</legend><p class="brief-step-hint">Можно выбрать несколько — или ничего.</p><div class="brief-choice-grid extras-grid">
+<label><input name="projectExtras" type="checkbox" value="Субтитры"/><span><b>Субтитры</b></span></label>
+<label><input name="projectExtras" type="checkbox" value="Графика / motion design"/><span><b>Графика / motion</b></span></label>
+<label><input name="projectExtras" type="checkbox" value="Обработка звука"/><span><b>Обработка звука</b></span></label>
+<label><input name="projectExtras" type="checkbox" value="Цветокоррекция"/><span><b>Цветокоррекция</b></span></label>
+</div><label class="brief-notes-label" for="briefNotes">О чём ролик? <span>Необязательно</span></label><textarea id="briefNotes" maxlength="1200" placeholder="Задача, примерный хронометраж, сроки или ссылка на референс" rows="3"></textarea></fieldset>
+<div class="brief-navigation"><button hidden="" id="briefPrev" type="button">← Назад</button><button class="brief-primary" id="briefNext" type="button">Дальше →</button></div>
+</form>
+<div class="brief-result" hidden="" id="briefResult"><span class="result-badge">БРИФ ГОТОВ</span><h4>От идеи — к обсуждению.</h4><label for="briefOutput">Текст для сообщения</label><textarea id="briefOutput" readonly="" rows="8"></textarea><div class="brief-result-actions"><button class="brief-primary" id="briefCopy" type="button">Скопировать бриф</button><a href="https://t.me/ModerationNikitosich" id="briefTelegram" rel="noopener" target="_blank">Открыть Telegram ↗</a></div><p class="brief-send-note">Скопируй бриф, открой чат и вставь сообщение. Ничего не отправляется автоматически.</p><p aria-live="polite" id="briefStatus" role="status"></p><button class="brief-edit" id="briefEdit" type="button">← Изменить ответы</button></div>
+</div></div>
+<div class="brief-fallback"><p>Уже есть подробное ТЗ? Можно сразу заполнить анкету.</p><button class="order-btn order-btn--lg" id="home-orderBtnCta" type="button">Открыть полную анкету</button></div></div>
 </section>
 <section id="home-reviews">
 <div class="glow glow-blue" style="width:500px;height:500px;top:-100px;left:-100px"></div>
@@ -1447,7 +1507,6 @@ html.motion-paused *{animation-play-state:paused!important}
 <h2>✨ Моушен-дизайн</h2>
 <span>Анимация, эффекты и графика</span>
 </div>
-
 <div class="vgrid vgrid--motion" data-grid="motion"></div>
 </div>
 </section>
@@ -1709,7 +1768,7 @@ const CONFIG = { web3formsKey: 'a2d85d28-b59e-462c-8788-556339b31b71', joinEndpo
 window.Site = (() => {
   let current = 'home';
   const routeTitles = {home:'Никита Андрианов — Nikitosich',team:'Команда — Nikitosich',portfolio:'Портфолио — Nikitosich','team-portfolio':'Портфолио команды — Nikitosich',join:'Вступить в команду — Nikitosich'};
-  function clearOverlays(){
+  function clearOverlays(){ const menu=document.getElementById('siteNav');if(menu){menu.hidden=true;document.getElementById('globalMenu').setAttribute('aria-expanded','false')}
     document.querySelectorAll('.formmodal.on,.vmodal.on,.modal.on,.mmenu.on,.burger.on').forEach(el=>el.classList.remove('on'));
     document.querySelectorAll('[id$="vframe"]').forEach(el=>el.replaceChildren());
     document.body.classList.remove('locked');
@@ -2700,7 +2759,7 @@ window.Site = (() => {
   reduced.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);window.addEventListener('studio-motion',sync);
   resize();sync();
 
-})();</script><div class="site-nav" hidden="" id="siteNav"><div class="site-nav-head"><span>Куда дальше?</span><button aria-label="Закрыть меню" id="siteNavClose" type="button">×</button></div><div class="site-nav-links"><a data-nav="home" href="#/home">Главная <span>01</span></a><a data-nav="portfolio" href="#/portfolio">Моё портфолио <span>02</span></a><a data-nav="team" href="#/team">Команда <span>03</span></a><a data-nav="team-portfolio" href="#/team-portfolio">Работы команды <span>04</span></a><a data-nav="join" href="#/join">Вступить в команду <span>05</span></a></div><div class="site-nav-anchors"><a href="#/home/about">Обо мне</a><a href="#/home/tips">Советы по монтажу</a><a href="#/home/pack">Пак для монтажа</a><a href="#/home/reviews">Отзывы</a><a href="#/home/questions">Вопросы</a></div></div><script>(() => {
+})();</script><div class="site-nav" hidden="" id="siteNav"><div class="site-nav-head"><span>Куда дальше?</span><button aria-label="Закрыть меню" id="siteNavClose" type="button">×</button></div><div class="site-nav-links"><a data-nav="home" href="#/home">Главная <span>01</span></a><a data-nav="portfolio" href="#/portfolio">Моё портфолио <span>02</span></a><a data-nav="team" href="#/team">Команда <span>03</span></a><a data-nav="team-portfolio" href="#/team-portfolio">Работы команды <span>04</span></a><a data-nav="join" href="#/join">Вступить в команду <span>05</span></a></div><div class="site-nav-anchors"><a href="#/home/about">Обо мне</a><a href="#/home/tips">Советы по монтажу</a><a href="#/home/pack">Пак для монтажа</a><a href="#/home/reviews">Отзывы</a><a href="#/home/questions">Вопросы</a><a href="#/home/process">Как мы работаем</a><a href="#/home/order-cta">Собрать бриф</a></div></div><script>(() => {
   'use strict';
   const reduced=matchMedia('(prefers-reduced-motion:reduce)'),menu=document.getElementById('siteNav'),menuButton=document.getElementById('globalMenu');
   function setMenu(open){menu.hidden=!open;menuButton.setAttribute('aria-expanded',String(open));if(open)menu.querySelector('a')?.focus();else menuButton.focus({preventScroll:true})}
@@ -2722,5 +2781,26 @@ window.Site = (() => {
   // Additional supporting panels use repeatable viewport reveals on all routes.
   const io=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('studio-visible',e.isIntersecting)),{threshold:0,rootMargin:'-12px 0px -28px 0px'});
   document.querySelectorAll('.gem-layout,.join-challenge,.join__box,.pack__box,.faq__i,.footer__title,.footer__btns,.team-hero,.team-page>.tbt,.phero h1,.phero p,.pfoot,.title,.join-challenge,.field,.check-item').forEach(el=>{if(!el.classList.contains('scroll-reveal')&&!el.classList.contains('motion-tile')){el.classList.add('studio-reveal');io.observe(el)}});
+})();
+</script><script>(() => {
+ 'use strict';
+ const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ // Process cursor follows scroll until the visitor explicitly chooses a stage.
+ const process=document.querySelector('.process-timeline'),processButtons=[...document.querySelectorAll('[data-process]')];let manual=false,currentStage=-1;
+ const stages=[['Начинаем с твоей идеи.','Расскажи, для кого ролик и что он должен передать. Обсудим формат, объём работы, стоимость и сроки.'],['Собираем всё для монтажа.','Передай исходники, логотипы, текст и референсы, если они есть. Уточним, что обязательно должно попасть в ролик.'],['Смотрим первую версию.','Соберём историю, ритм и оформление. Ты посмотришь версию и соберёшь комментарии — по ним обсудим корректировки.'],['Доводим до финального кадра.','Согласуем последние детали и подготовим экспорт под нужную площадку. Формат и способ передачи обсудим заранее.']];
+ function setStage(n){if(n===currentStage)return;currentStage=n;process.style.setProperty('--process-progress',n/3);processButtons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));document.getElementById('processDetailNumber').textContent='ЭТАП '+String(n+1).padStart(2,'0');document.getElementById('processDetailTitle').textContent=stages[n][0];document.getElementById('processDetailText').textContent=stages[n][1]}
+ processButtons.forEach((b,i)=>b.addEventListener('click',()=>{manual=true;setStage(i)}));
+ let queued=false;function onScroll(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;if(manual||reduced.matches||process.closest('[hidden]'))return;const r=process.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const progress=Math.max(0,Math.min(1,(innerHeight*.78-r.top)/(Math.min(r.height,innerHeight)*.85)));setStage(Math.min(3,Math.floor(progress*4)))})}
+ window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);window.addEventListener('hashchange',()=>{manual=false;setStage(0);onScroll()});setStage(0);
+ const form=document.getElementById('projectBrief'),fields=[...document.querySelectorAll('[data-brief-step]')],result=document.getElementById('briefResult'),prev=document.getElementById('briefPrev'),next=document.getElementById('briefNext'),stepLabel=document.getElementById('briefStepLabel'),output=document.getElementById('briefOutput');let step=0;
+ function scrollWorkspace(){requestAnimationFrame(()=>document.querySelector('.brief-workspace').scrollIntoView({block:'start',behavior:reduced.matches?'instant':'smooth'}))}
+ function displayStep(n,focus=false){step=n;result.hidden=true;form.hidden=false;fields.forEach((p,i)=>p.hidden=i!==n);prev.hidden=n===0;next.textContent=n===2?'Собрать бриф →':'Дальше →';stepLabel.textContent='Шаг '+(n+1)+' из 3 · '+['Формат','Настроение','Детали'][n];document.getElementById('briefProgressFill').style.width=((n+1)/3*100)+'%';document.querySelector('.brief-progress').setAttribute('aria-valuenow',String(n+1));if(focus){const legend=fields[n].querySelector('legend');legend.tabIndex=-1;legend.focus({preventScroll:true});scrollWorkspace()}}
+ function buildText(){const format=form.querySelector('[name="projectFormat"]:checked').value,mood=form.querySelector('[name="projectMood"]:checked').value,extras=[...form.querySelectorAll('[name="projectExtras"]:checked')].map(e=>e.value),notes=document.getElementById('briefNotes').value.trim();return 'Привет! Хочу обсудить монтаж ролика.\n\nФормат: '+format+'\nНастроение: '+mood+'\nДополнительно: '+(extras.length?extras.join(', '):'обсудим по задаче')+(notes?'\n\nО проекте:\n'+notes:'')+'\n\nПодскажи, пожалуйста, стоимость, сроки и какие материалы нужно прислать.'}
+ function buildResult(){output.value=buildText();form.hidden=true;result.hidden=false;stepLabel.textContent='Готово · можно обсудить проект';document.getElementById('briefStatus').textContent='';document.querySelector('.brief-progress').setAttribute('aria-valuenow','3');document.getElementById('briefProgressFill').style.width='100%';result.querySelector('h4').tabIndex=-1;result.querySelector('h4').focus({preventScroll:true});scrollWorkspace()}
+ next.addEventListener('click',()=>step<2?displayStep(step+1,true):buildResult());prev.addEventListener('click',()=>displayStep(Math.max(0,step-1),true));form.addEventListener('submit',e=>{e.preventDefault();step<2?displayStep(step+1,true):buildResult()});document.getElementById('briefEdit').addEventListener('click',()=>displayStep(2,true));
+ document.getElementById('briefCopy').addEventListener('click',async()=>{let success=false;document.getElementById('briefStatus').textContent='Копирую бриф…';try{if(navigator.clipboard?.writeText){await Promise.race([navigator.clipboard.writeText(output.value),new Promise((_,reject)=>setTimeout(()=>reject(new Error('clipboard timeout')),1000))]);success=true}}catch{}if(!success){output.focus();output.select();try{success=document.execCommand('copy')}catch{}}document.getElementById('briefStatus').textContent=success?'Бриф скопирован. Открой Telegram и вставь его в чат.':'Выдели текст брифа и скопируй вручную — браузер ограничил доступ к буферу обмена.'});
+ // No remote submission, tracking or storage of draft brief answers.
+ const observer=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('feature-visible',e.isIntersecting)),{threshold:0,rootMargin:'-16px 0px -32px 0px'});document.querySelectorAll('.feature-reveal,.feature-heading').forEach(el=>{el.classList.add('feature-reveal');observer.observe(el)});
+ displayStep(0);
 })();
 </script></body></html>
